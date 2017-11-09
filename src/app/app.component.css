@@ -1,3 +1,17 @@
 .content {
   padding: 1em;
 }
+
+.sidebar {
+  padding: 1em;
+  min-height: 100vh;
+  background-color: grey;
+}
+
+.page {
+  min-height: 100vh;
+}
+
+h4 {
+  color: white;
+}
