@@ -7,6 +7,7 @@ import { SocialComponent } from './social/social.component';
 import { PersonalComponent } from './personal/personal.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { SocialActivityChartComponent } from './social-activity-chart/social-activity-chart.component';
+import { KeywordsComponent } from './keywords/keywords.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { SocialActivityChartComponent } from './social-activity-chart/social-act
     AppComponent,
     SocialComponent,
     PersonalComponent,
-    SocialActivityChartComponent
+    SocialActivityChartComponent,
+    KeywordsComponent
   ],
   imports: [
     BrowserModule,

@@ -14,12 +14,7 @@
       <div class="panel-heading">
         <h3 class="panel-title">Keywords</h3>
       </div>
-      <ul class="list-group">
-        <li *ngFor="let keyword of keywords" class="list-group-item">
-          {{keyword.word}}
-          <span class="badge">{{keyword.total}}</span>
-        </li>
-      </ul>
+      <app-keywords></app-keywords>
     </div>
   </div>
 </div>
