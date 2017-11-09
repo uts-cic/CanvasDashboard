@@ -1,0 +1,12 @@
+.panel-body {
+  overflow: auto;
+}
+
+.equal {  
+  display: -webkit-flex;
+  display: flex;
+}
+
+.full-height {
+  height: 100%;
+}
