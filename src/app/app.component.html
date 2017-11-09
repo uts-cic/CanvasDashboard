@@ -1,8 +1,8 @@
-<!--The content below is only a placeholder and can be replaced.-->
 <ul class="nav nav-tabs">
-  <li role="presentation" class="active"><a routerLink="/personal">Personal</a></li>
-  <li role="presentation"><a routerLink="/social">Social</a></li>
+  <li role="presentation" [routerLinkActive]="['active']"><a routerLink="/personal" [routerLinkActive]="['is-active']">Personal</a></li>
+  <li role="presentation" [routerLinkActive]="['active']"><a routerLink="/social">Social</a></li>
 </ul>
 <div class="content">
   <router-outlet></router-outlet>
 </div>
+
