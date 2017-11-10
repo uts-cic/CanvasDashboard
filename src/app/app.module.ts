@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { NvD3Module } from 'ng2-nvd3';
 
 
 import { AppComponent } from './app.component';
@@ -8,7 +9,11 @@ import { PersonalComponent } from './personal/personal.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { SocialActivityChartComponent } from './social-activity-chart/social-activity-chart.component';
 import { KeywordsComponent } from './keywords/keywords.component';
+import { SocialReachChartComponent } from './social-reach-chart/social-reach-chart.component';
 
+
+import 'd3';
+import 'nvd3';
 
 @NgModule({
   declarations: [
@@ -16,11 +21,13 @@ import { KeywordsComponent } from './keywords/keywords.component';
     SocialComponent,
     PersonalComponent,
     SocialActivityChartComponent,
-    KeywordsComponent
+    KeywordsComponent,
+    SocialReachChartComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NvD3Module
   ],
   providers: [],
   bootstrap: [AppComponent]
