@@ -14,6 +14,7 @@ import { SocialReachChartComponent } from './social-reach-chart/social-reach-cha
 
 import 'd3';
 import 'nvd3';
+import { EngagementChartComponent } from './engagement-chart/engagement-chart.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import 'nvd3';
     PersonalComponent,
     SocialActivityChartComponent,
     KeywordsComponent,
-    SocialReachChartComponent
+    SocialReachChartComponent,
+    EngagementChartComponent
   ],
   imports: [
     BrowserModule,

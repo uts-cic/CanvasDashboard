@@ -3,12 +3,12 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 declare let d3: any;
 
 @Component({
-  selector: 'app-social-reach-chart',
-  templateUrl: './social-reach-chart.component.html',
-  styleUrls: ['./social-reach-chart.component.css'],
+  selector: 'app-engagement-chart',
+  templateUrl: './engagement-chart.component.html',
+  styleUrls: ['./engagement-chart.component.css'],
   encapsulation: ViewEncapsulation.None
 })
-export class SocialReachChartComponent implements OnInit {
+export class EngagementChartComponent implements OnInit {
   private options: any;
   private data: any;
 
@@ -19,31 +19,25 @@ export class SocialReachChartComponent implements OnInit {
       chart: {
         type: 'pieChart',
         height: 400,
+        donut: true,
         x: d => d.key,
         y: d => d.y,
         showLabels: true,
         showLegend: false,
         duration: 500,
-        labelThreshold: 0.01,
-        labelSunbeamLayout: true,
       }
     };
 
     this.data = [
       {
         key: 'Twitter',
-        y: 65,
+        y: 35,
         color: '#1DA1F2'
       },
       {
-        key: 'Facebook',
-        y: 25,
-        color: '#3b5998'
-      },
-      {
-        key: 'Slack',
-        y: 10,
-        color: '#DB4437'
+        key: '',
+        y: 70,
+        color: '#CCCCCC'
       }
     ];
   }
