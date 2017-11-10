@@ -32,15 +32,18 @@ export class SocialReachChartComponent implements OnInit {
     this.data = [
       {
         key: 'Twitter',
-        y: 65
+        y: 65,
+        color: '#1DA1F2'
       },
       {
         key: 'Facebook',
-        y: 25
+        y: 25,
+        color: '#3b5998'
       },
       {
         key: 'Slack',
-        y: 10
+        y: 10,
+        color: '#DB4437'
       }
     ];
   }
