@@ -1,20 +1,20 @@
-<div class="page">
-  <div class="row">
-    <div class="col-md-2">
-      <div class="sidebar">
-        <h4>Canvas Sidebar</h4>
-      </div>
+<div class="row equal">
+  <div class="col-md-2">
+    <div class="sidebar">
+      <h4>Canvas Sidebar</h4>
     </div>
-    <div class="col-md-10">
-      <ul class="nav nav-tabs">
-        <li role="presentation" [routerLinkActive]="['active']"><a routerLink="/personal">Personal</a></li>
-        <li role="presentation" [routerLinkActive]="['active']"><a routerLink="/social">Social</a></li>
-      </ul>
-      <div class="content">
-        <router-outlet></router-outlet>
-      </div>
+  </div>
+  <div class="col-md-10">
+    <ul class="nav nav-tabs">
+      <li role="presentation" [routerLinkActive]="['active']"><a routerLink="/personal">Personal</a></li>
+      <li role="presentation" [routerLinkActive]="['active']"><a routerLink="/social">Social</a></li>
+    </ul>
+    <div class="content">
+      <router-outlet></router-outlet>
     </div>
   </div>
 </div>
+
+
 
 

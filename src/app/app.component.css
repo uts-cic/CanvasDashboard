@@ -4,14 +4,15 @@
 
 .sidebar {
   padding: 1em;
-  min-height: 100vh;
   background-color: grey;
-}
-
-.page {
-  min-height: 100vh;
+  height: 100%;
 }
 
 h4 {
   color: white;
+}
+
+.equal {  
+  display: -webkit-flex;
+  display: flex;
 }
