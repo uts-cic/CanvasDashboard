@@ -16,6 +16,7 @@ import 'd3';
 import 'nvd3';
 import { EngagementChartComponent } from './engagement-chart/engagement-chart.component';
 import { NetworkChartComponent } from './network-chart/network-chart.component';
+import { TwitterTopicChartComponent } from './twitter-topic-chart/twitter-topic-chart.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { NetworkChartComponent } from './network-chart/network-chart.component';
     KeywordsComponent,
     SocialReachChartComponent,
     EngagementChartComponent,
-    NetworkChartComponent
+    NetworkChartComponent,
+    TwitterTopicChartComponent
   ],
   imports: [
     BrowserModule,
