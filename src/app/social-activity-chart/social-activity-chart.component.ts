@@ -1,7 +1,5 @@
 import { Component, OnInit, ViewEncapsulation, Input } from '@angular/core';
 
-import { Stock, Stocks } from '../mock-stocks';
-
 declare let d3: any;
 
 @Component({
