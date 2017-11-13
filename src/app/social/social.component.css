@@ -14,3 +14,8 @@
 .card {
   margin-bottom: 2rem;
 }
+
+.vertical-center {
+  display: flex;
+  align-items: center;
+}
