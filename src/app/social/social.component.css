@@ -7,6 +7,10 @@
   display: flex;
 }
 
-.full-height {
-  height: 95%;
+.max-height {
+  max-height: 97%;
+}
+
+.card {
+  margin-bottom: 1rem;
 }
