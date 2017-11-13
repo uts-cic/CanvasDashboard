@@ -4,11 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { PersonalComponent } from './personal/personal.component';
 import { SocialComponent } from './social/social.component';
 
-const routes: Routes = [
-  { path: 'personal', component: PersonalComponent },
-  { path: 'social', component: SocialComponent },
-  { path: '', redirectTo: 'personal', pathMatch: 'full'}
-];
+const routes: Routes = [];
 
 @NgModule({
   imports: [ RouterModule.forRoot(routes) ],
