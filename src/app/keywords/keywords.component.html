@@ -1,6 +1,6 @@
-<ul class="list-group">
+<ul class="list-group list-group-flush">
   <li *ngFor="let keyword of keywords" class="list-group-item">
     {{keyword.word}}
-    <span class="badge">{{keyword.total}}</span>
+    <span class="badge badge-secondary badge-pill">{{keyword.total}}</span>
   </li>
 </ul>
