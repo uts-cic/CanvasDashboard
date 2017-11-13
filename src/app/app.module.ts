@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { NvD3Module } from 'ng2-nvd3';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 
 import { AppComponent } from './app.component';
@@ -33,7 +34,8 @@ import { TwitterTopicChartComponent } from './twitter-topic-chart/twitter-topic-
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NvD3Module
+    NvD3Module,
+    NgbModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

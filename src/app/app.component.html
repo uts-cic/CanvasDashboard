@@ -5,13 +5,29 @@
     </div>
   </div>
   <div class="col-md-10">
-    <ul class="nav nav-tabs">
+    <!-- <ul class="nav nav-tabs">
       <li role="presentation" [routerLinkActive]="['active']"><a routerLink="/personal">Personal</a></li>
       <li role="presentation" [routerLinkActive]="['active']"><a routerLink="/social">Social</a></li>
     </ul>
     <div class="content">
       <router-outlet></router-outlet>
-    </div>
+    </div> -->
+    <ngb-tabset>
+      <ngb-tab title="Personal">
+        <ng-template ngbTabContent>
+          <div class="content">
+            <app-personal></app-personal>
+          </div>
+        </ng-template>
+      </ngb-tab>
+      <ngb-tab title="Social">
+        <ng-template ngbTabContent>
+          <div class="content">
+            <app-social></app-social>
+          </div>
+        </ng-template>
+      </ngb-tab>
+    </ngb-tabset>
   </div>
 </div>
 
