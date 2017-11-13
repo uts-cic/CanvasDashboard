@@ -1,5 +1,6 @@
 .content {
   padding: 1em;
+  padding-left: 1.5em;
 }
 
 .sidebar {
@@ -16,4 +17,14 @@ h4 {
 .equal {  
   display: -webkit-flex;
   display: flex;
+  max-width: 100%;
+}
+
+.sidebar-container {
+  padding-right: 0;
+}
+
+.content-container {
+  padding-left: 0;
+  padding-right: 0;
 }
