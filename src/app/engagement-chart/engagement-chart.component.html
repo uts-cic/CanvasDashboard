@@ -1,5 +1,5 @@
 <div>
-  <div class="btn-group" ngbRadioGroup name="radioBasic">
+  <div class="btn-group" ngbRadioGroup name="radioBasic" [(ngModel)]="selected" (ngModelChange)="onSelect(selected)">
     <label ngbButtonLabel class="btn-outline-primary">
       <input ngbButton type="radio" value="Facebook">Facebook
     </label>

@@ -11,6 +11,10 @@ declare let d3: any;
 export class EngagementChartComponent implements OnInit {
   private options: any;
   private data: any;
+  private twitterData: any;
+  private facebookData: any;
+  private slackData: any;
+  private selected: String = 'Facebook';
 
   constructor() { }
 
@@ -29,7 +33,7 @@ export class EngagementChartComponent implements OnInit {
       }
     };
 
-    this.data = [
+    this.twitterData = [
       {
         key: 'Twitter',
         y: 35,
@@ -41,6 +45,50 @@ export class EngagementChartComponent implements OnInit {
         color: '#CCCCCC'
       }
     ];
+
+    this.facebookData = [
+      {
+        key: 'Facebook',
+        y: 45,
+        color: '#3B5998'
+      },
+      {
+        key: '',
+        y: 55,
+        color: '#CCCCCC'
+      }
+    ];
+
+    this.slackData = [
+      {
+        key: 'Slack',
+        y: 65,
+        color: '#DB4437'
+      },
+      {
+        key: '',
+        y: 35,
+        color: '#CCCCCC'
+      }
+    ];
+
+    this.data = this.facebookData;
+  }
+
+  onSelect(val) {
+    switch (val) {
+      case 'Twitter':
+        this.data = this.twitterData;
+        break;
+      case 'Facebook':
+        this.data = this.facebookData;
+        break;
+      case 'Slack':
+        this.data = this.slackData;
+        break;
+      default:
+        break;
+    }
   }
 
 }
