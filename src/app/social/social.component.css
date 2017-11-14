@@ -11,6 +11,16 @@
   min-height: 95%;
 }
 
+.keywords {
+  max-height: 30rem;
+  overflow-y: scroll;
+}
+
+.social-activity {
+  max-height: 30rem;
+  overflow-y: hidden;
+}
+
 .card {
   margin-bottom: 2rem;
 }
