@@ -1,6 +1,6 @@
 <div>
   <div class="search-bar">
-    <input type="text" class="form-control" placeholder="Search Topics">
+    <input id="typeahead-template" type="text" class="form-control" placeholder="Search Topics" [ngbTypeahead]="search">
   </div>
   <nvd3 [options]="options" [data]="data"></nvd3>
 </div>

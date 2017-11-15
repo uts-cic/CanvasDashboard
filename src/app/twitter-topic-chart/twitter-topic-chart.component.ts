@@ -1,4 +1,10 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/debounceTime';
+import 'rxjs/add/operator/distinctUntilChanged';
+
+import { KEYWORDS } from '../mock-keywords';
 
 declare let d3: any;
 
@@ -11,10 +17,23 @@ declare let d3: any;
 export class TwitterTopicChartComponent implements OnInit {
   private options: any;
   private data: any;
+  private keywords: any;
+
+  search = (text$: Observable<string>) => {
+    const result = text$
+      .debounceTime(200)
+      .distinctUntilChanged()
+      .map(term => term === '' ? [] :
+          this.keywords.filter(v => v.word.toLowerCase().indexOf(term.toLowerCase()) > -1).slice(0, 10)
+            .map(keyword => keyword.word)
+      );
+    return result;
+  }
 
   constructor() { }
 
   ngOnInit() {
+    this.keywords = KEYWORDS;
     this.options = {
       chart: {
         type: 'lineChart',
@@ -162,5 +181,4 @@ export class TwitterTopicChartComponent implements OnInit {
       },
     ];
   }
-
 }
