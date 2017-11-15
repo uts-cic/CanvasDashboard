@@ -7,3 +7,25 @@
 .badge {
   line-height: inherit;
 }
+
+.keywords li {
+  cursor: pointer;
+  position: relative;
+  display: inline;
+}
+
+.keywords li:hover {
+  background-color: #DDDDDD;
+}
+
+.selected {
+  background-color: #BBBBBB;
+  color: white;
+}
+
+.inline-right {
+  position: absolute;
+  display: inline;
+  right: 0;
+  margin-right: 1.25rem;
+}

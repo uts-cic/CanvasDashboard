@@ -12,9 +12,15 @@ export class KeywordsComponent implements OnInit {
 
   keywords = KEYWORDS;
 
+  selectedKeyword: any;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onSelect(keyword: any): void {
+    this.selectedKeyword = this.selectedKeyword === keyword ? undefined : keyword;
   }
 
 }

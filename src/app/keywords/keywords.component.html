@@ -1,6 +1,6 @@
-<ul class="list-group list-group-flush">
-  <li *ngFor="let keyword of keywords" class="list-group-item">
+<ul class="list-group list-group-flush keywords">
+  <li *ngFor="let keyword of keywords" class="list-group-item" [class.selected]="keyword === selectedKeyword" (click)="onSelect(keyword)">
     {{keyword.word}}
-    <span class="badge badge-secondary badge-pill">{{keyword.total}}</span>
+    <span class="badge badge-secondary badge-pill inline-right">{{keyword.total}}</span>
   </li>
 </ul>
