@@ -7,6 +7,9 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
   encapsulation: ViewEncapsulation.None
 })
 export class SocialComponent implements OnInit {
+  public isShowSocialActivity = true;
+  public isShowNetworkAnalysis = true;
+  public isShowTwitterTopicAnalysis = false;
 
   constructor() { }
 
