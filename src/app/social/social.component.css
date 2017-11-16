@@ -29,3 +29,7 @@
   display: flex;
   align-items: center;
 }
+
+.content-btn {
+  margin-right: 1rem;
+}
