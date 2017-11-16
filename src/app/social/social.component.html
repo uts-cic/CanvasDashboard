@@ -1,12 +1,13 @@
 <div class="card">
   <div class="card-header">Content Manager</div>
   <div class="card-body">
-    <button type="button" class="btn btn-outline-primary content-btn" (click)="isShowSocialActivity = !isShowSocialActivity"
-    [class.active]="isShowSocialActivity">Social Activity</button>
-    <button type="button" class="btn btn-outline-primary content-btn" (click)="isShowNetworkAnalysis = !isShowNetworkAnalysis"
-    [class.active]="isShowNetworkAnalysis">Network Analysis</button>
+    <button type="button" class="btn btn-outline-primary content-btn" (click)="onSelect('socialActivity')"
+    [class.active]="isShowSocialActivity" [disabled]="isSocialActivityDisabled">Social Activity</button>
+    <button type="button" class="btn btn-outline-primary content-btn" (click)="onSelect('networkAnalysis')"
+    [class.active]="isShowNetworkAnalysis" [disabled]="isNetworkAnalysisDisabled">Network Analysis</button>
     <button type="button" class="btn btn-outline-primary content-btn" 
-    (click)="isShowTwitterTopicAnalysis = !isShowTwitterTopicAnalysis" [class.active]="isShowTwitterTopicAnalysis">Twitter Topic Analysis</button>
+    (click)="onSelect('twitterTopicAnalysis')" [class.active]="isShowTwitterTopicAnalysis"
+    [disabled]="isTwitterTopicAnalysisDisabled">Twitter Topic Analysis</button>
   </div>
 </div>
 
