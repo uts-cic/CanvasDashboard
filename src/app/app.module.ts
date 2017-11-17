@@ -19,6 +19,7 @@ import 'nvd3';
 import { EngagementChartComponent } from './engagement-chart/engagement-chart.component';
 import { NetworkChartComponent } from './network-chart/network-chart.component';
 import { TwitterTopicChartComponent } from './twitter-topic-chart/twitter-topic-chart.component';
+import { SocialActivityService } from './social-activity.service';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,7 @@ import { TwitterTopicChartComponent } from './twitter-topic-chart/twitter-topic-
     NgbModule.forRoot(),
     FormsModule
   ],
-  providers: [],
+  providers: [SocialActivityService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

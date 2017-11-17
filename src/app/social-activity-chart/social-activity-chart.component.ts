@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewEncapsulation, Input, ViewChild } from '@angular/core';
 import { SOCIAL_ACTIVITY } from '../mock-social-activity';
+import { SocialActivityService } from '../social-activity.service';
 
 declare let d3: any;
 
@@ -15,8 +16,7 @@ export class SocialActivityChartComponent implements OnInit {
   public isShow = false;
   @ViewChild('nvd3') nvd3;
 
-  constructor() {
-  }
+  constructor(private socialAtivityService: SocialActivityService) { }
 
   ngOnInit() {
     this.options = {
@@ -50,7 +50,7 @@ export class SocialActivityChartComponent implements OnInit {
       }
     };
 
-    this.data = SOCIAL_ACTIVITY;
+    this.getSocialActivity();
   }
 
   toggleShow() {
@@ -93,6 +93,9 @@ export class SocialActivityChartComponent implements OnInit {
     }
 
     this.nvd3.chart.update();
+  }
 
+  getSocialActivity() {
+    this.data = this.socialAtivityService.getSocialActivity();
   }
 }
