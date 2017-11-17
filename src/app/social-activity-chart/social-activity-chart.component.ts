@@ -95,7 +95,9 @@ export class SocialActivityChartComponent implements OnInit {
     this.nvd3.chart.update();
   }
 
-  getSocialActivity() {
+  getSocialActivity(): void {
     this.data = this.socialAtivityService.getSocialActivity();
+    this.socialAtivityService.getSocialActivity()
+      .subscribe(socialActivity => this.data = socialActivity);
   }
 }
