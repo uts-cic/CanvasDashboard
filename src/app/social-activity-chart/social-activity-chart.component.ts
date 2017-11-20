@@ -1,5 +1,4 @@
 import { Component, OnInit, ViewEncapsulation, Input, ViewChild } from '@angular/core';
-import { SOCIAL_ACTIVITY } from '../mock-social-activity';
 import { SocialActivityService } from '../social-activity.service';
 import { SocialActivity } from '../socialActivity';
 
