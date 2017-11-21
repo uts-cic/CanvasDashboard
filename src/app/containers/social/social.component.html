@@ -1,73 +1,82 @@
-<div class="card">
-  <div class="card-header">Content Manager</div>
-  <div class="card-body">
-    <button type="button" class="btn btn-outline-primary content-btn" (click)="onSelect('socialActivity')"
-    [class.active]="socialActivityGroup" [disabled]="socialActivityDisabled">Social Activity</button>
-    <button type="button" class="btn btn-outline-primary content-btn" (click)="onSelect('networkAnalysis')"
-    [class.active]="networkAnalysisGroup" [disabled]="networkAnalysisDisabled">Network Analysis</button>
-    <button type="button" class="btn btn-outline-primary content-btn" 
-    (click)="onSelect('twitterTopicAnalysis')" [class.active]="twitterTopicAnalysis"
-    [disabled]="twitterTopicAnalysisDisabled">Twitter Topic Analysis</button>
-  </div>
-</div>
-
-<div *ngIf="socialActivityGroup">
-  <div class="row equal">
-    <div class="col-md-8">
-      <div class="card full-height">
-        <div class="card-header">Social Activity</div>
-        <div class="card-body social-activity">
-          <app-social-activity-chart></app-social-activity-chart>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="card full-height">
-        <div class="card-header">Keywords</div>
-        <div class="keywords">
-          <app-keywords></app-keywords>
-        </div>
-      </div>
+<div class="row social-container">
+  <div class="col-md-2 sidebar-container">
+    <div class="sidebar">
+      <h4>Canvas Sidebar</h4>
     </div>
   </div>
-</div>
+  <div class="col-md-10 content">
+    <div class="card">
+      <div class="card-header">Content Manager</div>
+      <div class="card-body">
+        <button type="button" class="btn btn-outline-primary content-btn" (click)="onSelect('socialActivity')"
+        [class.active]="socialActivityGroup" [disabled]="socialActivityDisabled">Social Activity</button>
+        <button type="button" class="btn btn-outline-primary content-btn" (click)="onSelect('networkAnalysis')"
+        [class.active]="networkAnalysisGroup" [disabled]="networkAnalysisDisabled">Network Analysis</button>
+        <button type="button" class="btn btn-outline-primary content-btn" 
+        (click)="onSelect('twitterTopicAnalysis')" [class.active]="twitterTopicAnalysis"
+        [disabled]="twitterTopicAnalysisDisabled">Twitter Topic Analysis</button>
+      </div>
+    </div>
 
-<div *ngIf="networkAnalysisGroup">
-  <div class="row equal">
-    <div class="col-md-4">
-      <div class="card full-height">
-        <div class="card-header">Social Reach</div>
-        <div class="card-body">
-          <app-social-reach-chart></app-social-reach-chart>
+    <div *ngIf="socialActivityGroup">
+      <div class="row equal">
+        <div class="col-md-8">
+          <div class="card full-height">
+            <div class="card-header">Social Activity</div>
+            <div class="card-body social-activity">
+              <app-social-activity-chart></app-social-activity-chart>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card full-height">
+            <div class="card-header">Keywords</div>
+            <div class="keywords">
+              <app-keywords></app-keywords>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    <div class="col-md-4">
-      <div class="card full-height">
-        <div class="card-header">Engagement</div>
-        <div class="card-body text-center">
-          <app-engagement-chart></app-engagement-chart>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="card full-height">
-        <div class="card-header">Network</div>
-        <div class="card-body text-center">
-          <app-network-chart></app-network-chart>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 
-<div *ngIf="twitterTopicAnalysis">
-  <div class="row equal">
-    <div class="col-md-12">
-      <div class="card">
-        <div class="card-header">Twitter Topic Analysis</div>
-        <div class="card-body">
-          <app-twitter-topic-chart></app-twitter-topic-chart>
+    <div *ngIf="networkAnalysisGroup">
+      <div class="row equal">
+        <div class="col-md-4">
+          <div class="card full-height">
+            <div class="card-header">Social Reach</div>
+            <div class="card-body">
+              <app-social-reach-chart></app-social-reach-chart>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card full-height">
+            <div class="card-header">Engagement</div>
+            <div class="card-body text-center">
+              <app-engagement-chart></app-engagement-chart>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card full-height">
+            <div class="card-header">Network</div>
+            <div class="card-body text-center">
+              <app-network-chart></app-network-chart>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="twitterTopicAnalysis">
+      <div class="row equal">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header">Twitter Topic Analysis</div>
+            <div class="card-body">
+              <app-twitter-topic-chart></app-twitter-topic-chart>
+            </div>
+          </div>
         </div>
       </div>
     </div>
