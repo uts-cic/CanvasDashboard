@@ -2,16 +2,16 @@
   <div class="card-header">Content Manager</div>
   <div class="card-body">
     <button type="button" class="btn btn-outline-primary content-btn" (click)="onSelect('socialActivity')"
-    [class.active]="isShowSocialActivity" [disabled]="isSocialActivityDisabled">Social Activity</button>
+    [class.active]="socialActivityGroup" [disabled]="socialActivityDisabled">Social Activity</button>
     <button type="button" class="btn btn-outline-primary content-btn" (click)="onSelect('networkAnalysis')"
-    [class.active]="isShowNetworkAnalysis" [disabled]="isNetworkAnalysisDisabled">Network Analysis</button>
+    [class.active]="networkAnalysisGroup" [disabled]="networkAnalysisDisabled">Network Analysis</button>
     <button type="button" class="btn btn-outline-primary content-btn" 
-    (click)="onSelect('twitterTopicAnalysis')" [class.active]="isShowTwitterTopicAnalysis"
-    [disabled]="isTwitterTopicAnalysisDisabled">Twitter Topic Analysis</button>
+    (click)="onSelect('twitterTopicAnalysis')" [class.active]="twitterTopicAnalysis"
+    [disabled]="twitterTopicAnalysisDisabled">Twitter Topic Analysis</button>
   </div>
 </div>
 
-<div *ngIf="isShowSocialActivity">
+<div *ngIf="socialActivityGroup">
   <div class="row equal">
     <div class="col-md-8">
       <div class="card full-height">
@@ -32,7 +32,7 @@
   </div>
 </div>
 
-<div *ngIf="isShowNetworkAnalysis">
+<div *ngIf="networkAnalysisGroup">
   <div class="row equal">
     <div class="col-md-4">
       <div class="card full-height">
@@ -61,7 +61,7 @@
   </div>
 </div>
 
-<div *ngIf="isShowTwitterTopicAnalysis">
+<div *ngIf="twitterTopicAnalysis">
   <div class="row equal">
     <div class="col-md-12">
       <div class="card">

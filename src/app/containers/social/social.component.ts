@@ -7,12 +7,12 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
   encapsulation: ViewEncapsulation.None
 })
 export class SocialComponent implements OnInit {
-  public isShowSocialActivity = true;
-  public isShowNetworkAnalysis = true;
-  public isShowTwitterTopicAnalysis = false;
-  public isSocialActivityDisabled = false;
-  public isNetworkAnalysisDisabled = false;
-  public isTwitterTopicAnalysisDisabled = true;
+  public socialActivityGroup = true;
+  public networkAnalysisGroup = true;
+  public twitterTopicAnalysis = false;
+  public socialActivityDisabled = false;
+  public networkAnalysisDisabled = false;
+  public twitterTopicAnalysisDisabled = true;
   public occupiedSpace = 0;
 
   constructor() { }
@@ -23,32 +23,32 @@ export class SocialComponent implements OnInit {
   }
 
   calculateOccupiedSpace(): void {
-    if (this.isShowSocialActivity) { this.occupiedSpace += 3; }
-    if (this.isShowNetworkAnalysis) { this.occupiedSpace += 3; }
-    if (this.isShowTwitterTopicAnalysis) { this.occupiedSpace += 3; }
+    if (this.socialActivityGroup) { this.occupiedSpace += 3; }
+    if (this.networkAnalysisGroup) { this.occupiedSpace += 3; }
+    if (this.twitterTopicAnalysis) { this.occupiedSpace += 3; }
   }
 
   setDisabledBtn(): void {
-    this.isSocialActivityDisabled = !this.isShowSocialActivity && this.occupiedSpace >= 6 ? true : false;
-    this.isNetworkAnalysisDisabled = !this.isShowNetworkAnalysis && this.occupiedSpace >= 6 ? true : false;
-    this.isTwitterTopicAnalysisDisabled = !this.isShowTwitterTopicAnalysis && this.occupiedSpace >= 6 ? true : false;
+    this.socialActivityDisabled = !this.socialActivityGroup && this.occupiedSpace >= 6 ? true : false;
+    this.networkAnalysisDisabled = !this.networkAnalysisGroup && this.occupiedSpace >= 6 ? true : false;
+    this.twitterTopicAnalysisDisabled = !this.twitterTopicAnalysis && this.occupiedSpace >= 6 ? true : false;
   }
 
   onSelect(component: string): void {
     switch (component) {
       case 'socialActivity':
-        this.isShowSocialActivity = !this.isShowSocialActivity;
-        this.isShowSocialActivity ? this.occupiedSpace += 3 : this.occupiedSpace -= 3;
+        this.socialActivityGroup = !this.socialActivityGroup;
+        this.socialActivityGroup ? this.occupiedSpace += 3 : this.occupiedSpace -= 3;
         this.setDisabledBtn();
         break;
       case 'networkAnalysis':
-        this.isShowNetworkAnalysis = !this.isShowNetworkAnalysis;
-        this.isShowNetworkAnalysis ? this.occupiedSpace += 3 : this.occupiedSpace -= 3;
+        this.networkAnalysisGroup = !this.networkAnalysisGroup;
+        this.networkAnalysisGroup ? this.occupiedSpace += 3 : this.occupiedSpace -= 3;
         this.setDisabledBtn();
         break;
       case 'twitterTopicAnalysis':
-        this.isShowTwitterTopicAnalysis = !this.isShowTwitterTopicAnalysis;
-        this.isShowTwitterTopicAnalysis ? this.occupiedSpace += 3 : this.occupiedSpace -= 3;
+        this.twitterTopicAnalysis = !this.twitterTopicAnalysis;
+        this.twitterTopicAnalysis ? this.occupiedSpace += 3 : this.occupiedSpace -= 3;
         this.setDisabledBtn();
         break;
       default:
