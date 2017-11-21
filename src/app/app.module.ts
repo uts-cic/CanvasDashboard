@@ -7,20 +7,20 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 
 import { AppComponent } from './app.component';
-import { SocialComponent } from './social/social.component';
-import { PersonalComponent } from './personal/personal.component';
+import { SocialComponent } from './containers/social/social.component';
+import { PersonalComponent } from './containers/personal/personal.component';
 import { AppRoutingModule } from './/app-routing.module';
-import { SocialActivityChartComponent } from './social-activity-chart/social-activity-chart.component';
-import { KeywordsComponent } from './keywords/keywords.component';
-import { SocialReachChartComponent } from './social-reach-chart/social-reach-chart.component';
-import { InMemoryDataService } from './in-memory-data.service';
+import { SocialActivityChartComponent } from './components/social-activity-chart/social-activity-chart.component';
+import { KeywordsComponent } from './components/keywords/keywords.component';
+import { SocialReachChartComponent } from './components/social-reach-chart/social-reach-chart.component';
+import { InMemoryDataService } from './domain/services/in-memory-data.service';
 
 import 'd3';
 import 'nvd3';
-import { EngagementChartComponent } from './engagement-chart/engagement-chart.component';
-import { NetworkChartComponent } from './network-chart/network-chart.component';
-import { TwitterTopicChartComponent } from './twitter-topic-chart/twitter-topic-chart.component';
-import { SocialActivityService } from './social-activity.service';
+import { EngagementChartComponent } from './components/engagement-chart/engagement-chart.component';
+import { NetworkChartComponent } from './components/network-chart/network-chart.component';
+import { TwitterTopicChartComponent } from './components/twitter-topic-chart/twitter-topic-chart.component';
+import { SocialActivityService } from './domain/services/social-activity/social-activity.service';
 
 @NgModule({
   declarations: [

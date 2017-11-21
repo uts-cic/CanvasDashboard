@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { PersonalComponent } from './personal/personal.component';
-import { SocialComponent } from './social/social.component';
+import { PersonalComponent } from './containers/personal/personal.component';
+import { SocialComponent } from './containers/social/social.component';
 
 const routes: Routes = [];
 

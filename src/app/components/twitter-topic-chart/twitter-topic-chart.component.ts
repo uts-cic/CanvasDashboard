@@ -4,7 +4,7 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/distinctUntilChanged';
 
-import { KEYWORDS } from '../mock-keywords';
+import { KEYWORDS } from '../../domain/data/mock-keywords';
 
 declare let d3: any;
 

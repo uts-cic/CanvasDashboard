@@ -4,8 +4,7 @@ import { of } from 'rxjs/observable/of';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
 
-import { SOCIAL_ACTIVITY } from './mock-social-activity';
-import { SocialActivity } from './socialActivity';
+import { SocialActivity } from '../../models/socialActivity';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
