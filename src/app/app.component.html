@@ -1,28 +1,16 @@
-<div class="row equal">
-  <div class="col-md-2 sidebar-container">
-    <div class="sidebar">
-      <h4>Canvas Sidebar</h4>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Canvas Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link" href="/personal">Personal</a>
+      <a class="nav-item nav-link" href="/social">Social</a>
     </div>
   </div>
-  <div class="col-md-10 content-container">
-    <ngb-tabset>
-      <ngb-tab title="Personal">
-        <ng-template ngbTabContent>
-          <div class="content">
-            <app-personal></app-personal>
-          </div>
-        </ng-template>
-      </ngb-tab>
-      <ngb-tab title="Social">
-        <ng-template ngbTabContent>
-          <div class="content">
-            <app-social></app-social>
-          </div>
-        </ng-template>
-      </ngb-tab>
-    </ngb-tabset>
-  </div>
-</div>
+</nav>
+<router-outlet></router-outlet>
 
 
 
