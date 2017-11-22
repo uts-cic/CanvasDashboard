@@ -8,26 +8,42 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
   encapsulation: ViewEncapsulation.None
 })
 export class SocialComponent implements OnInit {
-  public socialActivity = false;
-  public keywords = false;
-  public socialReach = false;
-  public engagement = false;
-  public network = false;
-  public twitterTopic = false;
-  public socialActivityDisabled = false;
-  public keywordsDisabled = false;
-  public socialReachDisabled = false;
-  public engagementDisabled = false;
-  public networkDisabled = false;
-  public twitterTopicDisabled = false;
-  public occupiedSpace = 0;
-  public rowOccupied = false;
+  private socialActivity = false;
+  private keywords = false;
+  private socialReach = false;
+  private engagement = false;
+  private network = false;
+  private twitterTopic = false;
+  private socialActivityDisabled = false;
+  private keywordsDisabled = false;
+  private socialReachDisabled = false;
+  private engagementDisabled = false;
+  private networkDisabled = false;
+  private twitterTopicDisabled = false;
+  private occupiedSpace = 0;
+  private rowOccupied = false;
+  private socialActivity2 = false;
+  private keywords2 = false;
+  private socialReach2 = false;
+  private engagement2 = false;
+  private network2 = false;
+  private twitterTopic2 = false;
+  private socialActivityDisabled2 = false;
+  private keywordsDisabled2 = false;
+  private socialReachDisabled2 = false;
+  private engagementDisabled2 = false;
+  private networkDisabled2 = false;
+  private twitterTopicDisabled2 = false;
+  private occupiedSpace2 = 0;
+  private rowOccupied2 = false;
 
   constructor(private modalService: NgbModal) { }
 
   ngOnInit() {
     this.calculateOccupiedSpace();
     this.setDisabledBtn();
+    this.calculateOccupiedSpace2();
+    this.setDisabledBtn2();
   }
 
   open(content) {
@@ -43,6 +59,15 @@ export class SocialComponent implements OnInit {
     if (this.twitterTopic) { this.occupiedSpace += 3; }
   }
 
+  calculateOccupiedSpace2(): void {
+    if (this.socialActivity2) { this.occupiedSpace2 += 2; }
+    if (this.keywords2) { this.occupiedSpace2 += 1; }
+    if (this.socialReach2) { this.occupiedSpace2 += 1; }
+    if (this.engagement2) { this.occupiedSpace2 += 1; }
+    if (this.network2) { this.occupiedSpace2 += 1; }
+    if (this.twitterTopic2) { this.occupiedSpace2 += 3; }
+  }
+
   setDisabledBtn(): void {
     this.socialActivityDisabled = !this.socialActivity && this.occupiedSpace >= 2 ? true : false;
     this.keywordsDisabled = !this.keywords && this.occupiedSpace >= 3 ? true : false;
@@ -51,6 +76,16 @@ export class SocialComponent implements OnInit {
     this.networkDisabled = !this.network && this.occupiedSpace >= 3 ? true : false;
     this.twitterTopicDisabled = !this.twitterTopic && this.occupiedSpace >= 1 ? true : false;
     this.rowOccupied = this.occupiedSpace > 0 ? true : false;
+  }
+
+  setDisabledBtn2(): void {
+    this.socialActivityDisabled2 = !this.socialActivity2 && this.occupiedSpace2 >= 2 ? true : false;
+    this.keywordsDisabled2 = !this.keywords2 && this.occupiedSpace2 >= 3 ? true : false;
+    this.socialReachDisabled2 = !this.socialReach2 && this.occupiedSpace2 >= 3 ? true : false;
+    this.engagementDisabled2 = !this.engagement2 && this.occupiedSpace2 >= 3 ? true : false;
+    this.networkDisabled2 = !this.network2 && this.occupiedSpace2 >= 3 ? true : false;
+    this.twitterTopicDisabled2 = !this.twitterTopic2 && this.occupiedSpace2 >= 1 ? true : false;
+    this.rowOccupied2 = this.occupiedSpace2 > 0 ? true : false;
   }
 
   onSelect(component: string): void {
@@ -84,6 +119,43 @@ export class SocialComponent implements OnInit {
         this.twitterTopic = !this.twitterTopic;
         this.twitterTopic ? this.occupiedSpace += 3 : this.occupiedSpace -= 3;
         this.setDisabledBtn();
+        break;
+      default:
+        break;
+    }
+  }
+
+  onSelect2(component: string): void {
+    switch (component) {
+      case 'socialActivity':
+        this.socialActivity2 = !this.socialActivity2;
+        this.socialActivity2 ? this.occupiedSpace2 += 2 : this.occupiedSpace2 -= 2;
+        this.setDisabledBtn2();
+        break;
+      case 'keywords':
+        this.keywords2 = !this.keywords2;
+        this.keywords2 ? this.occupiedSpace2 += 1 : this.occupiedSpace2 -= 1;
+        this.setDisabledBtn2();
+        break;
+      case 'socialReach':
+        this.socialReach2 = !this.socialReach2;
+        this.socialReach2 ? this.occupiedSpace2 += 1 : this.occupiedSpace2 -= 1;
+        this.setDisabledBtn2();
+        break;
+      case 'engagement':
+        this.engagement2 = !this.engagement2;
+        this.engagement2 ? this.occupiedSpace2 += 1 : this.occupiedSpace2 -= 1;
+        this.setDisabledBtn2();
+        break;
+      case 'network':
+        this.network2 = !this.network2;
+        this.network2 ? this.occupiedSpace2 += 1 : this.occupiedSpace2 -= 1;
+        this.setDisabledBtn2();
+        break;
+      case 'twitterTopic':
+        this.twitterTopic2 = !this.twitterTopic2;
+        this.twitterTopic2 ? this.occupiedSpace2 += 3 : this.occupiedSpace2 -= 3;
+        this.setDisabledBtn2();
         break;
       default:
         break;
