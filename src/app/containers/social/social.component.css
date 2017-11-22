@@ -35,19 +35,27 @@
 }
 
 .content {
-  padding: 1em;
-  padding-left: 1.5em;
+  padding: 1rem;
+  padding-left: 0.5rem;
   padding-right: 0;
+  margin-left: 14.5rem;
 }
 
 .sidebar {
-  padding: 1em;
+  padding: 1rem;
+  padding-right: 2rem;
   background-color: grey;
   height: 100%;
   min-height: 100vh;
+  position: fixed;
+  max-width: 13.5rem;
 }
 
-h4 {
+.sidebar-content {
+  max-width: 100%;
+}
+
+h5 {
   color: white;
 }
 
