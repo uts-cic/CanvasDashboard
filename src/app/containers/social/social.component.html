@@ -24,7 +24,7 @@
     </div>
   </div>
   <div class="col-md-10 content">
-    <div class="card">
+    <!-- <div class="card">
       <div class="card-header">Content Manager</div>
       <div class="card-body">
         <button type="button" class="btn btn-outline-primary content-btn" (click)="onSelect('socialActivity')"
@@ -35,6 +35,14 @@
         (click)="onSelect('twitterTopicAnalysis')" [class.active]="twitterTopicAnalysis"
         [disabled]="twitterTopicAnalysisDisabled">Twitter Topic Analysis</button>
       </div>
+    </div> -->
+
+    <div class="card empty-card">
+      <h3 class="card-title">Click here to pick your content</h3>
+    </div>
+
+    <div class="card empty-card">
+      <h3 class="card-title">Click here to pick your content</h3>
     </div>
 
     <div *ngIf="socialActivityGroup">

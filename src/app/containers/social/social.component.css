@@ -70,3 +70,12 @@
 .content-manager-section {
   margin-bottom: 1rem;
 }
+
+.empty-card {
+  cursor: pointer;
+  height: 20rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}

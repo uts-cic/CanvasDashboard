@@ -7,12 +7,12 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
   encapsulation: ViewEncapsulation.None
 })
 export class SocialComponent implements OnInit {
-  public socialActivityGroup = true;
-  public networkAnalysisGroup = true;
+  public socialActivityGroup = false;
+  public networkAnalysisGroup = false;
   public twitterTopicAnalysis = false;
   public socialActivityDisabled = false;
   public networkAnalysisDisabled = false;
-  public twitterTopicAnalysisDisabled = true;
+  public twitterTopicAnalysisDisabled = false;
   public occupiedSpace = 0;
 
   constructor() { }
