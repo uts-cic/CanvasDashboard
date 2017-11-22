@@ -1,8 +1,11 @@
-<div>
-  <div class="complexity-container">
-    <button type="button" class="btn btn-outline-primary btn-sm">-</button>
-    <span class="complexity-text">Complexity</span>
-    <button type="button" class="btn btn-outline-primary btn-sm">+</button>
+<div class="card full-height">
+  <div class="card-header">Network</div>
+  <div class="card-body text-center">
+    <div class="complexity-container">
+      <button type="button" class="btn btn-outline-primary btn-sm">-</button>
+      <span class="complexity-text">Complexity</span>
+      <button type="button" class="btn btn-outline-primary btn-sm">+</button>
+    </div>
+    <nvd3 [options]="options" [data]="data" class="with-3d-shadow with-transitions"></nvd3>
   </div>
-  <nvd3 [options]="options" [data]="data" class="with-3d-shadow with-transitions"></nvd3>
 </div>

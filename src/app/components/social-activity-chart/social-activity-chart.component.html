@@ -1,5 +1,8 @@
-<div>
-  <button type="button" class="btn btn-outline-primary" (click)="toggleShow()"
-  [class.active]="isShow">Toggle</button>
-  <nvd3 #nvd3 [options]="options" [data]="data"></nvd3>
+<div class="card full-height">
+  <div class="card-header">Social Activity</div>
+  <div class="card-body social-activity">
+    <button type="button" class="btn btn-outline-primary" (click)="toggleShow()"
+    [class.active]="isShow">Toggle</button>
+    <nvd3 #nvd3 [options]="options" [data]="data"></nvd3>
+  </div>
 </div>
