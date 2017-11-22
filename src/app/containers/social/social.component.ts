@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-social',
@@ -15,11 +16,15 @@ export class SocialComponent implements OnInit {
   public twitterTopicAnalysisDisabled = false;
   public occupiedSpace = 0;
 
-  constructor() { }
+  constructor(private modalService: NgbModal) { }
 
   ngOnInit() {
     this.calculateOccupiedSpace();
     this.setDisabledBtn();
+  }
+
+  open(content) {
+    this.modalService.open(content);
   }
 
   calculateOccupiedSpace(): void {

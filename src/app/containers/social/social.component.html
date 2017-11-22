@@ -37,12 +37,12 @@
       </div>
     </div> -->
 
-    <div class="card empty-card">
-      <h3 class="card-title">Click here to pick your content</h3>
+    <div class="card empty-card" (click)="open(content1)">
+      <h3 class="card-title">Click here to choose your content</h3>
     </div>
 
-    <div class="card empty-card">
-      <h3 class="card-title">Click here to pick your content</h3>
+    <div class="card empty-card" (click)="open(content2)">
+      <h3 class="card-title">Click here to choose your content</h3>
     </div>
 
     <div *ngIf="socialActivityGroup">
@@ -109,3 +109,45 @@
     </div>
   </div>
 </div>
+
+<ng-template #content1 let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title">Choose Your Content</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>Choose components to fill up your first row</p>
+    <button type="button" class="btn btn-outline-primary content-btn">Social Activity</button>
+    <button type="button" class="btn btn-outline-primary content-btn">Keywords</button>
+    <button type="button" class="btn btn-outline-primary content-btn">Social Reach</button>
+    <button type="button" class="btn btn-outline-primary content-btn">Engagement</button>
+    <button type="button" class="btn btn-outline-primary content-btn">Network</button>
+    <button type="button" class="btn btn-outline-primary content-btn">Twitter Topic Analysis</button>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">Close</button>
+  </div>
+</ng-template>
+
+<ng-template #content2 let-c="close" let-d="dismiss">
+    <div class="modal-header">
+      <h4 class="modal-title">Choose Your Content</h4>
+      <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <p>Choose components to fill up your second row</p>
+      <button type="button" class="btn btn-outline-primary content-btn">Social Activity</button>
+      <button type="button" class="btn btn-outline-primary content-btn">Keywords</button>
+      <button type="button" class="btn btn-outline-primary content-btn">Social Reach</button>
+      <button type="button" class="btn btn-outline-primary content-btn">Engagement</button>
+      <button type="button" class="btn btn-outline-primary content-btn">Network</button>
+      <button type="button" class="btn btn-outline-primary content-btn">Twitter Topic Analysis</button>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">Close</button>
+    </div>
+  </ng-template>
