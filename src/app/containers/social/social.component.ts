@@ -44,12 +44,12 @@ export class SocialComponent implements OnInit {
   }
 
   setDisabledBtn(): void {
-    this.socialActivityDisabled = !this.socialActivity && this.occupiedSpace >= 3 ? true : false;
+    this.socialActivityDisabled = !this.socialActivity && this.occupiedSpace >= 2 ? true : false;
     this.keywordsDisabled = !this.keywords && this.occupiedSpace >= 3 ? true : false;
     this.socialReachDisabled = !this.socialReach && this.occupiedSpace >= 3 ? true : false;
     this.engagementDisabled = !this.engagement && this.occupiedSpace >= 3 ? true : false;
     this.networkDisabled = !this.network && this.occupiedSpace >= 3 ? true : false;
-    this.twitterTopicDisabled = !this.twitterTopic && this.occupiedSpace >= 3 ? true : false;
+    this.twitterTopicDisabled = !this.twitterTopic && this.occupiedSpace >= 1 ? true : false;
     this.rowOccupied = this.occupiedSpace > 0 ? true : false;
   }
 

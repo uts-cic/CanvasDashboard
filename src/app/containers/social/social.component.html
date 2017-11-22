@@ -27,41 +27,30 @@
     <div *ngIf="!rowOccupied" class="card empty-card" (click)="open(content1)">
       <h3 class="card-title">Click here to choose your content</h3>
     </div>
+    <div class="row equal">
+      <div *ngIf="socialActivity" class="col-md-8">
+        <app-social-activity-chart></app-social-activity-chart>
+      </div>
+      <div *ngIf="keywords" class="col-md-4">
+        <app-keywords></app-keywords>
+      </div>
+      <div *ngIf="socialReach" class="col-md-4">      
+        <app-social-reach-chart></app-social-reach-chart>
+      </div>
+      <div *ngIf="engagement" class="col-md-4">
+        <app-engagement-chart></app-engagement-chart>
+      </div>
+      <div *ngIf="network" class="col-md-4">
+        <app-network-chart></app-network-chart>
+      </div>
+      <div *ngIf="twitterTopic" class="col-md-12">
+        <app-twitter-topic-chart></app-twitter-topic-chart>
+      </div>
+    </div>
+    
     <div class="card empty-card" (click)="open(content2)">
       <h3 class="card-title">Click here to choose your content</h3>
     </div>
-
-    <!-- <div>
-      <div class="row equal">
-        <div class="col-md-8">
-          <app-social-activity-chart></app-social-activity-chart>
-        </div>
-        <div class="col-md-4">
-          <app-keywords></app-keywords>
-        </div>
-      </div>
-    </div>
-    <div>
-      <div class="row equal">
-        <div class="col-md-4">      
-          <app-social-reach-chart></app-social-reach-chart>
-        </div>
-        <div class="col-md-4">
-          <app-engagement-chart></app-engagement-chart>
-        </div>
-        <div class="col-md-4">
-          <app-network-chart></app-network-chart>
-        </div>
-      </div>
-    </div>
-    <div>
-      <div class="row equal">
-        <div class="col-md-12">
-          <app-twitter-topic-chart></app-twitter-topic-chart>
-        </div>
-      </div>
-    </div> -->
-
   </div>
 </div>
 
@@ -75,12 +64,17 @@
   <div class="modal-body">
     <p>Choose components to fill up your first row</p>
     <button type="button" class="btn btn-outline-primary content-btn" (click)="onSelect('socialActivity')"
-    [class.active]="socialActivityGroup" [disabled]="socialActivityDisabled">Social Activity</button>
-    <button type="button" class="btn btn-outline-primary content-btn">Keywords</button>
-    <button type="button" class="btn btn-outline-primary content-btn">Social Reach</button>
-    <button type="button" class="btn btn-outline-primary content-btn">Engagement</button>
-    <button type="button" class="btn btn-outline-primary content-btn">Network</button>
-    <button type="button" class="btn btn-outline-primary content-btn">Twitter Topic Analysis</button>
+    [class.active]="socialActivity" [disabled]="socialActivityDisabled">Social Activity</button>
+    <button type="button" class="btn btn-outline-primary content-btn" (click)="onSelect('keywords')"
+    [class.active]="keywords" [disabled]="keywordsDisabled">Keywords</button>
+    <button type="button" class="btn btn-outline-primary content-btn" (click)="onSelect('socialReach')"
+    [class.active]="socialReach" [disabled]="socialReachDisabled">Social Reach</button>
+    <button type="button" class="btn btn-outline-primary content-btn" (click)="onSelect('engagement')"
+    [class.active]="engagement" [disabled]="engagementDisabled">Engagement</button>
+    <button type="button" class="btn btn-outline-primary content-btn" (click)="onSelect('network')"
+    [class.active]="network" [disabled]="networkDisabled">Network</button>
+    <button type="button" class="btn btn-outline-primary content-btn" (click)="onSelect('twitterTopic')"
+    [class.active]="twitterTopic" [disabled]="twitterTopicDisabled">Twitter Topic Analysis</button>
   </div>
   <div class="modal-footer">
     <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">Close</button>
