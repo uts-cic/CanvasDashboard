@@ -24,20 +24,7 @@
     </div>
   </div>
   <div class="col-md-10 content">
-    <!-- <div class="card">
-      <div class="card-header">Content Manager</div>
-      <div class="card-body">
-        <button type="button" class="btn btn-outline-primary content-btn" (click)="onSelect('socialActivity')"
-        [class.active]="socialActivityGroup" [disabled]="socialActivityDisabled">Social Activity</button>
-        <button type="button" class="btn btn-outline-primary content-btn" (click)="onSelect('networkAnalysis')"
-        [class.active]="networkAnalysisGroup" [disabled]="networkAnalysisDisabled">Network Analysis</button>
-        <button type="button" class="btn btn-outline-primary content-btn" 
-        (click)="onSelect('twitterTopicAnalysis')" [class.active]="twitterTopicAnalysis"
-        [disabled]="twitterTopicAnalysisDisabled">Twitter Topic Analysis</button>
-      </div>
-    </div> -->
-
-    <div class="card empty-card" (click)="open(content1)">
+    <div *ngIf="!rowOccupied" class="card empty-card" (click)="open(content1)">
       <h3 class="card-title">Click here to choose your content</h3>
     </div>
 
@@ -45,7 +32,7 @@
       <h3 class="card-title">Click here to choose your content</h3>
     </div>
 
-    <div *ngIf="socialActivityGroup">
+    <!-- <div *ngIf="socialActivityGroup">
       <div class="row equal">
         <div class="col-md-8">
           <div class="card full-height">
@@ -106,7 +93,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
 </div>
 
@@ -119,7 +106,8 @@
   </div>
   <div class="modal-body">
     <p>Choose components to fill up your first row</p>
-    <button type="button" class="btn btn-outline-primary content-btn">Social Activity</button>
+    <button type="button" class="btn btn-outline-primary content-btn" (click)="onSelect('socialActivity')"
+    [class.active]="socialActivityGroup" [disabled]="socialActivityDisabled">Social Activity</button>
     <button type="button" class="btn btn-outline-primary content-btn">Keywords</button>
     <button type="button" class="btn btn-outline-primary content-btn">Social Reach</button>
     <button type="button" class="btn btn-outline-primary content-btn">Engagement</button>
