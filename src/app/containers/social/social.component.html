@@ -2,22 +2,28 @@
   <div class="col-md-2 sidebar-container">
     <div class="sidebar">
       <div class="sidebar-content">
-        <h5>Content Manager</h5>
+        <h5 [ngbPopover]="contentManDesc" triggers="mouseenter:mouseleave" container="body" placement="right">Content Manager</h5>
         <div class="content-manager">
           <div class="content-manager-section">
             <h6>Activity</h6>
-            <mat-checkbox [(checked)]="socialActivityCheck" (change)="onCheck('socialActivity')">Social activity</mat-checkbox>
-            <mat-checkbox [(checked)]="keywordsCheck" (change)="onCheck('keywords')">Keywords</mat-checkbox>
+            <mat-checkbox [(checked)]="socialActivityCheck" (change)="onCheck('socialActivity')" [ngbPopover]="chartDesc"
+            triggers="mouseenter:mouseleave" container="body" placement="right">Social activity</mat-checkbox>
+            <mat-checkbox [(checked)]="keywordsCheck" (change)="onCheck('keywords')" [ngbPopover]="chartDesc"
+            triggers="mouseenter:mouseleave" container="body" placement="right">Keywords</mat-checkbox>
           </div>
           <div class="content-manager-section">
           <h6>Network</h6>
-            <mat-checkbox [(checked)]="socialReachCheck" (change)="onCheck('socialReach')">Social reach</mat-checkbox>
-            <mat-checkbox [(checked)]="engagementCheck" (change)="onCheck('engagement')">Engagement</mat-checkbox>
-            <mat-checkbox [(checked)]="networkCheck" (change)="onCheck('network')">Network</mat-checkbox>
+            <mat-checkbox [(checked)]="socialReachCheck" (change)="onCheck('socialReach')" [ngbPopover]="chartDesc"
+            triggers="mouseenter:mouseleave" container="body" placement="right">Social reach</mat-checkbox>
+            <mat-checkbox [(checked)]="engagementCheck" (change)="onCheck('engagement')" [ngbPopover]="chartDesc"
+            triggers="mouseenter:mouseleave" container="body" placement="right">Engagement</mat-checkbox>
+            <mat-checkbox [(checked)]="networkCheck" (change)="onCheck('network')" [ngbPopover]="chartDesc"
+            triggers="mouseenter:mouseleave" container="body" placement="right">Network</mat-checkbox>
           </div>
           <div class="content-manager-section">
             <h6>Topic</h6>
-            <mat-checkbox [(checked)]="twitterTopicCheck" (change)="onCheck('twitterTopic')">Twitter topic analysis</mat-checkbox>
+            <mat-checkbox [(checked)]="twitterTopicCheck" (change)="onCheck('twitterTopic')" [ngbPopover]="chartDesc"
+            triggers="mouseenter:mouseleave" container="body" placement="right">Twitter topic analysis</mat-checkbox>
           </div>
         </div>
       </div>
@@ -31,7 +37,7 @@
       <div *ngIf="socialActivity" class="col-md-8">
         <div class="card full-height">
           <div class="card-header header-click" (click)="open(content1)" placement="left" 
-          [ngbTooltip]="chartDescription">
+          [ngbTooltip]="chartDesc">
             Social Activity
           </div>
           <app-social-activity-chart></app-social-activity-chart>
@@ -40,7 +46,7 @@
       <div *ngIf="keywords" class="col-md-4">
         <div class="card full-height">
           <div class="card-header header-click" (click)="open(content1)" placement="left" 
-          [ngbTooltip]="chartDescription">
+          [ngbTooltip]="chartDesc">
             Keywords
           </div>
           <app-keywords></app-keywords>
@@ -49,7 +55,7 @@
       <div *ngIf="socialReach" class="col-md-4">
         <div class="card full-height">
           <div class="card-header header-click" (click)="open(content1)" placement="left" 
-          [ngbTooltip]="chartDescription">
+          [ngbTooltip]="chartDesc">
             Social Reach
           </div>
           <app-social-reach-chart></app-social-reach-chart>
@@ -58,7 +64,7 @@
       <div *ngIf="engagement" class="col-md-4">
         <div class="card full-height">
           <div class="card-header header-click" (click)="open(content1)" placement="left" 
-          [ngbTooltip]="chartDescription">
+          [ngbTooltip]="chartDesc">
             Engagement
           </div>
           <app-engagement-chart></app-engagement-chart>
@@ -67,7 +73,7 @@
       <div *ngIf="network" class="col-md-4">
         <div class="card full-height">
           <div class="card-header header-click" (click)="open(content1)" placement="left" 
-          [ngbTooltip]="chartDescription">
+          [ngbTooltip]="chartDesc">
             Network
           </div>
           <app-network-chart></app-network-chart>
@@ -76,7 +82,7 @@
       <div *ngIf="twitterTopic" class="col-md-12">
         <div class="card full-height">
           <div class="card-header header-click" (click)="open(content1)" placement="left" 
-          [ngbTooltip]="chartDescription">
+          [ngbTooltip]="chartDesc">
             Twitter Topic Analysis
           </div>
           <app-twitter-topic-chart></app-twitter-topic-chart>
@@ -91,7 +97,7 @@
       <div *ngIf="socialActivity2" class="col-md-8">
         <div class="card full-height">
           <div class="card-header header-click" (click)="open(content2)" placement="left" 
-          [ngbTooltip]="chartDescription">
+          [ngbTooltip]="chartDesc">
             Social Activity
           </div>
           <app-social-activity-chart></app-social-activity-chart>
@@ -100,7 +106,7 @@
       <div *ngIf="keywords2" class="col-md-4">
         <div class="card full-height">
           <div class="card-header header-click" (click)="open(content2)" placement="left" 
-          [ngbTooltip]="chartDescription">
+          [ngbTooltip]="chartDesc">
             Keywords
           </div>
           <app-keywords></app-keywords>
@@ -109,7 +115,7 @@
       <div *ngIf="socialReach2" class="col-md-4">      
         <div class="card full-height">
           <div class="card-header header-click" (click)="open(content2)" placement="left" 
-          [ngbTooltip]="chartDescription">
+          [ngbTooltip]="chartDesc">
             Social Reach
           </div>
           <app-social-reach-chart></app-social-reach-chart>
@@ -118,7 +124,7 @@
       <div *ngIf="engagement2" class="col-md-4">
         <div class="card full-height">
           <div class="card-header header-click" (click)="open(content2)" placement="left" 
-          [ngbTooltip]="chartDescription">
+          [ngbTooltip]="chartDesc">
             Engagement
           </div>
           <app-engagement-chart></app-engagement-chart>
@@ -127,7 +133,7 @@
       <div *ngIf="network2" class="col-md-4">
         <div class="card full-height">
           <div class="card-header header-click" (click)="open(content2)" placement="left" 
-          [ngbTooltip]="chartDescription">
+          [ngbTooltip]="chartDesc">
             Network
           </div>
           <app-network-chart></app-network-chart>
@@ -136,7 +142,7 @@
       <div *ngIf="twitterTopic2" class="col-md-12">
         <div class="card full-height">
           <div class="card-header header-click" (click)="open(content2)" placement="left" 
-          [ngbTooltip]="chartDescription">
+          [ngbTooltip]="chartDesc">
             Network
           </div>
           <app-twitter-topic-chart></app-twitter-topic-chart>

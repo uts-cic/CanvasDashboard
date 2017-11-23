@@ -36,13 +36,14 @@ export class SocialComponent implements OnInit {
   private twitterTopicDisabled2 = false;
   private occupiedSpace2 = 0;
   private rowOccupied2 = false;
-  private chartDescription = 'Lorem ipsum dolor sit amet, ei mei autem docendi nostrum, esse sonet vel cu.';
   private socialActivityCheck = true;
   private keywordsCheck = true;
   private socialReachCheck = true;
   private engagementCheck = true;
   private networkCheck = true;
   private twitterTopicCheck = true;
+  private chartDesc = 'Lorem ipsum dolor sit amet, ei mei autem docendi nostrum, esse sonet vel cu.';
+  private contentManDesc= 'Use this content manager to configure components available for selection.';
 
   constructor(private modalService: NgbModal) { }
 
