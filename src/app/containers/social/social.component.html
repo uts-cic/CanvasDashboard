@@ -31,13 +31,14 @@
   </div>
   <div class="col-md-10 content">
     <div *ngIf="!rowOccupied" class="card empty-card" (click)="open(content1)">
-      <h3 class="card-title">Click here to choose your content</h3>
+      <h3 class="card-title">Click here to select your content</h3>
+      <p>Maximum of 3 spaces</p>
     </div>
     <div class="row equal">
       <div *ngIf="socialActivity" class="col-md-8">
         <div class="card full-height">
-          <div class="card-header header-click" (click)="open(content1)" placement="left" 
-          [ngbTooltip]="chartDesc">
+          <div class="card-header header-click" (click)="open(content1)" [ngbPopover]="chartDesc"
+          triggers="mouseenter:mouseleave" container="body" placement="auto">
             Social Activity
           </div>
           <app-social-activity-chart></app-social-activity-chart>
@@ -45,8 +46,8 @@
       </div>
       <div *ngIf="keywords" class="col-md-4">
         <div class="card full-height">
-          <div class="card-header header-click" (click)="open(content1)" placement="left" 
-          [ngbTooltip]="chartDesc">
+          <div class="card-header header-click" (click)="open(content1)" [ngbPopover]="chartDesc"
+          triggers="mouseenter:mouseleave" container="body" placement="auto">
             Keywords
           </div>
           <app-keywords></app-keywords>
@@ -54,8 +55,8 @@
       </div>
       <div *ngIf="socialReach" class="col-md-4">
         <div class="card full-height">
-          <div class="card-header header-click" (click)="open(content1)" placement="left" 
-          [ngbTooltip]="chartDesc">
+          <div class="card-header header-click" (click)="open(content1)" [ngbPopover]="chartDesc"
+          triggers="mouseenter:mouseleave" container="body" placement="auto">
             Social Reach
           </div>
           <app-social-reach-chart></app-social-reach-chart>
@@ -63,8 +64,8 @@
       </div>
       <div *ngIf="engagement" class="col-md-4">
         <div class="card full-height">
-          <div class="card-header header-click" (click)="open(content1)" placement="left" 
-          [ngbTooltip]="chartDesc">
+          <div class="card-header header-click" (click)="open(content1)" [ngbPopover]="chartDesc"
+          triggers="mouseenter:mouseleave" container="body" placement="auto">
             Engagement
           </div>
           <app-engagement-chart></app-engagement-chart>
@@ -72,8 +73,8 @@
       </div>
       <div *ngIf="network" class="col-md-4">
         <div class="card full-height">
-          <div class="card-header header-click" (click)="open(content1)" placement="left" 
-          [ngbTooltip]="chartDesc">
+          <div class="card-header header-click" (click)="open(content1)" [ngbPopover]="chartDesc"
+          triggers="mouseenter:mouseleave" container="body" placement="auto">
             Network
           </div>
           <app-network-chart></app-network-chart>
@@ -81,8 +82,8 @@
       </div>
       <div *ngIf="twitterTopic" class="col-md-12">
         <div class="card full-height">
-          <div class="card-header header-click" (click)="open(content1)" placement="left" 
-          [ngbTooltip]="chartDesc">
+          <div class="card-header header-click" (click)="open(content1)" [ngbPopover]="chartDesc"
+          triggers="mouseenter:mouseleave" container="body" placement="auto">
             Twitter Topic Analysis
           </div>
           <app-twitter-topic-chart></app-twitter-topic-chart>
@@ -91,13 +92,14 @@
     </div>
     
     <div *ngIf="!rowOccupied2" class="card empty-card" (click)="open(content2)">
-      <h3 class="card-title">Click here to choose your content</h3>
+      <h3 class="card-title">Click here to select your content</h3>
+      <p>Maximum of 3 spaces</p>
     </div>
     <div class="row equal">
       <div *ngIf="socialActivity2" class="col-md-8">
         <div class="card full-height">
-          <div class="card-header header-click" (click)="open(content2)" placement="left" 
-          [ngbTooltip]="chartDesc">
+          <div class="card-header header-click" (click)="open(content2)" [ngbPopover]="chartDesc"
+          triggers="mouseenter:mouseleave" container="body" placement="auto">
             Social Activity
           </div>
           <app-social-activity-chart></app-social-activity-chart>
@@ -105,8 +107,8 @@
       </div>
       <div *ngIf="keywords2" class="col-md-4">
         <div class="card full-height">
-          <div class="card-header header-click" (click)="open(content2)" placement="left" 
-          [ngbTooltip]="chartDesc">
+          <div class="card-header header-click" (click)="open(content2)" [ngbPopover]="chartDesc"
+          triggers="mouseenter:mouseleave" container="body" placement="auto">
             Keywords
           </div>
           <app-keywords></app-keywords>
@@ -114,8 +116,8 @@
       </div>
       <div *ngIf="socialReach2" class="col-md-4">      
         <div class="card full-height">
-          <div class="card-header header-click" (click)="open(content2)" placement="left" 
-          [ngbTooltip]="chartDesc">
+          <div class="card-header header-click" (click)="open(content2)" [ngbPopover]="chartDesc"
+          triggers="mouseenter:mouseleave" container="body" placement="auto">
             Social Reach
           </div>
           <app-social-reach-chart></app-social-reach-chart>
@@ -123,8 +125,8 @@
       </div>
       <div *ngIf="engagement2" class="col-md-4">
         <div class="card full-height">
-          <div class="card-header header-click" (click)="open(content2)" placement="left" 
-          [ngbTooltip]="chartDesc">
+          <div class="card-header header-click" (click)="open(content2)" [ngbPopover]="chartDesc"
+          triggers="mouseenter:mouseleave" container="body" placement="auto">
             Engagement
           </div>
           <app-engagement-chart></app-engagement-chart>
@@ -132,8 +134,8 @@
       </div>
       <div *ngIf="network2" class="col-md-4">
         <div class="card full-height">
-          <div class="card-header header-click" (click)="open(content2)" placement="left" 
-          [ngbTooltip]="chartDesc">
+          <div class="card-header header-click" (click)="open(content2)" [ngbPopover]="chartDesc"
+          triggers="mouseenter:mouseleave" container="body" placement="auto">
             Network
           </div>
           <app-network-chart></app-network-chart>
@@ -141,8 +143,8 @@
       </div>
       <div *ngIf="twitterTopic2" class="col-md-12">
         <div class="card full-height">
-          <div class="card-header header-click" (click)="open(content2)" placement="left" 
-          [ngbTooltip]="chartDesc">
+          <div class="card-header header-click" (click)="open(content2)" [ngbPopover]="chartDesc"
+          triggers="mouseenter:mouseleave" container="body" placement="auto">
             Network
           </div>
           <app-twitter-topic-chart></app-twitter-topic-chart>
@@ -154,13 +156,13 @@
 
 <ng-template #content1 let-c="close" let-d="dismiss">
   <div class="modal-header">
-    <h4 class="modal-title">Choose Your Content</h4>
+    <h4 class="modal-title">Select Your Content</h4>
     <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
   <div class="modal-body">
-    <p>Choose components to fill up your first row</p>
+    <p>Select components to fill up your first row</p>
     <button type="button" class="btn btn-outline-primary content-btn" (click)="onSelect('socialActivity')"
     [class.active]="socialActivity" [disabled]="socialActivityDisabled">Social Activity</button>
     <button type="button" class="btn btn-outline-primary content-btn" (click)="onSelect('keywords')"
@@ -181,13 +183,13 @@
 
 <ng-template #content2 let-c="close" let-d="dismiss">
     <div class="modal-header">
-      <h4 class="modal-title">Choose Your Content</h4>
+      <h4 class="modal-title">Select Your Content</h4>
       <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
         <span aria-hidden="true">&times;</span>
       </button>
     </div>
     <div class="modal-body">
-      <p>Choose components to fill up your second row</p>
+      <p>Select components to fill up your second row</p>
       <button type="button" class="btn btn-outline-primary content-btn" (click)="onSelect2('socialActivity')"
       [class.active]="socialActivity2" [disabled]="socialActivityDisabled2">Social Activity</button>
       <button type="button" class="btn btn-outline-primary content-btn" (click)="onSelect2('keywords')"
