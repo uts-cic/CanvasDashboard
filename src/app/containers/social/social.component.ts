@@ -69,22 +69,22 @@ export class SocialComponent implements OnInit {
   }
 
   setDisabledBtn(): void {
-    this.socialActivityDisabled = !this.socialActivity && this.occupiedSpace >= 2 ? true : false;
-    this.keywordsDisabled = !this.keywords && this.occupiedSpace >= 3 ? true : false;
-    this.socialReachDisabled = !this.socialReach && this.occupiedSpace >= 3 ? true : false;
-    this.engagementDisabled = !this.engagement && this.occupiedSpace >= 3 ? true : false;
-    this.networkDisabled = !this.network && this.occupiedSpace >= 3 ? true : false;
-    this.twitterTopicDisabled = !this.twitterTopic && this.occupiedSpace >= 1 ? true : false;
+    this.socialActivityDisabled = !this.socialActivity && this.occupiedSpace >= 2 || this.socialActivity2 ? true : false;
+    this.keywordsDisabled = !this.keywords && this.occupiedSpace >= 3 || this.keywords2 ? true : false;
+    this.socialReachDisabled = !this.socialReach && this.occupiedSpace >= 3 || this.socialReach2 ? true : false;
+    this.engagementDisabled = !this.engagement && this.occupiedSpace >= 3 || this.engagement2 ? true : false;
+    this.networkDisabled = !this.network && this.occupiedSpace >= 3 || this.network2 ? true : false;
+    this.twitterTopicDisabled = !this.twitterTopic && this.occupiedSpace >= 1 || this.twitterTopic2 ? true : false;
     this.rowOccupied = this.occupiedSpace > 0 ? true : false;
   }
 
   setDisabledBtn2(): void {
-    this.socialActivityDisabled2 = !this.socialActivity2 && this.occupiedSpace2 >= 2 ? true : false;
-    this.keywordsDisabled2 = !this.keywords2 && this.occupiedSpace2 >= 3 ? true : false;
-    this.socialReachDisabled2 = !this.socialReach2 && this.occupiedSpace2 >= 3 ? true : false;
-    this.engagementDisabled2 = !this.engagement2 && this.occupiedSpace2 >= 3 ? true : false;
-    this.networkDisabled2 = !this.network2 && this.occupiedSpace2 >= 3 ? true : false;
-    this.twitterTopicDisabled2 = !this.twitterTopic2 && this.occupiedSpace2 >= 1 ? true : false;
+    this.socialActivityDisabled2 = !this.socialActivity2 && this.occupiedSpace2 >= 2 || this.socialActivity ? true : false;
+    this.keywordsDisabled2 = !this.keywords2 && this.occupiedSpace2 >= 3 || this.keywords ? true : false;
+    this.socialReachDisabled2 = !this.socialReach2 && this.occupiedSpace2 >= 3 || this.socialReach ? true : false;
+    this.engagementDisabled2 = !this.engagement2 && this.occupiedSpace2 >= 3 || this.engagement ? true : false;
+    this.networkDisabled2 = !this.network2 && this.occupiedSpace2 >= 3 || this.network ? true : false;
+    this.twitterTopicDisabled2 = !this.twitterTopic2 && this.occupiedSpace2 >= 1 || this.twitterTopic ? true : false;
     this.rowOccupied2 = this.occupiedSpace2 > 0 ? true : false;
   }
 
@@ -94,31 +94,37 @@ export class SocialComponent implements OnInit {
         this.socialActivity = !this.socialActivity;
         this.socialActivity ? this.occupiedSpace += 2 : this.occupiedSpace -= 2;
         this.setDisabledBtn();
+        this.setDisabledBtn2();
         break;
       case 'keywords':
         this.keywords = !this.keywords;
         this.keywords ? this.occupiedSpace += 1 : this.occupiedSpace -= 1;
         this.setDisabledBtn();
+        this.setDisabledBtn2();
         break;
       case 'socialReach':
         this.socialReach = !this.socialReach;
         this.socialReach ? this.occupiedSpace += 1 : this.occupiedSpace -= 1;
         this.setDisabledBtn();
+        this.setDisabledBtn2();
         break;
       case 'engagement':
         this.engagement = !this.engagement;
         this.engagement ? this.occupiedSpace += 1 : this.occupiedSpace -= 1;
         this.setDisabledBtn();
+        this.setDisabledBtn2();
         break;
       case 'network':
         this.network = !this.network;
         this.network ? this.occupiedSpace += 1 : this.occupiedSpace -= 1;
         this.setDisabledBtn();
+        this.setDisabledBtn2();
         break;
       case 'twitterTopic':
         this.twitterTopic = !this.twitterTopic;
         this.twitterTopic ? this.occupiedSpace += 3 : this.occupiedSpace -= 3;
         this.setDisabledBtn();
+        this.setDisabledBtn2();
         break;
       default:
         break;
@@ -130,31 +136,37 @@ export class SocialComponent implements OnInit {
       case 'socialActivity':
         this.socialActivity2 = !this.socialActivity2;
         this.socialActivity2 ? this.occupiedSpace2 += 2 : this.occupiedSpace2 -= 2;
+        this.setDisabledBtn();
         this.setDisabledBtn2();
         break;
       case 'keywords':
         this.keywords2 = !this.keywords2;
         this.keywords2 ? this.occupiedSpace2 += 1 : this.occupiedSpace2 -= 1;
+        this.setDisabledBtn();
         this.setDisabledBtn2();
         break;
       case 'socialReach':
         this.socialReach2 = !this.socialReach2;
         this.socialReach2 ? this.occupiedSpace2 += 1 : this.occupiedSpace2 -= 1;
+        this.setDisabledBtn();
         this.setDisabledBtn2();
         break;
       case 'engagement':
         this.engagement2 = !this.engagement2;
         this.engagement2 ? this.occupiedSpace2 += 1 : this.occupiedSpace2 -= 1;
+        this.setDisabledBtn();
         this.setDisabledBtn2();
         break;
       case 'network':
         this.network2 = !this.network2;
         this.network2 ? this.occupiedSpace2 += 1 : this.occupiedSpace2 -= 1;
+        this.setDisabledBtn();
         this.setDisabledBtn2();
         break;
       case 'twitterTopic':
         this.twitterTopic2 = !this.twitterTopic2;
         this.twitterTopic2 ? this.occupiedSpace2 += 3 : this.occupiedSpace2 -= 3;
+        this.setDisabledBtn();
         this.setDisabledBtn2();
         break;
       default:
