@@ -1,12 +1,9 @@
-<div class="card full-height">
-  <div class="card-header">Keywords</div>
-  <div class="keywords">
-    <ul class="list-group list-group-flush">
-      <button *ngFor="let keyword of keywords" class="list-group-item list-group-item-action justify-content-between"
-      (click)="onSelect(keyword)" [class.active]="keyword === selectedKeyword">
-        {{keyword.word}}
-        <span class="badge badge-secondary badge-pill">{{keyword.total}}</span>
-      </button>
-    </ul>
-  </div>
+<div class="keywords">
+  <ul class="list-group list-group-flush">
+    <button *ngFor="let keyword of keywords" class="list-group-item list-group-item-action justify-content-between"
+    (click)="onSelect(keyword)" [class.active]="keyword === selectedKeyword">
+      {{keyword.word}}
+      <span class="badge badge-secondary badge-pill">{{keyword.total}}</span>
+    </button>
+  </ul>
 </div>

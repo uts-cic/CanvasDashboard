@@ -36,6 +36,7 @@ export class SocialComponent implements OnInit {
   private twitterTopicDisabled2 = false;
   private occupiedSpace2 = 0;
   private rowOccupied2 = false;
+  private chartDescription = 'Lorem ipsum dolor sit amet, ei mei autem docendi nostrum, esse sonet vel cu.';
 
   constructor(private modalService: NgbModal) { }
 

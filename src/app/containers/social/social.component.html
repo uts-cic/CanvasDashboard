@@ -29,22 +29,58 @@
     </div>
     <div class="row equal">
       <div *ngIf="socialActivity" class="col-md-8">
-        <app-social-activity-chart></app-social-activity-chart>
+        <div class="card full-height">
+          <div class="card-header header-click" (click)="open(content1)" placement="left" 
+          [ngbTooltip]="chartDescription">
+            Social Activity
+          </div>
+          <app-social-activity-chart></app-social-activity-chart>
+        </div>
       </div>
       <div *ngIf="keywords" class="col-md-4">
-        <app-keywords></app-keywords>
+        <div class="card full-height">
+          <div class="card-header header-click" (click)="open(content1)" placement="left" 
+          [ngbTooltip]="chartDescription">
+            Keywords
+          </div>
+          <app-keywords></app-keywords>
+        </div>
       </div>
-      <div *ngIf="socialReach" class="col-md-4">      
-        <app-social-reach-chart></app-social-reach-chart>
+      <div *ngIf="socialReach" class="col-md-4">
+        <div class="card full-height">
+          <div class="card-header header-click" (click)="open(content1)" placement="left" 
+          [ngbTooltip]="chartDescription">
+            Social Reach
+          </div>
+          <app-social-reach-chart></app-social-reach-chart>
+        </div>
       </div>
       <div *ngIf="engagement" class="col-md-4">
-        <app-engagement-chart></app-engagement-chart>
+        <div class="card full-height">
+          <div class="card-header header-click" (click)="open(content1)" placement="left" 
+          [ngbTooltip]="chartDescription">
+            Engagement
+          </div>
+          <app-engagement-chart></app-engagement-chart>
+        </div>
       </div>
       <div *ngIf="network" class="col-md-4">
-        <app-network-chart></app-network-chart>
+        <div class="card full-height">
+          <div class="card-header header-click" (click)="open(content1)" placement="left" 
+          [ngbTooltip]="chartDescription">
+            Network
+          </div>
+          <app-network-chart></app-network-chart>
+        </div>
       </div>
       <div *ngIf="twitterTopic" class="col-md-12">
-        <app-twitter-topic-chart></app-twitter-topic-chart>
+        <div class="card full-height">
+          <div class="card-header header-click" (click)="open(content1)" placement="left" 
+          [ngbTooltip]="chartDescription">
+            Twitter Topic Analysis
+          </div>
+          <app-twitter-topic-chart></app-twitter-topic-chart>
+        </div>
       </div>
     </div>
     
@@ -53,22 +89,58 @@
     </div>
     <div class="row equal">
       <div *ngIf="socialActivity2" class="col-md-8">
-        <app-social-activity-chart></app-social-activity-chart>
+        <div class="card full-height">
+          <div class="card-header header-click" (click)="open(content2)" placement="left" 
+          [ngbTooltip]="chartDescription">
+            Social Activity
+          </div>
+          <app-social-activity-chart></app-social-activity-chart>
+        </div>
       </div>
       <div *ngIf="keywords2" class="col-md-4">
-        <app-keywords></app-keywords>
+        <div class="card full-height">
+          <div class="card-header header-click" (click)="open(content2)" placement="left" 
+          [ngbTooltip]="chartDescription">
+            Keywords
+          </div>
+          <app-keywords></app-keywords>
+        </div>
       </div>
       <div *ngIf="socialReach2" class="col-md-4">      
-        <app-social-reach-chart></app-social-reach-chart>
+        <div class="card full-height">
+          <div class="card-header header-click" (click)="open(content2)" placement="left" 
+          [ngbTooltip]="chartDescription">
+            Social Reach
+          </div>
+          <app-social-reach-chart></app-social-reach-chart>
+        </div>
       </div>
       <div *ngIf="engagement2" class="col-md-4">
-        <app-engagement-chart></app-engagement-chart>
+        <div class="card full-height">
+          <div class="card-header header-click" (click)="open(content2)" placement="left" 
+          [ngbTooltip]="chartDescription">
+            Engagement
+          </div>
+          <app-engagement-chart></app-engagement-chart>
+        </div>
       </div>
       <div *ngIf="network2" class="col-md-4">
-        <app-network-chart></app-network-chart>
+        <div class="card full-height">
+          <div class="card-header header-click" (click)="open(content2)" placement="left" 
+          [ngbTooltip]="chartDescription">
+            Network
+          </div>
+          <app-network-chart></app-network-chart>
+        </div>
       </div>
       <div *ngIf="twitterTopic2" class="col-md-12">
-        <app-twitter-topic-chart></app-twitter-topic-chart>
+        <div class="card full-height">
+          <div class="card-header header-click" (click)="open(content2)" placement="left" 
+          [ngbTooltip]="chartDescription">
+            Network
+          </div>
+          <app-twitter-topic-chart></app-twitter-topic-chart>
+        </div>
       </div>
     </div>
   </div>
