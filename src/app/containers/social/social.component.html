@@ -6,18 +6,18 @@
         <div class="content-manager">
           <div class="content-manager-section">
             <h6>Activity</h6>
-            <mat-checkbox>Social activity</mat-checkbox>
-            <mat-checkbox>Keywords</mat-checkbox>
+            <mat-checkbox [(checked)]="socialActivityCheck" (change)="onCheck('socialActivity')">Social activity</mat-checkbox>
+            <mat-checkbox [(checked)]="keywordsCheck" (change)="onCheck('keywords')">Keywords</mat-checkbox>
           </div>
           <div class="content-manager-section">
           <h6>Network</h6>
-            <mat-checkbox>Social reach</mat-checkbox>
-            <mat-checkbox>Engagement</mat-checkbox>
-            <mat-checkbox>Network</mat-checkbox>
+            <mat-checkbox [(checked)]="socialReachCheck" (change)="onCheck('socialReach')">Social reach</mat-checkbox>
+            <mat-checkbox [(checked)]="engagementCheck" (change)="onCheck('engagement')">Engagement</mat-checkbox>
+            <mat-checkbox [(checked)]="networkCheck" (change)="onCheck('network')">Network</mat-checkbox>
           </div>
           <div class="content-manager-section">
             <h6>Topic</h6>
-            <mat-checkbox>Twitter topic analysis</mat-checkbox>
+            <mat-checkbox [(checked)]="twitterTopicCheck" (change)="onCheck('twitterTopic')">Twitter topic analysis</mat-checkbox>
           </div>
         </div>
       </div>

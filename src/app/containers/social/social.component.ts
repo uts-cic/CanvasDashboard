@@ -37,6 +37,12 @@ export class SocialComponent implements OnInit {
   private occupiedSpace2 = 0;
   private rowOccupied2 = false;
   private chartDescription = 'Lorem ipsum dolor sit amet, ei mei autem docendi nostrum, esse sonet vel cu.';
+  private socialActivityCheck = true;
+  private keywordsCheck = true;
+  private socialReachCheck = true;
+  private engagementCheck = true;
+  private networkCheck = true;
+  private twitterTopicCheck = true;
 
   constructor(private modalService: NgbModal) { }
 
@@ -87,6 +93,55 @@ export class SocialComponent implements OnInit {
     this.networkDisabled2 = !this.network2 && this.occupiedSpace2 >= 3 || this.network ? true : false;
     this.twitterTopicDisabled2 = !this.twitterTopic2 && this.occupiedSpace2 >= 1 || this.twitterTopic ? true : false;
     this.rowOccupied2 = this.occupiedSpace2 > 0 ? true : false;
+  }
+
+  onCheck(component: string): void {
+    switch (component) {
+      case 'socialActivity':
+        this.socialActivityCheck = !this.socialActivityCheck;
+        if (this.socialActivity) { this.onSelect('socialActivity'); }
+        if (this.socialActivity2) { this.onSelect2('socialActivity'); }
+        this.socialActivityDisabled = this.socialActivityCheck ? false : true;
+        this.socialActivityDisabled2 = this.socialActivityCheck ? false : true;
+        break;
+      case 'keywords':
+        this.keywordsCheck = !this.keywordsCheck;
+        if (this.keywords) { this.onSelect('keywords'); }
+        if (this.keywords2) { this.onSelect2('keywords'); }
+        this.keywordsDisabled = this.keywordsCheck ? false : true;
+        this.keywordsDisabled2 = this.keywordsCheck ? false : true;
+        break;
+      case 'socialReach':
+        this.socialReachCheck = !this.socialReachCheck;
+        if (this.socialReach) { this.onSelect('socialReach'); }
+        if (this.socialReach2) { this.onSelect2('socialReach'); }
+        this.socialReachDisabled = this.socialReachCheck ? false : true;
+        this.socialReachDisabled2 = this.socialReachCheck ? false : true;
+        break;
+      case 'engagement':
+        this.engagementCheck = !this.engagementCheck;
+        if (this.engagement) { this.onSelect('engagement'); }
+        if (this.engagement2) { this.onSelect2('engagement'); }
+        this.engagementDisabled = this.engagementCheck ? false : true;
+        this.engagementDisabled2 = this.engagementCheck ? false : true;
+        break;
+      case 'network':
+        this.networkCheck = !this.networkCheck;
+        if (this.network) { this.onSelect('network'); }
+        if (this.network2) { this.onSelect2('network'); }
+        this.networkDisabled = this.networkCheck ? false : true;
+        this.networkDisabled2 = this.networkCheck ? false : true;
+        break;
+      case 'twitterTopic':
+        this.twitterTopicCheck = !this.twitterTopicCheck;
+        if (this.twitterTopic) { this.onSelect('twitterTopic'); }
+        if (this.twitterTopic2) { this.onSelect2('twitterTopic'); }
+        this.twitterTopicDisabled = this.twitterTopicCheck ? false : true;
+        this.twitterTopicDisabled2 = this.twitterTopicCheck ? false : true;
+        break;
+      default:
+        break;
+    }
   }
 
   onSelect(component: string): void {
