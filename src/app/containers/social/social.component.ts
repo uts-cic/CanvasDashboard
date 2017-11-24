@@ -42,6 +42,8 @@ export class SocialComponent implements OnInit {
   private engagementCheck = true;
   private networkCheck = true;
   private twitterTopicCheck = true;
+  private progressType = 'primary';
+  private progressType2 = 'primary';
   private chartDesc = 'Lorem ipsum dolor sit amet, ei mei autem docendi nostrum, esse sonet vel cu.';
   private contentManDesc= 'Use this content manager to configure components available for selection.';
 
@@ -65,6 +67,7 @@ export class SocialComponent implements OnInit {
     if (this.engagement) { this.occupiedSpace += 1; }
     if (this.network) { this.occupiedSpace += 1; }
     if (this.twitterTopic) { this.occupiedSpace += 3; }
+    this.setProgressType();
   }
 
   calculateOccupiedSpace2(): void {
@@ -74,6 +77,7 @@ export class SocialComponent implements OnInit {
     if (this.engagement2) { this.occupiedSpace2 += 1; }
     if (this.network2) { this.occupiedSpace2 += 1; }
     if (this.twitterTopic2) { this.occupiedSpace2 += 3; }
+    this.setProgressType2();
   }
 
   setDisabledBtn(): void {
@@ -94,6 +98,38 @@ export class SocialComponent implements OnInit {
     this.networkDisabled2 = !this.network2 && this.occupiedSpace2 >= 3 || this.network ? true : false;
     this.twitterTopicDisabled2 = !this.twitterTopic2 && this.occupiedSpace2 >= 1 || this.twitterTopic ? true : false;
     this.rowOccupied2 = this.occupiedSpace2 > 0 ? true : false;
+  }
+
+  setProgressType(): void {
+    switch (this.occupiedSpace) {
+      case 1:
+        this.progressType = 'primary';
+        break;
+      case 2:
+        this.progressType = 'warning';
+        break;
+      case 3:
+        this.progressType = 'danger';
+        break;
+      default:
+        this.progressType = 'primary';
+    }
+  }
+
+  setProgressType2(): void {
+    switch (this.occupiedSpace2) {
+      case 1:
+        this.progressType2 = 'primary';
+        break;
+      case 2:
+        this.progressType2 = 'warning';
+        break;
+      case 3:
+        this.progressType2 = 'danger';
+        break;
+      default:
+        this.progressType2 = 'primary';
+    }
   }
 
   onCheck(component: string): void {
@@ -152,36 +188,42 @@ export class SocialComponent implements OnInit {
         this.socialActivity ? this.occupiedSpace += 2 : this.occupiedSpace -= 2;
         this.setDisabledBtn();
         this.setDisabledBtn2();
+        this.setProgressType();
         break;
       case 'keywords':
         this.keywords = !this.keywords;
         this.keywords ? this.occupiedSpace += 1 : this.occupiedSpace -= 1;
         this.setDisabledBtn();
         this.setDisabledBtn2();
+        this.setProgressType();
         break;
       case 'socialReach':
         this.socialReach = !this.socialReach;
         this.socialReach ? this.occupiedSpace += 1 : this.occupiedSpace -= 1;
         this.setDisabledBtn();
         this.setDisabledBtn2();
+        this.setProgressType();
         break;
       case 'engagement':
         this.engagement = !this.engagement;
         this.engagement ? this.occupiedSpace += 1 : this.occupiedSpace -= 1;
         this.setDisabledBtn();
         this.setDisabledBtn2();
+        this.setProgressType();
         break;
       case 'network':
         this.network = !this.network;
         this.network ? this.occupiedSpace += 1 : this.occupiedSpace -= 1;
         this.setDisabledBtn();
         this.setDisabledBtn2();
+        this.setProgressType();
         break;
       case 'twitterTopic':
         this.twitterTopic = !this.twitterTopic;
         this.twitterTopic ? this.occupiedSpace += 3 : this.occupiedSpace -= 3;
         this.setDisabledBtn();
         this.setDisabledBtn2();
+        this.setProgressType();
         break;
       default:
         break;
@@ -195,36 +237,42 @@ export class SocialComponent implements OnInit {
         this.socialActivity2 ? this.occupiedSpace2 += 2 : this.occupiedSpace2 -= 2;
         this.setDisabledBtn();
         this.setDisabledBtn2();
+        this.setProgressType2();
         break;
       case 'keywords':
         this.keywords2 = !this.keywords2;
         this.keywords2 ? this.occupiedSpace2 += 1 : this.occupiedSpace2 -= 1;
         this.setDisabledBtn();
         this.setDisabledBtn2();
+        this.setProgressType2();
         break;
       case 'socialReach':
         this.socialReach2 = !this.socialReach2;
         this.socialReach2 ? this.occupiedSpace2 += 1 : this.occupiedSpace2 -= 1;
         this.setDisabledBtn();
         this.setDisabledBtn2();
+        this.setProgressType2();
         break;
       case 'engagement':
         this.engagement2 = !this.engagement2;
         this.engagement2 ? this.occupiedSpace2 += 1 : this.occupiedSpace2 -= 1;
         this.setDisabledBtn();
         this.setDisabledBtn2();
+        this.setProgressType2();
         break;
       case 'network':
         this.network2 = !this.network2;
         this.network2 ? this.occupiedSpace2 += 1 : this.occupiedSpace2 -= 1;
         this.setDisabledBtn();
         this.setDisabledBtn2();
+        this.setProgressType2();
         break;
       case 'twitterTopic':
         this.twitterTopic2 = !this.twitterTopic2;
         this.twitterTopic2 ? this.occupiedSpace2 += 3 : this.occupiedSpace2 -= 3;
         this.setDisabledBtn();
         this.setDisabledBtn2();
+        this.setProgressType2();
         break;
       default:
         break;
