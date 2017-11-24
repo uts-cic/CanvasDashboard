@@ -164,17 +164,23 @@
   <div class="modal-body">
     <p>Select components to fill up your first row</p>
     <button type="button" class="btn btn-outline-primary content-btn" (click)="onSelect('socialActivity')"
-    [class.active]="socialActivity" [disabled]="socialActivityDisabled">Social Activity</button>
+    [class.active]="socialActivity" [disabled]="socialActivityDisabled" ngbPopover="Requires 2 spaces"
+    triggers="mouseenter:mouseleave" container="body" placement="auto">Social Activity</button>
     <button type="button" class="btn btn-outline-primary content-btn" (click)="onSelect('keywords')"
-    [class.active]="keywords" [disabled]="keywordsDisabled">Keywords</button>
+    [class.active]="keywords" [disabled]="keywordsDisabled" ngbPopover="Requires 1 space"
+    triggers="mouseenter:mouseleave" container="body" placement="auto">Keywords</button>
     <button type="button" class="btn btn-outline-primary content-btn" (click)="onSelect('socialReach')"
-    [class.active]="socialReach" [disabled]="socialReachDisabled">Social Reach</button>
+    [class.active]="socialReach" [disabled]="socialReachDisabled" ngbPopover="Requires 1 space"
+    triggers="mouseenter:mouseleave" container="body" placement="auto">Social Reach</button>
     <button type="button" class="btn btn-outline-primary content-btn" (click)="onSelect('engagement')"
-    [class.active]="engagement" [disabled]="engagementDisabled">Engagement</button>
+    [class.active]="engagement" [disabled]="engagementDisabled" ngbPopover="Requires 1 space"
+    triggers="mouseenter:mouseleave" container="body" placement="auto">Engagement</button>
     <button type="button" class="btn btn-outline-primary content-btn" (click)="onSelect('network')"
-    [class.active]="network" [disabled]="networkDisabled">Network</button>
+    [class.active]="network" [disabled]="networkDisabled" ngbPopover="Requires 1 space"
+    triggers="mouseenter:mouseleave" container="body" placement="auto">Network</button>
     <button type="button" class="btn btn-outline-primary content-btn" (click)="onSelect('twitterTopic')"
-    [class.active]="twitterTopic" [disabled]="twitterTopicDisabled">Twitter Topic Analysis</button>
+    [class.active]="twitterTopic" [disabled]="twitterTopicDisabled" ngbPopover="Requires 3 spaces"
+    triggers="mouseenter:mouseleave" container="body" placement="auto">Twitter Topic Analysis</button>
   </div>
   <div class="modal-footer">
     <span class="progressbar">
@@ -195,17 +201,23 @@
     <div class="modal-body">
       <p>Select components to fill up your second row</p>
       <button type="button" class="btn btn-outline-primary content-btn" (click)="onSelect2('socialActivity')"
-      [class.active]="socialActivity2" [disabled]="socialActivityDisabled2">Social Activity</button>
+      [class.active]="socialActivity2" [disabled]="socialActivityDisabled2" ngbPopover="Requires 2 spaces"
+      triggers="mouseenter:mouseleave" container="body" placement="auto">Social Activity</button>
       <button type="button" class="btn btn-outline-primary content-btn" (click)="onSelect2('keywords')"
-      [class.active]="keywords2" [disabled]="keywordsDisabled2">Keywords</button>
+      [class.active]="keywords2" [disabled]="keywordsDisabled2" ngbPopover="Requires 1 space"
+      triggers="mouseenter:mouseleave" container="body" placement="auto">Keywords</button>
       <button type="button" class="btn btn-outline-primary content-btn" (click)="onSelect2('socialReach')"
-      [class.active]="socialReach2" [disabled]="socialReachDisabled2">Social Reach</button>
+      [class.active]="socialReach2" [disabled]="socialReachDisabled2" ngbPopover="Requires 1 space"
+      triggers="mouseenter:mouseleave" container="body" placement="auto">Social Reach</button>
       <button type="button" class="btn btn-outline-primary content-btn" (click)="onSelect2('engagement')"
-      [class.active]="engagement2" [disabled]="engagementDisabled2">Engagement</button>
+      [class.active]="engagement2" [disabled]="engagementDisabled2" ngbPopover="Requires 1 space"
+      triggers="mouseenter:mouseleave" container="body" placement="auto">Engagement</button>
       <button type="button" class="btn btn-outline-primary content-btn" (click)="onSelect2('network')"
-      [class.active]="network2" [disabled]="networkDisabled2">Network</button>
+      [class.active]="network2" [disabled]="networkDisabled2" ngbPopover="Requires 1 space"
+      triggers="mouseenter:mouseleave" container="body" placement="auto">Network</button>
       <button type="button" class="btn btn-outline-primary content-btn" (click)="onSelect2('twitterTopic')"
-      [class.active]="twitterTopic2" [disabled]="twitterTopicDisabled2">Twitter Topic Analysis</button>
+      [class.active]="twitterTopic2" [disabled]="twitterTopicDisabled2" ngbPopover="Requires 3 spaces"
+      triggers="mouseenter:mouseleave" container="body" placement="auto">Twitter Topic Analysis</button>
     </div>
     <div class="modal-footer">
       <span class="progressbar">
