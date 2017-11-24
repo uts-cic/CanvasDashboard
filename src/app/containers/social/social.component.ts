@@ -81,22 +81,26 @@ export class SocialComponent implements OnInit {
   }
 
   setDisabledBtn(): void {
-    this.socialActivityDisabled = !this.socialActivity && this.occupiedSpace >= 2 || this.socialActivity2 ? true : false;
-    this.keywordsDisabled = !this.keywords && this.occupiedSpace >= 3 || this.keywords2 ? true : false;
-    this.socialReachDisabled = !this.socialReach && this.occupiedSpace >= 3 || this.socialReach2 ? true : false;
-    this.engagementDisabled = !this.engagement && this.occupiedSpace >= 3 || this.engagement2 ? true : false;
-    this.networkDisabled = !this.network && this.occupiedSpace >= 3 || this.network2 ? true : false;
-    this.twitterTopicDisabled = !this.twitterTopic && this.occupiedSpace >= 1 || this.twitterTopic2 ? true : false;
+    this.socialActivityDisabled = !this.socialActivity && this.occupiedSpace >= 2 || this.socialActivity2 ||
+    !this.socialActivityCheck ? true : false;
+    this.keywordsDisabled = !this.keywords && this.occupiedSpace >= 3 || this.keywords2 || !this.keywordsCheck ? true : false;
+    this.socialReachDisabled = !this.socialReach && this.occupiedSpace >= 3 || this.socialReach2 || !this.socialReachCheck ? true : false;
+    this.engagementDisabled = !this.engagement && this.occupiedSpace >= 3 || this.engagement2 || !this.engagementCheck ? true : false;
+    this.networkDisabled = !this.network && this.occupiedSpace >= 3 || this.network2 || !this.networkCheck ? true : false;
+    this.twitterTopicDisabled = !this.twitterTopic && this.occupiedSpace >= 1 || this.twitterTopic2 ||
+    !this.twitterTopicCheck ? true : false;
     this.rowOccupied = this.occupiedSpace > 0 ? true : false;
   }
 
   setDisabledBtn2(): void {
-    this.socialActivityDisabled2 = !this.socialActivity2 && this.occupiedSpace2 >= 2 || this.socialActivity ? true : false;
-    this.keywordsDisabled2 = !this.keywords2 && this.occupiedSpace2 >= 3 || this.keywords ? true : false;
-    this.socialReachDisabled2 = !this.socialReach2 && this.occupiedSpace2 >= 3 || this.socialReach ? true : false;
-    this.engagementDisabled2 = !this.engagement2 && this.occupiedSpace2 >= 3 || this.engagement ? true : false;
-    this.networkDisabled2 = !this.network2 && this.occupiedSpace2 >= 3 || this.network ? true : false;
-    this.twitterTopicDisabled2 = !this.twitterTopic2 && this.occupiedSpace2 >= 1 || this.twitterTopic ? true : false;
+    this.socialActivityDisabled2 = !this.socialActivity2 && this.occupiedSpace2 >= 2 || this.socialActivity ||
+    !this.socialActivityCheck ? true : false;
+    this.keywordsDisabled2 = !this.keywords2 && this.occupiedSpace2 >= 3 || this.keywords || !this.keywordsCheck ? true : false;
+    this.socialReachDisabled2 = !this.socialReach2 && this.occupiedSpace2 >= 3 || this.socialReach || !this.socialReachCheck ? true : false;
+    this.engagementDisabled2 = !this.engagement2 && this.occupiedSpace2 >= 3 || this.engagement || !this.engagementCheck ? true : false;
+    this.networkDisabled2 = !this.network2 && this.occupiedSpace2 >= 3 || this.network || !this.networkCheck ? true : false;
+    this.twitterTopicDisabled2 = !this.twitterTopic2 && this.occupiedSpace2 >= 1 || this.twitterTopic ||
+    !this.twitterTopicCheck ? true : false;
     this.rowOccupied2 = this.occupiedSpace2 > 0 ? true : false;
   }
 
