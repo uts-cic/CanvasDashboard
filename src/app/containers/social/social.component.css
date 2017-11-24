@@ -84,3 +84,7 @@
 .header-click {
   cursor: pointer;
 }
+
+.progressbar {
+  width: 100%;
+}
