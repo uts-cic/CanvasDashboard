@@ -78,7 +78,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  flex: 1;
+  text-align: center;
+  padding: 1rem;
 }
 
 .header-click {

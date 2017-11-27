@@ -21,7 +21,7 @@ export class SocialComponent implements OnInit {
   private networkDisabled = false;
   private twitterTopicDisabled = false;
   private occupiedSpace = 0;
-  private rowOccupied = false;
+  private rowFull = false;
   private socialActivity2 = false;
   private keywords2 = false;
   private socialReach2 = false;
@@ -35,7 +35,7 @@ export class SocialComponent implements OnInit {
   private networkDisabled2 = false;
   private twitterTopicDisabled2 = false;
   private occupiedSpace2 = 0;
-  private rowOccupied2 = false;
+  private rowFull2 = false;
   private socialActivityCheck = true;
   private keywordsCheck = true;
   private socialReachCheck = true;
@@ -44,6 +44,8 @@ export class SocialComponent implements OnInit {
   private twitterTopicCheck = true;
   private progressType = 'primary';
   private progressType2 = 'primary';
+  private emptyColSize = 'col-md-12';
+  private emptyColSize2 = 'col-md-12';
   private chartDesc = 'Lorem ipsum dolor sit amet, ei mei autem docendi nostrum, esse sonet vel cu.';
   private contentManDesc= 'Use this content manager to configure components available for selection.';
 
@@ -68,6 +70,7 @@ export class SocialComponent implements OnInit {
     if (this.network) { this.occupiedSpace += 1; }
     if (this.twitterTopic) { this.occupiedSpace += 3; }
     this.setProgressType();
+    this.setEmptySpace();
   }
 
   calculateOccupiedSpace2(): void {
@@ -89,7 +92,6 @@ export class SocialComponent implements OnInit {
     this.networkDisabled = !this.network && this.occupiedSpace >= 3 || this.network2 || !this.networkCheck ? true : false;
     this.twitterTopicDisabled = !this.twitterTopic && this.occupiedSpace >= 1 || this.twitterTopic2 ||
     !this.twitterTopicCheck ? true : false;
-    this.rowOccupied = this.occupiedSpace > 0 ? true : false;
   }
 
   setDisabledBtn2(): void {
@@ -101,7 +103,16 @@ export class SocialComponent implements OnInit {
     this.networkDisabled2 = !this.network2 && this.occupiedSpace2 >= 3 || this.network || !this.networkCheck ? true : false;
     this.twitterTopicDisabled2 = !this.twitterTopic2 && this.occupiedSpace2 >= 1 || this.twitterTopic ||
     !this.twitterTopicCheck ? true : false;
-    this.rowOccupied2 = this.occupiedSpace2 > 0 ? true : false;
+  }
+
+  setEmptySpace(): void {
+    this.emptyColSize = 'col-md-' + (12 - this.occupiedSpace * 4);
+    this.rowFull = this.occupiedSpace >= 3 ? true : false;
+  }
+
+  setEmptySpace2(): void {
+    this.emptyColSize2 = 'col-md-' + (12 - this.occupiedSpace2 * 4);
+    this.rowFull2 = this.occupiedSpace2 >= 3 ? true : false;
   }
 
   setProgressType(): void {
@@ -193,6 +204,7 @@ export class SocialComponent implements OnInit {
         this.setDisabledBtn();
         this.setDisabledBtn2();
         this.setProgressType();
+        this.setEmptySpace();
         break;
       case 'keywords':
         this.keywords = !this.keywords;
@@ -200,6 +212,7 @@ export class SocialComponent implements OnInit {
         this.setDisabledBtn();
         this.setDisabledBtn2();
         this.setProgressType();
+        this.setEmptySpace();
         break;
       case 'socialReach':
         this.socialReach = !this.socialReach;
@@ -207,6 +220,7 @@ export class SocialComponent implements OnInit {
         this.setDisabledBtn();
         this.setDisabledBtn2();
         this.setProgressType();
+        this.setEmptySpace();
         break;
       case 'engagement':
         this.engagement = !this.engagement;
@@ -214,6 +228,7 @@ export class SocialComponent implements OnInit {
         this.setDisabledBtn();
         this.setDisabledBtn2();
         this.setProgressType();
+        this.setEmptySpace();
         break;
       case 'network':
         this.network = !this.network;
@@ -221,6 +236,7 @@ export class SocialComponent implements OnInit {
         this.setDisabledBtn();
         this.setDisabledBtn2();
         this.setProgressType();
+        this.setEmptySpace();
         break;
       case 'twitterTopic':
         this.twitterTopic = !this.twitterTopic;
@@ -228,6 +244,7 @@ export class SocialComponent implements OnInit {
         this.setDisabledBtn();
         this.setDisabledBtn2();
         this.setProgressType();
+        this.setEmptySpace();
         break;
       default:
         break;
@@ -242,6 +259,7 @@ export class SocialComponent implements OnInit {
         this.setDisabledBtn();
         this.setDisabledBtn2();
         this.setProgressType2();
+        this.setEmptySpace2();
         break;
       case 'keywords':
         this.keywords2 = !this.keywords2;
@@ -249,6 +267,7 @@ export class SocialComponent implements OnInit {
         this.setDisabledBtn();
         this.setDisabledBtn2();
         this.setProgressType2();
+        this.setEmptySpace2();
         break;
       case 'socialReach':
         this.socialReach2 = !this.socialReach2;
@@ -256,6 +275,7 @@ export class SocialComponent implements OnInit {
         this.setDisabledBtn();
         this.setDisabledBtn2();
         this.setProgressType2();
+        this.setEmptySpace2();
         break;
       case 'engagement':
         this.engagement2 = !this.engagement2;
@@ -263,6 +283,7 @@ export class SocialComponent implements OnInit {
         this.setDisabledBtn();
         this.setDisabledBtn2();
         this.setProgressType2();
+        this.setEmptySpace2();
         break;
       case 'network':
         this.network2 = !this.network2;
@@ -270,6 +291,7 @@ export class SocialComponent implements OnInit {
         this.setDisabledBtn();
         this.setDisabledBtn2();
         this.setProgressType2();
+        this.setEmptySpace2();
         break;
       case 'twitterTopic':
         this.twitterTopic2 = !this.twitterTopic2;
@@ -277,6 +299,7 @@ export class SocialComponent implements OnInit {
         this.setDisabledBtn();
         this.setDisabledBtn2();
         this.setProgressType2();
+        this.setEmptySpace2();
         break;
       default:
         break;
