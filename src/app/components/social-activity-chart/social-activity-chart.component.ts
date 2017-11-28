@@ -22,7 +22,7 @@ export class SocialActivityChartComponent implements OnInit {
     this.options = {
       chart: {
         type: 'lineChart',
-        height: 450,
+        height: 300,
         margin : {
           top: 20,
           right: 20,

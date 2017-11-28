@@ -1,12 +1,13 @@
-<div class="card-body text-center">
-  <div class="btn-group" ngbRadioGroup name="radioBasic" [(ngModel)]="selected" (ngModelChange)="onSelect(selected)">
-    <label ngbButtonLabel class="btn-outline-primary">
+<div class="card-body text-center component-body">
+  <div class="btn-group engagement-btn" ngbRadioGroup name="radioBasic" [(ngModel)]="selected" 
+  (ngModelChange)="onSelect(selected)">
+    <label ngbButtonLabel class="btn-outline-primary btn-sm">
       <input ngbButton type="radio" value="Facebook">Facebook
     </label>
-    <label ngbButtonLabel class="btn-outline-primary">
+    <label ngbButtonLabel class="btn-outline-primary btn-sm">
       <input ngbButton type="radio" value="Twitter">Twitter
     </label>
-    <label ngbButtonLabel class="btn-outline-primary">
+    <label ngbButtonLabel class="btn-outline-primary btn-sm">
       <input ngbButton type="radio" value="Slack">Slack
     </label>
   </div>

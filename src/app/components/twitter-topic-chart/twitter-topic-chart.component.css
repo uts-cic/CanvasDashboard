@@ -1,5 +1,6 @@
 .search-bar {
-  margin: 0.5em auto;
-  margin-bottom: 1em;
+  margin: 0.5rem auto;
+  margin-bottom: 0.5rem;
+  margin-top: 0.75rem;
   width: 40%;
 }

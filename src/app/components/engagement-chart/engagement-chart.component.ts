@@ -22,8 +22,13 @@ export class EngagementChartComponent implements OnInit {
     this.options = {
       chart: {
         type: 'pieChart',
-        height: 350,
-        margin: 0,
+        height: 250,
+        margin: {
+          top: 0,
+          right: 0,
+          bottom: 0,
+          left: 0
+        },
         donut: true,
         x: d => d.key,
         y: d => d.y,

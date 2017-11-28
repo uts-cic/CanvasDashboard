@@ -37,12 +37,12 @@ export class TwitterTopicChartComponent implements OnInit {
     this.options = {
       chart: {
         type: 'lineChart',
-        height: 450,
+        height: 250,
         margin : {
           top: 30,
           right: 30,
           bottom: 40,
-          left: 60
+          left: 70
         },
         x: d => d[0],
         y: d => d[1],

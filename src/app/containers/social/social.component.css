@@ -2,32 +2,14 @@
   overflow: auto;
 }
 
-.equal {  
-  display: -webkit-flex;
-  display: flex;
-}
-
-.full-height {
-  min-height: 95%;
-}
-
-.keywords {
-  max-height: 30rem;
-  overflow-y: scroll;
-}
-
-.social-activity {
-  max-height: 30rem;
-  overflow-y: hidden;
+.component-body {
+  height: 19.5rem;
+  overflow: auto;
+  padding: 0;
 }
 
 .card {
-  margin-bottom: 2rem;
-}
-
-.vertical-center {
-  display: flex;
-  align-items: center;
+  margin-bottom: 1rem;
 }
 
 .content-btn {
@@ -40,6 +22,7 @@
   padding-left: 0.5rem;
   padding-right: 0;
   margin-left: 15rem;
+  position: fixed;
 }
 
 .sidebar {
@@ -74,9 +57,8 @@
 
 .empty-card {
   cursor: pointer;
-  height: 20rem;
+  height: 22.7rem;
   display: flex;
-  align-items: center;
   justify-content: center;
   text-align: center;
   padding: 1rem;

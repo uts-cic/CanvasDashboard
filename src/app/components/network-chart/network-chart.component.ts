@@ -19,8 +19,14 @@ export class NetworkChartComponent implements OnInit {
     this.options = {
       chart: {
         type: 'forceDirectedGraph',
-        height: 350,
-        margin: { right: 95 },
+        height: 300,
+        width: 375,
+        margin: {
+          top: 0,
+          right: 0,
+          bottom: 0,
+          left: 0,
+        },
         color: d => color(d.group),
         nodeExtras: function(node) {
           node

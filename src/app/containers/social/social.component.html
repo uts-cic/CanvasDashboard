@@ -30,9 +30,9 @@
     </div>
   </div>
   <div class="col-md-10 content">
-    <div class="row equal">
+    <div class="row">
       <div *ngIf="socialActivity" class="col-md-8">
-        <div class="card full-height">
+        <div class="card">
           <div class="card-header header-click" (click)="open(content1)" [ngbPopover]="chartDesc"
           triggers="mouseenter:mouseleave" container="body" placement="auto">
             Social Activity
@@ -41,7 +41,7 @@
         </div>
       </div>
       <div *ngIf="keywords" class="col-md-4">
-        <div class="card full-height">
+        <div class="card">
           <div class="card-header header-click" (click)="open(content1)" [ngbPopover]="chartDesc"
           triggers="mouseenter:mouseleave" container="body" placement="auto">
             Keywords
@@ -50,7 +50,7 @@
         </div>
       </div>
       <div *ngIf="socialReach" class="col-md-4">
-        <div class="card full-height">
+        <div class="card">
           <div class="card-header header-click" (click)="open(content1)" [ngbPopover]="chartDesc"
           triggers="mouseenter:mouseleave" container="body" placement="auto">
             Social Reach
@@ -59,7 +59,7 @@
         </div>
       </div>
       <div *ngIf="engagement" class="col-md-4">
-        <div class="card full-height">
+        <div class="card">
           <div class="card-header header-click" (click)="open(content1)" [ngbPopover]="chartDesc"
           triggers="mouseenter:mouseleave" container="body" placement="auto">
             Engagement
@@ -68,7 +68,7 @@
         </div>
       </div>
       <div *ngIf="network" class="col-md-4">
-        <div class="card full-height">
+        <div class="card">
           <div class="card-header header-click" (click)="open(content1)" [ngbPopover]="chartDesc"
           triggers="mouseenter:mouseleave" container="body" placement="auto">
             Network
@@ -77,7 +77,7 @@
         </div>
       </div>
       <div *ngIf="twitterTopic" class="col-md-12">
-        <div class="card full-height">
+        <div class="card">
           <div class="card-header header-click" (click)="open(content1)" [ngbPopover]="chartDesc"
           triggers="mouseenter:mouseleave" container="body" placement="auto">
             Twitter Topic Analysis

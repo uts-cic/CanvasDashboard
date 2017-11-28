@@ -18,7 +18,13 @@ export class SocialReachChartComponent implements OnInit {
     this.options = {
       chart: {
         type: 'pieChart',
-        height: 400,
+        height: 300,
+        margin: {
+          top: 5,
+          right: 0,
+          bottom: 0,
+          left: 0
+        },
         x: d => d.key,
         y: d => d.y,
         showLabels: true,
