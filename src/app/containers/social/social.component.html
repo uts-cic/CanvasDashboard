@@ -6,23 +6,23 @@
         <div class="content-manager">
           <div class="content-manager-section">
             <h6>Activity</h6>
-            <mat-checkbox [(checked)]="socialActivityCheck" (change)="onCheck('socialActivity')" [ngbPopover]="chartDesc"
+            <mat-checkbox [(checked)]="content.socialActivityCheck" (change)="onCheck('socialActivity')" [ngbPopover]="chartDesc"
             triggers="mouseenter:mouseleave" container="body" placement="right">Social activity</mat-checkbox>
-            <mat-checkbox [(checked)]="keywordsCheck" (change)="onCheck('keywords')" [ngbPopover]="chartDesc"
+            <mat-checkbox [(checked)]="content.keywordsCheck" (change)="onCheck('keywords')" [ngbPopover]="chartDesc"
             triggers="mouseenter:mouseleave" container="body" placement="right">Keywords</mat-checkbox>
           </div>
           <div class="content-manager-section">
           <h6>Network</h6>
-            <mat-checkbox [(checked)]="socialReachCheck" (change)="onCheck('socialReach')" [ngbPopover]="chartDesc"
+            <mat-checkbox [(checked)]="content.socialReachCheck" (change)="onCheck('socialReach')" [ngbPopover]="chartDesc"
             triggers="mouseenter:mouseleave" container="body" placement="right">Social reach</mat-checkbox>
-            <mat-checkbox [(checked)]="engagementCheck" (change)="onCheck('engagement')" [ngbPopover]="chartDesc"
+            <mat-checkbox [(checked)]="content.engagementCheck" (change)="onCheck('engagement')" [ngbPopover]="chartDesc"
             triggers="mouseenter:mouseleave" container="body" placement="right">Engagement</mat-checkbox>
-            <mat-checkbox [(checked)]="networkCheck" (change)="onCheck('network')" [ngbPopover]="chartDesc"
+            <mat-checkbox [(checked)]="content.networkCheck" (change)="onCheck('network')" [ngbPopover]="chartDesc"
             triggers="mouseenter:mouseleave" container="body" placement="right">Network</mat-checkbox>
           </div>
           <div class="content-manager-section">
             <h6>Topic</h6>
-            <mat-checkbox [(checked)]="twitterTopicCheck" (change)="onCheck('twitterTopic')" [ngbPopover]="chartDesc"
+            <mat-checkbox [(checked)]="content.twitterTopicCheck" (change)="onCheck('twitterTopic')" [ngbPopover]="chartDesc"
             triggers="mouseenter:mouseleave" container="body" placement="right">Twitter topic analysis</mat-checkbox>
           </div>
         </div>
@@ -31,7 +31,7 @@
   </div>
   <div class="col-md-10 content">
     <div class="row">
-      <div *ngIf="socialActivity" class="col-md-8">
+      <div *ngIf="content.socialActivity" class="col-md-8">
         <div class="card">
           <div class="card-header header-click" (click)="open(content1)" [ngbPopover]="chartDesc"
           triggers="mouseenter:mouseleave" container="body" placement="auto">
@@ -40,7 +40,7 @@
           <app-social-activity-chart></app-social-activity-chart>
         </div>
       </div>
-      <div *ngIf="keywords" class="col-md-4">
+      <div *ngIf="content.keywords" class="col-md-4">
         <div class="card">
           <div class="card-header header-click" (click)="open(content1)" [ngbPopover]="chartDesc"
           triggers="mouseenter:mouseleave" container="body" placement="auto">
@@ -49,7 +49,7 @@
           <app-keywords></app-keywords>
         </div>
       </div>
-      <div *ngIf="socialReach" class="col-md-4">
+      <div *ngIf="content.socialReach" class="col-md-4">
         <div class="card">
           <div class="card-header header-click" (click)="open(content1)" [ngbPopover]="chartDesc"
           triggers="mouseenter:mouseleave" container="body" placement="auto">
@@ -58,7 +58,7 @@
           <app-social-reach-chart></app-social-reach-chart>
         </div>
       </div>
-      <div *ngIf="engagement" class="col-md-4">
+      <div *ngIf="content.engagement" class="col-md-4">
         <div class="card">
           <div class="card-header header-click" (click)="open(content1)" [ngbPopover]="chartDesc"
           triggers="mouseenter:mouseleave" container="body" placement="auto">
@@ -67,7 +67,7 @@
           <app-engagement-chart></app-engagement-chart>
         </div>
       </div>
-      <div *ngIf="network" class="col-md-4">
+      <div *ngIf="content.network" class="col-md-4">
         <div class="card">
           <div class="card-header header-click" (click)="open(content1)" [ngbPopover]="chartDesc"
           triggers="mouseenter:mouseleave" container="body" placement="auto">
@@ -76,7 +76,7 @@
           <app-network-chart></app-network-chart>
         </div>
       </div>
-      <div *ngIf="twitterTopic" class="col-md-12">
+      <div *ngIf="content.twitterTopic" class="col-md-12">
         <div class="card">
           <div class="card-header header-click" (click)="open(content1)" [ngbPopover]="chartDesc"
           triggers="mouseenter:mouseleave" container="body" placement="auto">
@@ -94,7 +94,7 @@
     </div>
     
     <div class="row equal">
-      <div *ngIf="socialActivity2" class="col-md-8">
+      <div *ngIf="content.socialActivity2" class="col-md-8">
         <div class="card full-height">
           <div class="card-header header-click" (click)="open(content2)" [ngbPopover]="chartDesc"
           triggers="mouseenter:mouseleave" container="body" placement="auto">
@@ -103,7 +103,7 @@
           <app-social-activity-chart></app-social-activity-chart>
         </div>
       </div>
-      <div *ngIf="keywords2" class="col-md-4">
+      <div *ngIf="content.keywords2" class="col-md-4">
         <div class="card full-height">
           <div class="card-header header-click" (click)="open(content2)" [ngbPopover]="chartDesc"
           triggers="mouseenter:mouseleave" container="body" placement="auto">
@@ -112,7 +112,7 @@
           <app-keywords></app-keywords>
         </div>
       </div>
-      <div *ngIf="socialReach2" class="col-md-4">      
+      <div *ngIf="content.socialReach2" class="col-md-4">      
         <div class="card full-height">
           <div class="card-header header-click" (click)="open(content2)" [ngbPopover]="chartDesc"
           triggers="mouseenter:mouseleave" container="body" placement="auto">
@@ -121,7 +121,7 @@
           <app-social-reach-chart></app-social-reach-chart>
         </div>
       </div>
-      <div *ngIf="engagement2" class="col-md-4">
+      <div *ngIf="content.engagement2" class="col-md-4">
         <div class="card full-height">
           <div class="card-header header-click" (click)="open(content2)" [ngbPopover]="chartDesc"
           triggers="mouseenter:mouseleave" container="body" placement="auto">
@@ -130,7 +130,7 @@
           <app-engagement-chart></app-engagement-chart>
         </div>
       </div>
-      <div *ngIf="network2" class="col-md-4">
+      <div *ngIf="content.network2" class="col-md-4">
         <div class="card full-height">
           <div class="card-header header-click" (click)="open(content2)" [ngbPopover]="chartDesc"
           triggers="mouseenter:mouseleave" container="body" placement="auto">
@@ -139,7 +139,7 @@
           <app-network-chart></app-network-chart>
         </div>
       </div>
-      <div *ngIf="twitterTopic2" class="col-md-12">
+      <div *ngIf="content.twitterTopic2" class="col-md-12">
         <div class="card full-height">
           <div class="card-header header-click" (click)="open(content2)" [ngbPopover]="chartDesc"
           triggers="mouseenter:mouseleave" container="body" placement="auto">
@@ -168,22 +168,22 @@
   <div class="modal-body">
     <p>Select components to fill up your first row</p>
     <button type="button" class="btn btn-outline-primary content-btn" (click)="onSelect('socialActivity')"
-    [class.active]="socialActivity" [disabled]="socialActivityDisabled" ngbPopover="Requires 2 spaces"
+    [class.active]="content.socialActivity" [disabled]="socialActivityDisabled" ngbPopover="Requires 2 spaces"
     triggers="mouseenter:mouseleave" container="body" placement="auto">Social Activity</button>
     <button type="button" class="btn btn-outline-primary content-btn" (click)="onSelect('keywords')"
-    [class.active]="keywords" [disabled]="keywordsDisabled" ngbPopover="Requires 1 space"
+    [class.active]="content.keywords" [disabled]="keywordsDisabled" ngbPopover="Requires 1 space"
     triggers="mouseenter:mouseleave" container="body" placement="auto">Keywords</button>
     <button type="button" class="btn btn-outline-primary content-btn" (click)="onSelect('socialReach')"
-    [class.active]="socialReach" [disabled]="socialReachDisabled" ngbPopover="Requires 1 space"
+    [class.active]="content.socialReach" [disabled]="socialReachDisabled" ngbPopover="Requires 1 space"
     triggers="mouseenter:mouseleave" container="body" placement="auto">Social Reach</button>
     <button type="button" class="btn btn-outline-primary content-btn" (click)="onSelect('engagement')"
-    [class.active]="engagement" [disabled]="engagementDisabled" ngbPopover="Requires 1 space"
+    [class.active]="content.engagement" [disabled]="engagementDisabled" ngbPopover="Requires 1 space"
     triggers="mouseenter:mouseleave" container="body" placement="auto">Engagement</button>
     <button type="button" class="btn btn-outline-primary content-btn" (click)="onSelect('network')"
-    [class.active]="network" [disabled]="networkDisabled" ngbPopover="Requires 1 space"
+    [class.active]="content.network" [disabled]="networkDisabled" ngbPopover="Requires 1 space"
     triggers="mouseenter:mouseleave" container="body" placement="auto">Network</button>
     <button type="button" class="btn btn-outline-primary content-btn" (click)="onSelect('twitterTopic')"
-    [class.active]="twitterTopic" [disabled]="twitterTopicDisabled" ngbPopover="Requires 3 spaces"
+    [class.active]="content.twitterTopic" [disabled]="twitterTopicDisabled" ngbPopover="Requires 3 spaces"
     triggers="mouseenter:mouseleave" container="body" placement="auto">Twitter Topic Analysis</button>
   </div>
   <div class="modal-footer">
@@ -205,22 +205,22 @@
     <div class="modal-body">
       <p>Select components to fill up your second row</p>
       <button type="button" class="btn btn-outline-primary content-btn" (click)="onSelect2('socialActivity')"
-      [class.active]="socialActivity2" [disabled]="socialActivityDisabled2" ngbPopover="Requires 2 spaces"
+      [class.active]="content.socialActivity2" [disabled]="socialActivityDisabled2" ngbPopover="Requires 2 spaces"
       triggers="mouseenter:mouseleave" container="body" placement="auto">Social Activity</button>
       <button type="button" class="btn btn-outline-primary content-btn" (click)="onSelect2('keywords')"
-      [class.active]="keywords2" [disabled]="keywordsDisabled2" ngbPopover="Requires 1 space"
+      [class.active]="content.keywords2" [disabled]="keywordsDisabled2" ngbPopover="Requires 1 space"
       triggers="mouseenter:mouseleave" container="body" placement="auto">Keywords</button>
       <button type="button" class="btn btn-outline-primary content-btn" (click)="onSelect2('socialReach')"
-      [class.active]="socialReach2" [disabled]="socialReachDisabled2" ngbPopover="Requires 1 space"
+      [class.active]="content.socialReach2" [disabled]="socialReachDisabled2" ngbPopover="Requires 1 space"
       triggers="mouseenter:mouseleave" container="body" placement="auto">Social Reach</button>
       <button type="button" class="btn btn-outline-primary content-btn" (click)="onSelect2('engagement')"
-      [class.active]="engagement2" [disabled]="engagementDisabled2" ngbPopover="Requires 1 space"
+      [class.active]="content.engagement2" [disabled]="engagementDisabled2" ngbPopover="Requires 1 space"
       triggers="mouseenter:mouseleave" container="body" placement="auto">Engagement</button>
       <button type="button" class="btn btn-outline-primary content-btn" (click)="onSelect2('network')"
-      [class.active]="network2" [disabled]="networkDisabled2" ngbPopover="Requires 1 space"
+      [class.active]="content.network2" [disabled]="networkDisabled2" ngbPopover="Requires 1 space"
       triggers="mouseenter:mouseleave" container="body" placement="auto">Network</button>
       <button type="button" class="btn btn-outline-primary content-btn" (click)="onSelect2('twitterTopic')"
-      [class.active]="twitterTopic2" [disabled]="twitterTopicDisabled2" ngbPopover="Requires 3 spaces"
+      [class.active]="content.twitterTopic2" [disabled]="twitterTopicDisabled2" ngbPopover="Requires 3 spaces"
       triggers="mouseenter:mouseleave" container="body" placement="auto">Twitter Topic Analysis</button>
     </div>
     <div class="modal-footer">

@@ -1,9 +1,11 @@
 import { InMemoryDbService } from 'angular-in-memory-web-api';
+import { CONTENTS } from '../data/mock-content';
 
 export class InMemoryDataService implements InMemoryDbService {
   createDb() {
     const socialActivity = sinAndCos();
-    return {socialActivity};
+    const contents = CONTENTS;
+    return { socialActivity, contents };
   }
 
 }

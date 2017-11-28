@@ -22,6 +22,7 @@ import { EngagementChartComponent } from './components/engagement-chart/engageme
 import { NetworkChartComponent } from './components/network-chart/network-chart.component';
 import { TwitterTopicChartComponent } from './components/twitter-topic-chart/twitter-topic-chart.component';
 import { SocialActivityService } from './domain/services/social-activity/social-activity.service';
+import { ContentService } from './domain/services/content/content.service';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,7 @@ import { SocialActivityService } from './domain/services/social-activity/social-
     ),
     MatCheckboxModule
   ],
-  providers: [SocialActivityService],
+  providers: [SocialActivityService, ContentService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
