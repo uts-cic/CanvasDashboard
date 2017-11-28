@@ -88,7 +88,7 @@
       <div *ngIf="!rowFull" [class]="emptyColSize">
         <div class="card empty-card full-height" (click)="open(content1)">
           <h3 class="card-title">Click here to select your content</h3>
-          <p>Maximum of 3 spaces</p>
+          <p>{{emptySpaceText}}</p>
         </div>
       </div>
     </div>
@@ -151,7 +151,7 @@
       <div *ngIf="!rowFull2" [class]="emptyColSize2">
         <div class="card empty-card full-height" (click)="open(content2)">
           <h3 class="card-title">Click here to select your content</h3>
-          <p>Maximum of 3 spaces</p>
+          <p>{{emptySpaceText2}}</p>
         </div>
       </div>
     </div>

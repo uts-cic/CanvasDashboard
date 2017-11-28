@@ -46,6 +46,8 @@ export class SocialComponent implements OnInit {
   private progressType2 = 'primary';
   private emptyColSize = 'col-md-12';
   private emptyColSize2 = 'col-md-12';
+  private emptySpaceText = '3 of 3 spaces left';
+  private emptySpaceText2 = '3 of 3 spaces left';
   private chartDesc = 'Lorem ipsum dolor sit amet, ei mei autem docendi nostrum, esse sonet vel cu.';
   private contentManDesc= 'Use this content manager to configure components available for selection.';
 
@@ -108,11 +110,13 @@ export class SocialComponent implements OnInit {
   setEmptySpace(): void {
     this.emptyColSize = 'col-md-' + (12 - this.occupiedSpace * 4);
     this.rowFull = this.occupiedSpace >= 3 ? true : false;
+    this.emptySpaceText = (3 - this.occupiedSpace) + ' of 3 spaces left';
   }
 
   setEmptySpace2(): void {
     this.emptyColSize2 = 'col-md-' + (12 - this.occupiedSpace2 * 4);
     this.rowFull2 = this.occupiedSpace2 >= 3 ? true : false;
+    this.emptySpaceText2 = (3 - this.occupiedSpace2) + ' of 3 spaces left';
   }
 
   setProgressType(): void {
