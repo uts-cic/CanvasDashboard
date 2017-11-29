@@ -160,86 +160,77 @@ export class SocialComponent implements OnInit {
   }
 
   onCheck(component: string): void {
-    switch (component) {
-      case 'socialActivity':
-        this.content.socialActivityCheck = !this.content.socialActivityCheck;
-        this.updateContent();
-        if (this.content.socialActivity) { this.onSelect('socialActivity'); }
-        if (this.content.socialActivity2) { this.onSelect2('socialActivity'); }
-        this.socialActivityDisabled = this.content.socialActivityCheck ? false : true;
-        this.socialActivityDisabled2 = this.content.socialActivityCheck ? false : true;
-        break;
-      case 'keywords':
-        this.content.keywordsCheck = !this.content.keywordsCheck;
-        if (this.content.keywords) { this.onSelect('keywords'); }
-        if (this.content.keywords2) { this.onSelect2('keywords'); }
-        this.keywordsDisabled = this.content.keywordsCheck ? false : true;
-        this.keywordsDisabled2 = this.content.keywordsCheck ? false : true;
-        break;
-      case 'socialReach':
-        this.content.socialReachCheck = !this.content.socialReachCheck;
-        if (this.content.socialReach) { this.onSelect('socialReach'); }
-        if (this.content.socialReach2) { this.onSelect2('socialReach'); }
-        this.socialReachDisabled = this.content.socialReachCheck ? false : true;
-        this.socialReachDisabled2 = this.content.socialReachCheck ? false : true;
-        break;
-      case 'engagement':
-        this.content.engagementCheck = !this.content.engagementCheck;
-        if (this.content.engagement) { this.onSelect('engagement'); }
-        if (this.content.engagement2) { this.onSelect2('engagement'); }
-        this.engagementDisabled = this.content.engagementCheck ? false : true;
-        this.engagementDisabled2 = this.content.engagementCheck ? false : true;
-        break;
-      case 'network':
-        this.content.networkCheck = !this.content.networkCheck;
-        if (this.content.network) { this.onSelect('network'); }
-        if (this.content.network2) { this.onSelect2('network'); }
-        this.networkDisabled = this.content.networkCheck ? false : true;
-        this.networkDisabled2 = this.content.networkCheck ? false : true;
-        break;
-      case 'twitterTopic':
-        this.content.twitterTopicCheck = !this.content.twitterTopicCheck;
-        if (this.content.twitterTopic) { this.onSelect('twitterTopic'); }
-        if (this.content.twitterTopic2) { this.onSelect2('twitterTopic'); }
-        this.twitterTopicDisabled = this.content.twitterTopicCheck ? false : true;
-        this.twitterTopicDisabled2 = this.content.twitterTopicCheck ? false : true;
-        break;
-      default:
-        break;
+    if (component === 'socialActivity') {
+      this.content.socialActivityCheck = !this.content.socialActivityCheck;
+      if (this.content.socialActivity) { this.onSelect('socialActivity'); }
+      if (this.content.socialActivity2) { this.onSelect2('socialActivity'); }
+      this.socialActivityDisabled = this.content.socialActivityCheck ? false : true;
+      this.socialActivityDisabled2 = this.content.socialActivityCheck ? false : true;
     }
+    if (component === 'keywords') {
+      this.content.keywordsCheck = !this.content.keywordsCheck;
+      if (this.content.keywords) { this.onSelect('keywords'); }
+      if (this.content.keywords2) { this.onSelect2('keywords'); }
+      this.keywordsDisabled = this.content.keywordsCheck ? false : true;
+      this.keywordsDisabled2 = this.content.keywordsCheck ? false : true;
+    }
+    if (component === 'socialReach') {
+      this.content.socialReachCheck = !this.content.socialReachCheck;
+      if (this.content.socialReach) { this.onSelect('socialReach'); }
+      if (this.content.socialReach2) { this.onSelect2('socialReach'); }
+      this.socialReachDisabled = this.content.socialReachCheck ? false : true;
+      this.socialReachDisabled2 = this.content.socialReachCheck ? false : true;
+    }
+    if (component === 'engagement') {
+      this.content.engagementCheck = !this.content.engagementCheck;
+      if (this.content.engagement) { this.onSelect('engagement'); }
+      if (this.content.engagement2) { this.onSelect2('engagement'); }
+      this.engagementDisabled = this.content.engagementCheck ? false : true;
+      this.engagementDisabled2 = this.content.engagementCheck ? false : true;
+    }
+    if (component === 'network') {
+      this.content.networkCheck = !this.content.networkCheck;
+      if (this.content.network) { this.onSelect('network'); }
+      if (this.content.network2) { this.onSelect2('network'); }
+      this.networkDisabled = this.content.networkCheck ? false : true;
+      this.networkDisabled2 = this.content.networkCheck ? false : true;
+    }
+    if (component === 'twitterTopic') {
+      this.content.twitterTopicCheck = !this.content.twitterTopicCheck;
+      if (this.content.twitterTopic) { this.onSelect('twitterTopic'); }
+      if (this.content.twitterTopic2) { this.onSelect2('twitterTopic'); }
+      this.twitterTopicDisabled = this.content.twitterTopicCheck ? false : true;
+      this.twitterTopicDisabled2 = this.content.twitterTopicCheck ? false : true;
+    }
+    this.updateContent();
   }
 
   onSelect(component: string): void {
     if (component === 'socialActivity') {
       this.content.socialActivity = !this.content.socialActivity;
-      this.updateContent();
       this.content.socialActivity ? this.occupiedSpace += 2 : this.occupiedSpace -= 2;
     }
     if (component === 'keywords') {
       this.content.keywords = !this.content.keywords;
-      this.updateContent();
       this.content.keywords ? this.occupiedSpace += 1 : this.occupiedSpace -= 1;
     }
     if (component === 'socialReach') {
       this.content.socialReach = !this.content.socialReach;
-      this.updateContent();
       this.content.socialReach ? this.occupiedSpace += 1 : this.occupiedSpace -= 1;
     }
     if (component === 'engagement') {
       this.content.engagement = !this.content.engagement;
-      this.updateContent();
       this.content.engagement ? this.occupiedSpace += 1 : this.occupiedSpace -= 1;
     }
     if (component === 'network') {
       this.content.network = !this.content.network;
-      this.updateContent();
       this.content.network ? this.occupiedSpace += 1 : this.occupiedSpace -= 1;
     }
     if (component === 'twitterTopic') {
       this.content.twitterTopic = !this.content.twitterTopic;
-      this.updateContent();
       this.content.twitterTopic ? this.occupiedSpace += 3 : this.occupiedSpace -= 3;
     }
+    this.updateContent();
     this.setDisabledBtn();
     this.setDisabledBtn2();
     this.setProgressType();
@@ -249,34 +240,29 @@ export class SocialComponent implements OnInit {
   onSelect2(component: string): void {
     if (component === 'socialActivity') {
       this.content.socialActivity2 = !this.content.socialActivity2;
-      this.updateContent();
       this.content.socialActivity2 ? this.occupiedSpace2 += 2 : this.occupiedSpace2 -= 2;
     }
     if (component === 'keywords') {
       this.content.keywords2 = !this.content.keywords2;
-      this.updateContent();
       this.content.keywords2 ? this.occupiedSpace2 += 1 : this.occupiedSpace2 -= 1;
     }
     if (component === 'socialReach') {
       this.content.socialReach2 = !this.content.socialReach2;
-      this.updateContent();
       this.content.socialReach2 ? this.occupiedSpace2 += 1 : this.occupiedSpace2 -= 1;
     }
     if (component === 'engagement') {
       this.content.engagement2 = !this.content.engagement2;
-      this.updateContent();
       this.content.engagement2 ? this.occupiedSpace2 += 1 : this.occupiedSpace2 -= 1;
     }
     if (component === 'network') {
       this.content.network2 = !this.content.network2;
-      this.updateContent();
       this.content.network2 ? this.occupiedSpace2 += 1 : this.occupiedSpace2 -= 1;
     }
     if (component === 'twitterTopic') {
       this.content.twitterTopic2 = !this.content.twitterTopic2;
-      this.updateContent();
       this.content.twitterTopic2 ? this.occupiedSpace2 += 3 : this.occupiedSpace2 -= 3;
     }
+    this.updateContent();
     this.setDisabledBtn();
     this.setDisabledBtn2();
     this.setProgressType2();
