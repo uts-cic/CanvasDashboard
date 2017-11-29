@@ -23,6 +23,7 @@ import { NetworkChartComponent } from './components/network-chart/network-chart.
 import { TwitterTopicChartComponent } from './components/twitter-topic-chart/twitter-topic-chart.component';
 import { SocialActivityService } from './domain/services/social-activity/social-activity.service';
 import { ContentService } from './domain/services/content/content.service';
+import { SocialStudentComponent } from './containers/social-student/social-student.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { ContentService } from './domain/services/content/content.service';
     SocialReachChartComponent,
     EngagementChartComponent,
     NetworkChartComponent,
-    TwitterTopicChartComponent
+    TwitterTopicChartComponent,
+    SocialStudentComponent
   ],
   imports: [
     BrowserModule,
