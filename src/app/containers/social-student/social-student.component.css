@@ -1,0 +1,18 @@
+.social-student-container {
+  padding: 1rem;
+  width: 100%;
+  position: fixed;
+}
+
+.empty-card {
+  cursor: pointer;
+  height: 22.7rem;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding: 1rem;
+}
+
+.card {
+  margin-bottom: 1rem;
+}

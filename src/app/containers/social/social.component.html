@@ -86,7 +86,7 @@
         </div>
       </div>
       <div *ngIf="!rowFull" [class]="emptyColSize">
-        <div class="card empty-card full-height" (click)="open(content1)">
+        <div class="card empty-card" (click)="open(content1)">
           <h3 class="card-title">Click here to select your content</h3>
           <p>{{emptySpaceText}}</p>
         </div>
@@ -95,7 +95,7 @@
     
     <div class="row equal">
       <div *ngIf="content.socialActivity2" class="col-md-8">
-        <div class="card full-height">
+        <div class="card">
           <div class="card-header header-click" (click)="open(content2)" [ngbPopover]="chartDesc"
           triggers="mouseenter:mouseleave" container="body" placement="auto">
             Social Activity
@@ -104,7 +104,7 @@
         </div>
       </div>
       <div *ngIf="content.keywords2" class="col-md-4">
-        <div class="card full-height">
+        <div class="card">
           <div class="card-header header-click" (click)="open(content2)" [ngbPopover]="chartDesc"
           triggers="mouseenter:mouseleave" container="body" placement="auto">
             Keywords
@@ -113,7 +113,7 @@
         </div>
       </div>
       <div *ngIf="content.socialReach2" class="col-md-4">      
-        <div class="card full-height">
+        <div class="card">
           <div class="card-header header-click" (click)="open(content2)" [ngbPopover]="chartDesc"
           triggers="mouseenter:mouseleave" container="body" placement="auto">
             Social Reach
@@ -122,7 +122,7 @@
         </div>
       </div>
       <div *ngIf="content.engagement2" class="col-md-4">
-        <div class="card full-height">
+        <div class="card">
           <div class="card-header header-click" (click)="open(content2)" [ngbPopover]="chartDesc"
           triggers="mouseenter:mouseleave" container="body" placement="auto">
             Engagement
@@ -131,7 +131,7 @@
         </div>
       </div>
       <div *ngIf="content.network2" class="col-md-4">
-        <div class="card full-height">
+        <div class="card">
           <div class="card-header header-click" (click)="open(content2)" [ngbPopover]="chartDesc"
           triggers="mouseenter:mouseleave" container="body" placement="auto">
             Network
@@ -140,7 +140,7 @@
         </div>
       </div>
       <div *ngIf="content.twitterTopic2" class="col-md-12">
-        <div class="card full-height">
+        <div class="card">
           <div class="card-header header-click" (click)="open(content2)" [ngbPopover]="chartDesc"
           triggers="mouseenter:mouseleave" container="body" placement="auto">
             Twitter Topic Analysis
@@ -149,7 +149,7 @@
         </div>
       </div>
       <div *ngIf="!rowFull2" [class]="emptyColSize2">
-        <div class="card empty-card full-height" (click)="open(content2)">
+        <div class="card empty-card" (click)="open(content2)">
           <h3 class="card-title">Click here to select your content</h3>
           <p>{{emptySpaceText2}}</p>
         </div>
