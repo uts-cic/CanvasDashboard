@@ -1,7 +1,7 @@
 <div class="social-student-container">
   <div class="row">
     <div class="col-md-12">
-      <div class="card empty-card">
+      <div class="card empty-card" (click)="open(content1)">
         <h3 class="card-title">Click here to select your content</h3>
         <p>3 of 3 spaces left</p>
       </div>
@@ -9,10 +9,63 @@
   </div>
   <div class="row">
     <div class="col-md-12">
-      <div class="card empty-card">
+      <div class="card empty-card" (click)="open(content2)">
         <h3 class="card-title">Click here to select your content</h3>
         <p>3 of 3 spaces left</p>
       </div>
     </div>
   </div>
 </div>
+
+<ng-template #content1 let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title">Select Your Content</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>Select components to fill up your first row</p>
+    <button type="button" class="btn btn-outline-primary content-btn" ngbPopover="Requires 2 spaces"
+    triggers="mouseenter:mouseleave" container="body" placement="auto">Social Activity</button>
+    <button type="button" class="btn btn-outline-primary content-btn" ngbPopover="Requires 1 space"
+    triggers="mouseenter:mouseleave" container="body" placement="auto">Keywords</button>
+    <button type="button" class="btn btn-outline-primary content-btn" ngbPopover="Requires 1 space"
+    triggers="mouseenter:mouseleave" container="body" placement="auto">Social Reach</button>
+    <button type="button" class="btn btn-outline-primary content-btn" ngbPopover="Requires 1 space"
+    triggers="mouseenter:mouseleave" container="body" placement="auto">Engagement</button>
+    <button type="button" class="btn btn-outline-primary content-btn" ngbPopover="Requires 1 space"
+    triggers="mouseenter:mouseleave" container="body" placement="auto">Network</button>
+    <button type="button" class="btn btn-outline-primary content-btn" ngbPopover="Requires 3 spaces"
+    triggers="mouseenter:mouseleave" container="body" placement="auto">Twitter Topic Analysis</button>
+  </div>
+  <div class="modal-footer">
+  </div>
+</ng-template>
+
+<ng-template #content2 let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title">Select Your Content</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>Select components to fill up your second row</p>
+    <button type="button" class="btn btn-outline-primary content-btn" ngbPopover="Requires 2 spaces"
+    triggers="mouseenter:mouseleave" container="body" placement="auto">Social Activity</button>
+    <button type="button" class="btn btn-outline-primary content-btn" ngbPopover="Requires 1 space"
+    triggers="mouseenter:mouseleave" container="body" placement="auto">Keywords</button>
+    <button type="button" class="btn btn-outline-primary content-btn" ngbPopover="Requires 1 space"
+    triggers="mouseenter:mouseleave" container="body" placement="auto">Social Reach</button>
+    <button type="button" class="btn btn-outline-primary content-btn" ngbPopover="Requires 1 space"
+    triggers="mouseenter:mouseleave" container="body" placement="auto">Engagement</button>
+    <button type="button" class="btn btn-outline-primary content-btn" ngbPopover="Requires 1 space"
+    triggers="mouseenter:mouseleave" container="body" placement="auto">Network</button>
+    <button type="button" class="btn btn-outline-primary content-btn" ngbPopover="Requires 3 spaces"
+    triggers="mouseenter:mouseleave" container="body" placement="auto">Twitter Topic Analysis</button>
+  </div>
+  <div class="modal-footer">
+  </div>
+</ng-template>
+
