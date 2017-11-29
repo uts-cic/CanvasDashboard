@@ -12,7 +12,7 @@ import { CONTENTS } from '../../domain/data/mock-content';
   encapsulation: ViewEncapsulation.None
 })
 export class SocialStudentComponent implements OnInit {
-  private content = CONTENTS[0];
+  private content = CONTENTS[1];
   private socialActivityDisabled = false;
   private keywordsDisabled = false;
   private socialReachDisabled = false;
@@ -45,9 +45,8 @@ export class SocialStudentComponent implements OnInit {
   }
 
   getContent(id: number): void {
-  this.contentService.getContents()
-    .subscribe((contents: Content[]) => {
-      this.content = contents[0];
+    this.contentService.getContent(2).subscribe((content) => {
+      this.content = content;
       this.calculateOccupiedSpace();
       this.setDisabledBtn();
       this.calculateOccupiedSpace2();

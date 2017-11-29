@@ -44,18 +44,43 @@ export class SocialComponent implements OnInit {
   }
 
   getContent(id: number): void {
-    this.contentService.getContents()
-      .subscribe((contents: Content[]) => {
-        this.content = contents[0];
-        this.calculateOccupiedSpace();
-        this.setDisabledBtn();
-        this.calculateOccupiedSpace2();
-        this.setDisabledBtn2();
-      });
+    this.contentService.getContent(1).subscribe((content) => {
+      this.content = content;
+      this.calculateOccupiedSpace();
+      this.setDisabledBtn();
+      this.calculateOccupiedSpace2();
+      this.setDisabledBtn2();
+    });
   }
 
   updateContent(): void {
     this.contentService.updateContent(this.content).subscribe();
+    // Update student content
+    this.contentService.getContent(2).subscribe((content) => {
+      this.copyContent(this.content, content);
+      this.contentService.updateContent(content).subscribe();
+    });
+  }
+
+  copyContent(fromContent: Content, toContent: Content): void {
+    toContent.socialActivity = fromContent.socialActivity;
+    toContent.keywords = fromContent.keywords;
+    toContent.socialReach = fromContent.socialReach;
+    toContent.engagement = fromContent.engagement;
+    toContent.network = fromContent.network;
+    toContent.twitterTopic = fromContent.twitterTopic;
+    toContent.socialActivity2 = fromContent.socialActivity2;
+    toContent.keywords2 = fromContent.keywords2;
+    toContent.socialReach2 = fromContent.socialReach2;
+    toContent.engagement2 = fromContent.engagement2;
+    toContent.network2 = fromContent.network2;
+    toContent.twitterTopic2 = fromContent.twitterTopic2;
+    toContent.socialActivityCheck = fromContent.socialActivityCheck;
+    toContent.keywordsCheck = fromContent.keywordsCheck;
+    toContent.socialReachCheck = fromContent.socialReachCheck;
+    toContent.engagementCheck = fromContent.engagementCheck;
+    toContent.networkCheck = fromContent.networkCheck;
+    toContent.twitterTopicCheck = fromContent.twitterTopicCheck;
   }
 
   open(content) {
