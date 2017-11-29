@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, Input } from '@angular/core';
 
 declare let d3: any;
 
@@ -20,7 +20,6 @@ export class NetworkChartComponent implements OnInit {
       chart: {
         type: 'forceDirectedGraph',
         height: 300,
-        width: 375,
         margin: {
           top: 0,
           right: 0,

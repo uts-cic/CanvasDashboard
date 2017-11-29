@@ -1,6 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { Observable } from 'rxjs/Observable';
 import { ContentService } from '../../domain/services/content/content.service';
 import { Content } from '../../domain/models/content';
 import { CONTENTS } from '../../domain/data/mock-content';

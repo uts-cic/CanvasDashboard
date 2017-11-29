@@ -4,13 +4,10 @@
   position: fixed;
 }
 
-.empty-card {
-  cursor: pointer;
-  height: 22.7rem;
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  padding: 1rem;
+.component-body {
+  height: 19.5rem;
+  overflow: auto;
+  padding: 0;
 }
 
 .card {
@@ -20,4 +17,21 @@
 .content-btn {
   margin-right: 0.5rem;
   margin-bottom: 0.5rem;
+}
+
+.empty-card {
+  cursor: pointer;
+  height: 22.7rem;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding: 1rem;
+}
+
+.header-click {
+  cursor: pointer;
+}
+
+.progressbar {
+  width: 100%;
 }
