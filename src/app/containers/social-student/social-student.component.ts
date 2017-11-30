@@ -41,11 +41,11 @@ export class SocialStudentComponent implements OnInit {
   constructor(private modalService: NgbModal, private contentService: ContentService) { }
 
   ngOnInit() {
-    this.getContent(0);
+    this.getContent(2);
   }
 
   getContent(id: number): void {
-    this.contentService.getContent(2).subscribe((content) => {
+    this.contentService.getContent(id).subscribe((content) => {
       this.content = content;
       this.calculateOccupiedSpace();
       this.setDisabledBtn();
