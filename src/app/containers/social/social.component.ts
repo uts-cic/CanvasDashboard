@@ -110,33 +110,21 @@ export class SocialComponent implements OnInit {
   }
 
   setDisabledBtn(): void {
-    this.socialActivityDisabled = !this.content.socialActivity && this.occupiedSpace >= 2 || this.content.socialActivity2 ||
-    !this.content.socialActivityCheck ? true : false;
-    this.keywordsDisabled = !this.content.keywords && this.occupiedSpace >= 3 || this.content.keywords2 ||
-    !this.content.keywordsCheck ? true : false;
-    this.socialReachDisabled = !this.content.socialReach && this.occupiedSpace >= 3 || this.content.socialReach2 ||
-    !this.content.socialReachCheck ? true : false;
-    this.engagementDisabled = !this.content.engagement && this.occupiedSpace >= 3 || this.content.engagement2 ||
-    !this.content.engagementCheck ? true : false;
-    this.networkDisabled = !this.content.network && this.occupiedSpace >= 3 || this.content.network2 ||
-    !this.content.networkCheck ? true : false;
-    this.twitterTopicDisabled = !this.content.twitterTopic && this.occupiedSpace >= 1 || this.content.twitterTopic2 ||
-    !this.content.twitterTopicCheck ? true : false;
+    this.socialActivityDisabled = !this.content.socialActivity && this.occupiedSpace >= 2 || this.content.socialActivity2 ? true : false;
+    this.keywordsDisabled = !this.content.keywords && this.occupiedSpace >= 3 || this.content.keywords2 ? true : false;
+    this.socialReachDisabled = !this.content.socialReach && this.occupiedSpace >= 3 || this.content.socialReach2 ? true : false;
+    this.engagementDisabled = !this.content.engagement && this.occupiedSpace >= 3 || this.content.engagement2 ? true : false;
+    this.networkDisabled = !this.content.network && this.occupiedSpace >= 3 || this.content.network2 ? true : false;
+    this.twitterTopicDisabled = !this.content.twitterTopic && this.occupiedSpace >= 1 || this.content.twitterTopic2 ? true : false;
   }
 
   setDisabledBtn2(): void {
-    this.socialActivityDisabled2 = !this.content.socialActivity2 && this.occupiedSpace2 >= 2 || this.content.socialActivity ||
-    !this.content.socialActivityCheck ? true : false;
-    this.keywordsDisabled2 = !this.content.keywords2 && this.occupiedSpace2 >= 3 || this.content.keywords ||
-    !this.content.keywordsCheck ? true : false;
-    this.socialReachDisabled2 = !this.content.socialReach2 && this.occupiedSpace2 >= 3 || this.content.socialReach ||
-    !this.content.socialReachCheck ? true : false;
-    this.engagementDisabled2 = !this.content.engagement2 && this.occupiedSpace2 >= 3 || this.content.engagement ||
-    !this.content.engagementCheck ? true : false;
-    this.networkDisabled2 = !this.content.network2 && this.occupiedSpace2 >= 3 || this.content.network ||
-    !this.content.networkCheck ? true : false;
-    this.twitterTopicDisabled2 = !this.content.twitterTopic2 && this.occupiedSpace2 >= 1 || this.content.twitterTopic ||
-    !this.content.twitterTopicCheck ? true : false;
+    this.socialActivityDisabled2 = !this.content.socialActivity2 && this.occupiedSpace2 >= 2 || this.content.socialActivity ? true : false;
+    this.keywordsDisabled2 = !this.content.keywords2 && this.occupiedSpace2 >= 3 || this.content.keywords ? true : false;
+    this.socialReachDisabled2 = !this.content.socialReach2 && this.occupiedSpace2 >= 3 || this.content.socialReach ? true : false;
+    this.engagementDisabled2 = !this.content.engagement2 && this.occupiedSpace2 >= 3 || this.content.engagement ? true : false;
+    this.networkDisabled2 = !this.content.network2 && this.occupiedSpace2 >= 3 || this.content.network ? true : false;
+    this.twitterTopicDisabled2 = !this.content.twitterTopic2 && this.occupiedSpace2 >= 1 || this.content.twitterTopic ? true : false;
   }
 
   setEmptySpace(): void {
