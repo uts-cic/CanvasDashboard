@@ -215,6 +215,8 @@ export class SocialComponent implements OnInit {
       this.twitterTopicDisabled2 = this.content.twitterTopicCheck ? false : true;
     }
     this.updateContent();
+    this.setDisabledBtn();
+    this.setDisabledBtn2();
   }
 
   onSelect(component: string): void {
