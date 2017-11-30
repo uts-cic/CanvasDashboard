@@ -1,3 +1,13 @@
+.loading {
+  flex: 1;
+  display: flex;
+  height: 90%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+}
+
 .component-body {
   height: 19.5rem;
   overflow: auto;

@@ -37,6 +37,7 @@ export class SocialStudentComponent implements OnInit {
   private emptySpaceText2 = '3 of 3 spaces left';
   private chartDesc = 'Lorem ipsum dolor sit amet, ei mei autem docendi nostrum, esse sonet vel cu.';
   private contentManDesc= 'Use this content manager to configure components available for selection.';
+  private isLoading = true;
 
   constructor(private modalService: NgbModal, private contentService: ContentService) { }
 
@@ -51,6 +52,7 @@ export class SocialStudentComponent implements OnInit {
       this.setDisabledBtn();
       this.calculateOccupiedSpace2();
       this.setDisabledBtn2();
+      this.isLoading = false;
     });
   }
 

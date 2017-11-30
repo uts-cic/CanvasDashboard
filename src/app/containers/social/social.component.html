@@ -1,157 +1,163 @@
-<div class="row social-container">
-  <div class="col-md-2 sidebar-container">
-    <div class="sidebar">
-      <div class="sidebar-content">
-        <h5 [ngbPopover]="contentManDesc" triggers="mouseenter:mouseleave" container="body" placement="right">Content Manager</h5>
-        <div class="content-manager">
-          <div class="content-manager-section">
-            <h6>Activity</h6>
-            <mat-checkbox [(checked)]="content.socialActivityCheck" (change)="onCheck('socialActivity')" [ngbPopover]="chartDesc"
-            triggers="mouseenter:mouseleave" container="body" placement="right">Social activity</mat-checkbox>
-            <mat-checkbox [(checked)]="content.keywordsCheck" (change)="onCheck('keywords')" [ngbPopover]="chartDesc"
-            triggers="mouseenter:mouseleave" container="body" placement="right">Keywords</mat-checkbox>
-          </div>
-          <div class="content-manager-section">
-          <h6>Network</h6>
-            <mat-checkbox [(checked)]="content.socialReachCheck" (change)="onCheck('socialReach')" [ngbPopover]="chartDesc"
-            triggers="mouseenter:mouseleave" container="body" placement="right">Social reach</mat-checkbox>
-            <mat-checkbox [(checked)]="content.engagementCheck" (change)="onCheck('engagement')" [ngbPopover]="chartDesc"
-            triggers="mouseenter:mouseleave" container="body" placement="right">Engagement</mat-checkbox>
-            <mat-checkbox [(checked)]="content.networkCheck" (change)="onCheck('network')" [ngbPopover]="chartDesc"
-            triggers="mouseenter:mouseleave" container="body" placement="right">Network</mat-checkbox>
-          </div>
-          <div class="content-manager-section">
-            <h6>Topic</h6>
-            <mat-checkbox [(checked)]="content.twitterTopicCheck" (change)="onCheck('twitterTopic')" [ngbPopover]="chartDesc"
-            triggers="mouseenter:mouseleave" container="body" placement="right">Twitter topic analysis</mat-checkbox>
+<div *ngIf="isLoading" class="loading">
+  <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+  <span class="sr-only">Loading...</span>
+</div>
+<div *ngIf="!isLoading">
+  <div class="row social-container">
+    <div class="col-md-2 sidebar-container">
+      <div class="sidebar">
+        <div class="sidebar-content">
+          <h5 [ngbPopover]="contentManDesc" triggers="mouseenter:mouseleave" container="body" placement="right">Content Manager</h5>
+          <div class="content-manager">
+            <div class="content-manager-section">
+              <h6>Activity</h6>
+              <mat-checkbox [(checked)]="content.socialActivityCheck" (change)="onCheck('socialActivity')" [ngbPopover]="chartDesc"
+              triggers="mouseenter:mouseleave" container="body" placement="right">Social activity</mat-checkbox>
+              <mat-checkbox [(checked)]="content.keywordsCheck" (change)="onCheck('keywords')" [ngbPopover]="chartDesc"
+              triggers="mouseenter:mouseleave" container="body" placement="right">Keywords</mat-checkbox>
+            </div>
+            <div class="content-manager-section">
+            <h6>Network</h6>
+              <mat-checkbox [(checked)]="content.socialReachCheck" (change)="onCheck('socialReach')" [ngbPopover]="chartDesc"
+              triggers="mouseenter:mouseleave" container="body" placement="right">Social reach</mat-checkbox>
+              <mat-checkbox [(checked)]="content.engagementCheck" (change)="onCheck('engagement')" [ngbPopover]="chartDesc"
+              triggers="mouseenter:mouseleave" container="body" placement="right">Engagement</mat-checkbox>
+              <mat-checkbox [(checked)]="content.networkCheck" (change)="onCheck('network')" [ngbPopover]="chartDesc"
+              triggers="mouseenter:mouseleave" container="body" placement="right">Network</mat-checkbox>
+            </div>
+            <div class="content-manager-section">
+              <h6>Topic</h6>
+              <mat-checkbox [(checked)]="content.twitterTopicCheck" (change)="onCheck('twitterTopic')" [ngbPopover]="chartDesc"
+              triggers="mouseenter:mouseleave" container="body" placement="right">Twitter topic analysis</mat-checkbox>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="col-md-10 content">
-    <div class="row">
-      <div *ngIf="content.socialActivity" class="col-md-8">
-        <div class="card">
-          <div class="card-header header-click" (click)="open(content1)" [ngbPopover]="chartDesc"
-          triggers="mouseenter:mouseleave" container="body" placement="auto">
-            Social Activity
+    <div class="col-md-10 content">
+      <div class="row">
+        <div *ngIf="content.socialActivity" class="col-md-8">
+          <div class="card">
+            <div class="card-header header-click" (click)="open(content1)" [ngbPopover]="chartDesc"
+            triggers="mouseenter:mouseleave" container="body" placement="auto">
+              Social Activity
+            </div>
+            <app-social-activity-chart></app-social-activity-chart>
           </div>
-          <app-social-activity-chart></app-social-activity-chart>
         </div>
-      </div>
-      <div *ngIf="content.keywords" class="col-md-4">
-        <div class="card">
-          <div class="card-header header-click" (click)="open(content1)" [ngbPopover]="chartDesc"
-          triggers="mouseenter:mouseleave" container="body" placement="auto">
-            Keywords
+        <div *ngIf="content.keywords" class="col-md-4">
+          <div class="card">
+            <div class="card-header header-click" (click)="open(content1)" [ngbPopover]="chartDesc"
+            triggers="mouseenter:mouseleave" container="body" placement="auto">
+              Keywords
+            </div>
+            <app-keywords></app-keywords>
           </div>
-          <app-keywords></app-keywords>
         </div>
-      </div>
-      <div *ngIf="content.socialReach" class="col-md-4">
-        <div class="card">
-          <div class="card-header header-click" (click)="open(content1)" [ngbPopover]="chartDesc"
-          triggers="mouseenter:mouseleave" container="body" placement="auto">
-            Social Reach
+        <div *ngIf="content.socialReach" class="col-md-4">
+          <div class="card">
+            <div class="card-header header-click" (click)="open(content1)" [ngbPopover]="chartDesc"
+            triggers="mouseenter:mouseleave" container="body" placement="auto">
+              Social Reach
+            </div>
+            <app-social-reach-chart></app-social-reach-chart>
           </div>
-          <app-social-reach-chart></app-social-reach-chart>
         </div>
-      </div>
-      <div *ngIf="content.engagement" class="col-md-4">
-        <div class="card">
-          <div class="card-header header-click" (click)="open(content1)" [ngbPopover]="chartDesc"
-          triggers="mouseenter:mouseleave" container="body" placement="auto">
-            Engagement
+        <div *ngIf="content.engagement" class="col-md-4">
+          <div class="card">
+            <div class="card-header header-click" (click)="open(content1)" [ngbPopover]="chartDesc"
+            triggers="mouseenter:mouseleave" container="body" placement="auto">
+              Engagement
+            </div>
+            <app-engagement-chart></app-engagement-chart>
           </div>
-          <app-engagement-chart></app-engagement-chart>
         </div>
-      </div>
-      <div *ngIf="content.network" class="col-md-4">
-        <div class="card">
-          <div class="card-header header-click" (click)="open(content1)" [ngbPopover]="chartDesc"
-          triggers="mouseenter:mouseleave" container="body" placement="auto">
-            Network
+        <div *ngIf="content.network" class="col-md-4">
+          <div class="card">
+            <div class="card-header header-click" (click)="open(content1)" [ngbPopover]="chartDesc"
+            triggers="mouseenter:mouseleave" container="body" placement="auto">
+              Network
+            </div>
+            <app-network-chart></app-network-chart>
           </div>
-          <app-network-chart></app-network-chart>
         </div>
-      </div>
-      <div *ngIf="content.twitterTopic" class="col-md-12">
-        <div class="card">
-          <div class="card-header header-click" (click)="open(content1)" [ngbPopover]="chartDesc"
-          triggers="mouseenter:mouseleave" container="body" placement="auto">
-            Twitter Topic Analysis
+        <div *ngIf="content.twitterTopic" class="col-md-12">
+          <div class="card">
+            <div class="card-header header-click" (click)="open(content1)" [ngbPopover]="chartDesc"
+            triggers="mouseenter:mouseleave" container="body" placement="auto">
+              Twitter Topic Analysis
+            </div>
+            <app-twitter-topic-chart></app-twitter-topic-chart>
           </div>
-          <app-twitter-topic-chart></app-twitter-topic-chart>
         </div>
-      </div>
-      <div *ngIf="!rowFull" [class]="emptyColSize">
-        <div class="card empty-card" (click)="open(content1)">
-          <h3 class="card-title">Click here to select your content</h3>
-          <p>{{emptySpaceText}}</p>
-        </div>
-      </div>
-    </div>
-    
-    <div class="row">
-      <div *ngIf="content.socialActivity2" class="col-md-8">
-        <div class="card">
-          <div class="card-header header-click" (click)="open(content2)" [ngbPopover]="chartDesc"
-          triggers="mouseenter:mouseleave" container="body" placement="auto">
-            Social Activity
+        <div *ngIf="!rowFull" [class]="emptyColSize">
+          <div class="card empty-card" (click)="open(content1)">
+            <h3 class="card-title">Click here to select your content</h3>
+            <p>{{emptySpaceText}}</p>
           </div>
-          <app-social-activity-chart></app-social-activity-chart>
         </div>
       </div>
-      <div *ngIf="content.keywords2" class="col-md-4">
-        <div class="card">
-          <div class="card-header header-click" (click)="open(content2)" [ngbPopover]="chartDesc"
-          triggers="mouseenter:mouseleave" container="body" placement="auto">
-            Keywords
+      
+      <div class="row">
+        <div *ngIf="content.socialActivity2" class="col-md-8">
+          <div class="card">
+            <div class="card-header header-click" (click)="open(content2)" [ngbPopover]="chartDesc"
+            triggers="mouseenter:mouseleave" container="body" placement="auto">
+              Social Activity
+            </div>
+            <app-social-activity-chart></app-social-activity-chart>
           </div>
-          <app-keywords></app-keywords>
         </div>
-      </div>
-      <div *ngIf="content.socialReach2" class="col-md-4">      
-        <div class="card">
-          <div class="card-header header-click" (click)="open(content2)" [ngbPopover]="chartDesc"
-          triggers="mouseenter:mouseleave" container="body" placement="auto">
-            Social Reach
+        <div *ngIf="content.keywords2" class="col-md-4">
+          <div class="card">
+            <div class="card-header header-click" (click)="open(content2)" [ngbPopover]="chartDesc"
+            triggers="mouseenter:mouseleave" container="body" placement="auto">
+              Keywords
+            </div>
+            <app-keywords></app-keywords>
           </div>
-          <app-social-reach-chart></app-social-reach-chart>
         </div>
-      </div>
-      <div *ngIf="content.engagement2" class="col-md-4">
-        <div class="card">
-          <div class="card-header header-click" (click)="open(content2)" [ngbPopover]="chartDesc"
-          triggers="mouseenter:mouseleave" container="body" placement="auto">
-            Engagement
+        <div *ngIf="content.socialReach2" class="col-md-4">      
+          <div class="card">
+            <div class="card-header header-click" (click)="open(content2)" [ngbPopover]="chartDesc"
+            triggers="mouseenter:mouseleave" container="body" placement="auto">
+              Social Reach
+            </div>
+            <app-social-reach-chart></app-social-reach-chart>
           </div>
-          <app-engagement-chart></app-engagement-chart>
         </div>
-      </div>
-      <div *ngIf="content.network2" class="col-md-4">
-        <div class="card">
-          <div class="card-header header-click" (click)="open(content2)" [ngbPopover]="chartDesc"
-          triggers="mouseenter:mouseleave" container="body" placement="auto">
-            Network
+        <div *ngIf="content.engagement2" class="col-md-4">
+          <div class="card">
+            <div class="card-header header-click" (click)="open(content2)" [ngbPopover]="chartDesc"
+            triggers="mouseenter:mouseleave" container="body" placement="auto">
+              Engagement
+            </div>
+            <app-engagement-chart></app-engagement-chart>
           </div>
-          <app-network-chart></app-network-chart>
         </div>
-      </div>
-      <div *ngIf="content.twitterTopic2" class="col-md-12">
-        <div class="card">
-          <div class="card-header header-click" (click)="open(content2)" [ngbPopover]="chartDesc"
-          triggers="mouseenter:mouseleave" container="body" placement="auto">
-            Twitter Topic Analysis
+        <div *ngIf="content.network2" class="col-md-4">
+          <div class="card">
+            <div class="card-header header-click" (click)="open(content2)" [ngbPopover]="chartDesc"
+            triggers="mouseenter:mouseleave" container="body" placement="auto">
+              Network
+            </div>
+            <app-network-chart></app-network-chart>
           </div>
-          <app-twitter-topic-chart></app-twitter-topic-chart>
         </div>
-      </div>
-      <div *ngIf="!rowFull2" [class]="emptyColSize2">
-        <div class="card empty-card" (click)="open(content2)">
-          <h3 class="card-title">Click here to select your content</h3>
-          <p>{{emptySpaceText2}}</p>
+        <div *ngIf="content.twitterTopic2" class="col-md-12">
+          <div class="card">
+            <div class="card-header header-click" (click)="open(content2)" [ngbPopover]="chartDesc"
+            triggers="mouseenter:mouseleave" container="body" placement="auto">
+              Twitter Topic Analysis
+            </div>
+            <app-twitter-topic-chart></app-twitter-topic-chart>
+          </div>
+        </div>
+        <div *ngIf="!rowFull2" [class]="emptyColSize2">
+          <div class="card empty-card" (click)="open(content2)">
+            <h3 class="card-title">Click here to select your content</h3>
+            <p>{{emptySpaceText2}}</p>
+          </div>
         </div>
       </div>
     </div>
