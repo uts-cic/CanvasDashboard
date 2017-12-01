@@ -55,10 +55,8 @@ export class SocialComponent implements OnInit {
   getContent(id: number): void {
     this.contentService.getContent(id).subscribe((content) => {
       this.content = content;
-      this.calculateOccupiedSpace();
-      this.setDisabledBtn();
-      this.calculateOccupiedSpace2();
-      this.setDisabledBtn2();
+      this.setupPage();
+      this.setupPage2();
       this.isLoading = false;
     });
   }
@@ -68,37 +66,11 @@ export class SocialComponent implements OnInit {
    */
   updateContent(): void {
     this.contentService.updateContent(this.content).subscribe();
-    // Update student content
+    // Update student content (index 2 in mock data)
     this.contentService.getContent(2).subscribe((content) => {
       this.copyContent(this.content, content);
       this.contentService.updateContent(content).subscribe();
     });
-  }
-
-  /**
-   * Copies content attributes from one content to another (deep copy)
-   * @param fromContent content to be copied from
-   * @param toContent content to be copied to
-   */
-  copyContent(fromContent: Content, toContent: Content): void {
-    toContent.socialActivity = fromContent.socialActivity;
-    toContent.keywords = fromContent.keywords;
-    toContent.socialReach = fromContent.socialReach;
-    toContent.engagement = fromContent.engagement;
-    toContent.network = fromContent.network;
-    toContent.twitterTopic = fromContent.twitterTopic;
-    toContent.socialActivity2 = fromContent.socialActivity2;
-    toContent.keywords2 = fromContent.keywords2;
-    toContent.socialReach2 = fromContent.socialReach2;
-    toContent.engagement2 = fromContent.engagement2;
-    toContent.network2 = fromContent.network2;
-    toContent.twitterTopic2 = fromContent.twitterTopic2;
-    toContent.socialActivityCheck = fromContent.socialActivityCheck;
-    toContent.keywordsCheck = fromContent.keywordsCheck;
-    toContent.socialReachCheck = fromContent.socialReachCheck;
-    toContent.engagementCheck = fromContent.engagementCheck;
-    toContent.networkCheck = fromContent.networkCheck;
-    toContent.twitterTopicCheck = fromContent.twitterTopicCheck;
   }
 
   /**
@@ -110,31 +82,41 @@ export class SocialComponent implements OnInit {
   }
 
   /**
-   * Calculates occupied space in the first row
+   * Setup page attributes based on first row components
    */
-  calculateOccupiedSpace(): void {
+  setupPage(): void {
+    this.occupiedSpace = 0;
+
     if (this.content.socialActivity) { this.occupiedSpace += 2; }
     if (this.content.keywords) { this.occupiedSpace += 1; }
     if (this.content.socialReach) { this.occupiedSpace += 1; }
     if (this.content.engagement) { this.occupiedSpace += 1; }
     if (this.content.network) { this.occupiedSpace += 1; }
     if (this.content.twitterTopic) { this.occupiedSpace += 3; }
+
     this.setProgressType();
     this.setEmptySpace();
+    this.setDisabledBtn();
+    this.setDisabledBtn2();
   }
 
   /**
-   * Calculates occupied space in the second row
+   * Setup page attributes based on second row components
    */
-  calculateOccupiedSpace2(): void {
+  setupPage2(): void {
+    this.occupiedSpace2 = 0;
+
     if (this.content.socialActivity2) { this.occupiedSpace2 += 2; }
     if (this.content.keywords2) { this.occupiedSpace2 += 1; }
     if (this.content.socialReach2) { this.occupiedSpace2 += 1; }
     if (this.content.engagement2) { this.occupiedSpace2 += 1; }
     if (this.content.network2) { this.occupiedSpace2 += 1; }
     if (this.content.twitterTopic2) { this.occupiedSpace2 += 3; }
+
     this.setProgressType2();
     this.setEmptySpace2();
+    this.setDisabledBtn();
+    this.setDisabledBtn2();
   }
 
   /**
@@ -180,6 +162,76 @@ export class SocialComponent implements OnInit {
   }
 
   /**
+   * Selects or deselects first row components when content selection modal buttons are clicked
+   * @param component informs which button is clicked
+   */
+  onSelect(component: string): void {
+    if (component === 'socialActivity') { this.content.socialActivity = !this.content.socialActivity; }
+    if (component === 'keywords') { this.content.keywords = !this.content.keywords; }
+    if (component === 'socialReach') { this.content.socialReach = !this.content.socialReach; }
+    if (component === 'engagement') { this.content.engagement = !this.content.engagement; }
+    if (component === 'network') { this.content.network = !this.content.network; }
+    if (component === 'twitterTopic') { this.content.twitterTopic = !this.content.twitterTopic; }
+
+    this.setupPage();
+    this.updateContent();
+  }
+
+  /**
+   * Selects or deselects first row components when content selection modal buttons are clicked
+   * @param component informs which button is clicked
+   */
+  onSelect2(component: string): void {
+    if (component === 'socialActivity') { this.content.socialActivity2 = !this.content.socialActivity2; }
+    if (component === 'keywords') { this.content.keywords2 = !this.content.keywords2; }
+    if (component === 'socialReach') { this.content.socialReach2 = !this.content.socialReach2; }
+    if (component === 'engagement') { this.content.engagement2 = !this.content.engagement2; }
+    if (component === 'network') { this.content.network2 = !this.content.network2; }
+    if (component === 'twitterTopic') { this.content.twitterTopic2 = !this.content.twitterTopic2; }
+
+    this.setupPage2();
+    this.updateContent();
+  }
+
+  /**
+   * Updates contents when charts are disabled or enabled (Content Manager functionality)
+   * @param component informs which checkbox is clicked
+   */
+  onCheck(component: string): void {
+    if (component === 'socialActivity') {
+      this.content.socialActivityCheck = !this.content.socialActivityCheck;
+      if (this.content.socialActivity) { this.onSelect('socialActivity'); }
+      if (this.content.socialActivity2) { this.onSelect2('socialActivity'); }
+    }
+    if (component === 'keywords') {
+      this.content.keywordsCheck = !this.content.keywordsCheck;
+      if (this.content.keywords) { this.onSelect('keywords'); }
+      if (this.content.keywords2) { this.onSelect2('keywords'); }
+    }
+    if (component === 'socialReach') {
+      this.content.socialReachCheck = !this.content.socialReachCheck;
+      if (this.content.socialReach) { this.onSelect('socialReach'); }
+      if (this.content.socialReach2) { this.onSelect2('socialReach'); }
+    }
+    if (component === 'engagement') {
+      this.content.engagementCheck = !this.content.engagementCheck;
+      if (this.content.engagement) { this.onSelect('engagement'); }
+      if (this.content.engagement2) { this.onSelect2('engagement'); }
+    }
+    if (component === 'network') {
+      this.content.networkCheck = !this.content.networkCheck;
+      if (this.content.network) { this.onSelect('network'); }
+      if (this.content.network2) { this.onSelect2('network'); }
+    }
+    if (component === 'twitterTopic') {
+      this.content.twitterTopicCheck = !this.content.twitterTopicCheck;
+      if (this.content.twitterTopic) { this.onSelect('twitterTopic'); }
+      if (this.content.twitterTopic2) { this.onSelect2('twitterTopic'); }
+    }
+    this.updateContent();
+  }
+
+  /**
    * Sets progress bar color for first row content selection modal
    */
   setProgressType(): void {
@@ -218,127 +270,29 @@ export class SocialComponent implements OnInit {
   }
 
   /**
-   * Updates contents when charts are disabled or enabled (Content Manager functionality)
-   * @param component informs which checkbox is clicked
+   * Copies content attributes from one content to another (deep copy)
+   * @param fromContent content to be copied from
+   * @param toContent content to be copied to
    */
-  onCheck(component: string): void {
-    if (component === 'socialActivity') {
-      this.content.socialActivityCheck = !this.content.socialActivityCheck;
-      if (this.content.socialActivity) { this.onSelect('socialActivity'); }
-      if (this.content.socialActivity2) { this.onSelect2('socialActivity'); }
-      this.socialActivityDisabled = this.content.socialActivityCheck ? false : true;
-      this.socialActivityDisabled2 = this.content.socialActivityCheck ? false : true;
-    }
-    if (component === 'keywords') {
-      this.content.keywordsCheck = !this.content.keywordsCheck;
-      if (this.content.keywords) { this.onSelect('keywords'); }
-      if (this.content.keywords2) { this.onSelect2('keywords'); }
-      this.keywordsDisabled = this.content.keywordsCheck ? false : true;
-      this.keywordsDisabled2 = this.content.keywordsCheck ? false : true;
-    }
-    if (component === 'socialReach') {
-      this.content.socialReachCheck = !this.content.socialReachCheck;
-      if (this.content.socialReach) { this.onSelect('socialReach'); }
-      if (this.content.socialReach2) { this.onSelect2('socialReach'); }
-      this.socialReachDisabled = this.content.socialReachCheck ? false : true;
-      this.socialReachDisabled2 = this.content.socialReachCheck ? false : true;
-    }
-    if (component === 'engagement') {
-      this.content.engagementCheck = !this.content.engagementCheck;
-      if (this.content.engagement) { this.onSelect('engagement'); }
-      if (this.content.engagement2) { this.onSelect2('engagement'); }
-      this.engagementDisabled = this.content.engagementCheck ? false : true;
-      this.engagementDisabled2 = this.content.engagementCheck ? false : true;
-    }
-    if (component === 'network') {
-      this.content.networkCheck = !this.content.networkCheck;
-      if (this.content.network) { this.onSelect('network'); }
-      if (this.content.network2) { this.onSelect2('network'); }
-      this.networkDisabled = this.content.networkCheck ? false : true;
-      this.networkDisabled2 = this.content.networkCheck ? false : true;
-    }
-    if (component === 'twitterTopic') {
-      this.content.twitterTopicCheck = !this.content.twitterTopicCheck;
-      if (this.content.twitterTopic) { this.onSelect('twitterTopic'); }
-      if (this.content.twitterTopic2) { this.onSelect2('twitterTopic'); }
-      this.twitterTopicDisabled = this.content.twitterTopicCheck ? false : true;
-      this.twitterTopicDisabled2 = this.content.twitterTopicCheck ? false : true;
-    }
-    this.updateContent();
-    this.setDisabledBtn();
-    this.setDisabledBtn2();
-  }
-
-  /**
-   * Selects or deselects first row components when content selection modal buttons are clicked
-   * @param component informs which button is clicked
-   */
-  onSelect(component: string): void {
-    if (component === 'socialActivity') {
-      this.content.socialActivity = !this.content.socialActivity;
-      this.content.socialActivity ? this.occupiedSpace += 2 : this.occupiedSpace -= 2;
-    }
-    if (component === 'keywords') {
-      this.content.keywords = !this.content.keywords;
-      this.content.keywords ? this.occupiedSpace += 1 : this.occupiedSpace -= 1;
-    }
-    if (component === 'socialReach') {
-      this.content.socialReach = !this.content.socialReach;
-      this.content.socialReach ? this.occupiedSpace += 1 : this.occupiedSpace -= 1;
-    }
-    if (component === 'engagement') {
-      this.content.engagement = !this.content.engagement;
-      this.content.engagement ? this.occupiedSpace += 1 : this.occupiedSpace -= 1;
-    }
-    if (component === 'network') {
-      this.content.network = !this.content.network;
-      this.content.network ? this.occupiedSpace += 1 : this.occupiedSpace -= 1;
-    }
-    if (component === 'twitterTopic') {
-      this.content.twitterTopic = !this.content.twitterTopic;
-      this.content.twitterTopic ? this.occupiedSpace += 3 : this.occupiedSpace -= 3;
-    }
-    this.updateContent();
-    this.setDisabledBtn();
-    this.setDisabledBtn2();
-    this.setProgressType();
-    this.setEmptySpace();
-  }
-
-  /**
-   * Selects or deselects first row components when content selection modal buttons are clicked
-   * @param component informs which button is clicked
-   */
-  onSelect2(component: string): void {
-    if (component === 'socialActivity') {
-      this.content.socialActivity2 = !this.content.socialActivity2;
-      this.content.socialActivity2 ? this.occupiedSpace2 += 2 : this.occupiedSpace2 -= 2;
-    }
-    if (component === 'keywords') {
-      this.content.keywords2 = !this.content.keywords2;
-      this.content.keywords2 ? this.occupiedSpace2 += 1 : this.occupiedSpace2 -= 1;
-    }
-    if (component === 'socialReach') {
-      this.content.socialReach2 = !this.content.socialReach2;
-      this.content.socialReach2 ? this.occupiedSpace2 += 1 : this.occupiedSpace2 -= 1;
-    }
-    if (component === 'engagement') {
-      this.content.engagement2 = !this.content.engagement2;
-      this.content.engagement2 ? this.occupiedSpace2 += 1 : this.occupiedSpace2 -= 1;
-    }
-    if (component === 'network') {
-      this.content.network2 = !this.content.network2;
-      this.content.network2 ? this.occupiedSpace2 += 1 : this.occupiedSpace2 -= 1;
-    }
-    if (component === 'twitterTopic') {
-      this.content.twitterTopic2 = !this.content.twitterTopic2;
-      this.content.twitterTopic2 ? this.occupiedSpace2 += 3 : this.occupiedSpace2 -= 3;
-    }
-    this.updateContent();
-    this.setDisabledBtn();
-    this.setDisabledBtn2();
-    this.setProgressType2();
-    this.setEmptySpace2();
+  copyContent(fromContent: Content, toContent: Content): void {
+    toContent.socialActivity = fromContent.socialActivity;
+    toContent.keywords = fromContent.keywords;
+    toContent.socialReach = fromContent.socialReach;
+    toContent.engagement = fromContent.engagement;
+    toContent.network = fromContent.network;
+    toContent.twitterTopic = fromContent.twitterTopic;
+    toContent.socialActivity2 = fromContent.socialActivity2;
+    toContent.keywords2 = fromContent.keywords2;
+    toContent.socialReach2 = fromContent.socialReach2;
+    toContent.engagement2 = fromContent.engagement2;
+    toContent.network2 = fromContent.network2;
+    toContent.twitterTopic2 = fromContent.twitterTopic2;
+    toContent.socialActivityCheck = fromContent.socialActivityCheck;
+    toContent.keywordsCheck = fromContent.keywordsCheck;
+    toContent.socialReachCheck = fromContent.socialReachCheck;
+    toContent.engagementCheck = fromContent.engagementCheck;
+    toContent.networkCheck = fromContent.networkCheck;
+    toContent.twitterTopicCheck = fromContent.twitterTopicCheck;
   }
 
 }
