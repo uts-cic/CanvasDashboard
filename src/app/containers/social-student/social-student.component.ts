@@ -12,32 +12,36 @@ import { CONTENTS } from '../../domain/data/mock-content';
   encapsulation: ViewEncapsulation.None
 })
 export class SocialStudentComponent implements OnInit {
-  private content = CONTENTS[1];
+  private content = CONTENTS[1]; // Initialise content to avoid undefined errors before contents finishes loading
+  private chartDesc = 'Lorem ipsum dolor sit amet, ei mei autem docendi nostrum, esse sonet vel cu.';
+  private contentManDesc= 'Use this content manager to configure components available for selection.';
+  private isLoading = true;
+
+  // First row component attributes
   private socialActivityDisabled = false;
   private keywordsDisabled = false;
   private socialReachDisabled = false;
   private engagementDisabled = false;
   private networkDisabled = false;
   private twitterTopicDisabled = false;
+  private occupiedSpace = 0;
+  private rowFull = false;
+  private progressType = 'primary';
+  private emptyColSize = 'col-md-12';
+  private emptySpaceText = '3 of 3 spaces left';
+
+  // Second row component attributes
   private socialActivityDisabled2 = false;
   private keywordsDisabled2 = false;
   private socialReachDisabled2 = false;
   private engagementDisabled2 = false;
   private networkDisabled2 = false;
   private twitterTopicDisabled2 = false;
-  private occupiedSpace = 0;
-  private rowFull = false;
   private occupiedSpace2 = 0;
   private rowFull2 = false;
-  private progressType = 'primary';
   private progressType2 = 'primary';
-  private emptyColSize = 'col-md-12';
   private emptyColSize2 = 'col-md-12';
-  private emptySpaceText = '3 of 3 spaces left';
   private emptySpaceText2 = '3 of 3 spaces left';
-  private chartDesc = 'Lorem ipsum dolor sit amet, ei mei autem docendi nostrum, esse sonet vel cu.';
-  private contentManDesc= 'Use this content manager to configure components available for selection.';
-  private isLoading = true;
 
   constructor(private modalService: NgbModal, private contentService: ContentService) { }
 
@@ -45,47 +49,75 @@ export class SocialStudentComponent implements OnInit {
     this.getContent(2);
   }
 
+  /**
+   * Gets page contents from Content Service and setup page after contents are fetched
+   * @param id content ID (from mock content)
+   */
   getContent(id: number): void {
     this.contentService.getContent(id).subscribe((content) => {
       this.content = content;
-      this.calculateOccupiedSpace();
-      this.setDisabledBtn();
-      this.calculateOccupiedSpace2();
-      this.setDisabledBtn2();
+      this.setupPage();
+      this.setupPage2();
       this.isLoading = false;
     });
   }
 
+  /**
+   * Updates student contents (does not affect instructor contents)
+   */
   updateContent(): void {
     this.contentService.updateContent(this.content).subscribe();
   }
 
+  /**
+   * Opens a modal
+   * @param content modal template
+   */
   open(content) {
     this.modalService.open(content);
   }
 
-  calculateOccupiedSpace(): void {
+  /**
+   * Setup page attributes based on first row components
+   */
+  setupPage(): void {
+    this.occupiedSpace = 0;
+
     if (this.content.socialActivity) { this.occupiedSpace += 2; }
     if (this.content.keywords) { this.occupiedSpace += 1; }
     if (this.content.socialReach) { this.occupiedSpace += 1; }
     if (this.content.engagement) { this.occupiedSpace += 1; }
     if (this.content.network) { this.occupiedSpace += 1; }
     if (this.content.twitterTopic) { this.occupiedSpace += 3; }
+
     this.setProgressType();
     this.setEmptySpace();
+    this.setDisabledBtn();
+    this.setDisabledBtn2();
   }
 
-  calculateOccupiedSpace2(): void {
+  /**
+   * Setup page attributes based on second row components
+   */
+  setupPage2(): void {
+    this.occupiedSpace2 = 0;
+
     if (this.content.socialActivity2) { this.occupiedSpace2 += 2; }
     if (this.content.keywords2) { this.occupiedSpace2 += 1; }
     if (this.content.socialReach2) { this.occupiedSpace2 += 1; }
     if (this.content.engagement2) { this.occupiedSpace2 += 1; }
     if (this.content.network2) { this.occupiedSpace2 += 1; }
     if (this.content.twitterTopic2) { this.occupiedSpace2 += 3; }
+
     this.setProgressType2();
     this.setEmptySpace2();
+    this.setDisabledBtn();
+    this.setDisabledBtn2();
   }
 
+  /**
+   * Determines disabled first row selections based on attribute checks
+   */
   setDisabledBtn(): void {
     this.socialActivityDisabled = !this.content.socialActivity && this.occupiedSpace >= 2 || this.content.socialActivity2 ? true : false;
     this.keywordsDisabled = !this.content.keywords && this.occupiedSpace >= 3 || this.content.keywords2 ? true : false;
@@ -95,6 +127,9 @@ export class SocialStudentComponent implements OnInit {
     this.twitterTopicDisabled = !this.content.twitterTopic && this.occupiedSpace >= 1 || this.content.twitterTopic2 ? true : false;
   }
 
+  /**
+   * Determines disabled second row selections based on attribute checks
+   */
   setDisabledBtn2(): void {
     this.socialActivityDisabled2 = !this.content.socialActivity2 && this.occupiedSpace2 >= 2 || this.content.socialActivity ? true : false;
     this.keywordsDisabled2 = !this.content.keywords2 && this.occupiedSpace2 >= 3 || this.content.keywords ? true : false;
@@ -104,18 +139,59 @@ export class SocialStudentComponent implements OnInit {
     this.twitterTopicDisabled2 = !this.content.twitterTopic2 && this.occupiedSpace2 >= 1 || this.content.twitterTopic ? true : false;
   }
 
+  /**
+   * Sets attributes of 'select your content' empty space (first row)
+   */
   setEmptySpace(): void {
     this.emptyColSize = 'col-md-' + (12 - this.occupiedSpace * 4);
     this.rowFull = this.occupiedSpace >= 3 ? true : false;
     this.emptySpaceText = (3 - this.occupiedSpace) + ' of 3 spaces left';
   }
 
+  /**
+   * Sets attributes of 'select your content' empty space (second row)
+   */
   setEmptySpace2(): void {
     this.emptyColSize2 = 'col-md-' + (12 - this.occupiedSpace2 * 4);
     this.rowFull2 = this.occupiedSpace2 >= 3 ? true : false;
     this.emptySpaceText2 = (3 - this.occupiedSpace2) + ' of 3 spaces left';
   }
 
+  /**
+   * Selects or deselects first row components when content selection modal buttons are clicked
+   * @param component informs which button is clicked
+   */
+  onSelect(component: string): void {
+    if (component === 'socialActivity') { this.content.socialActivity = !this.content.socialActivity; }
+    if (component === 'keywords') { this.content.keywords = !this.content.keywords; }
+    if (component === 'socialReach') { this.content.socialReach = !this.content.socialReach; }
+    if (component === 'engagement') { this.content.engagement = !this.content.engagement; }
+    if (component === 'network') { this.content.network = !this.content.network; }
+    if (component === 'twitterTopic') { this.content.twitterTopic = !this.content.twitterTopic; }
+
+    this.setupPage();
+    this.updateContent();
+  }
+
+  /**
+   * Selects or deselects first row components when content selection modal buttons are clicked
+   * @param component informs which button is clicked
+   */
+  onSelect2(component: string): void {
+    if (component === 'socialActivity') { this.content.socialActivity2 = !this.content.socialActivity2; }
+    if (component === 'keywords') { this.content.keywords2 = !this.content.keywords2; }
+    if (component === 'socialReach') { this.content.socialReach2 = !this.content.socialReach2; }
+    if (component === 'engagement') { this.content.engagement2 = !this.content.engagement2; }
+    if (component === 'network') { this.content.network2 = !this.content.network2; }
+    if (component === 'twitterTopic') { this.content.twitterTopic2 = !this.content.twitterTopic2; }
+
+    this.setupPage2();
+    this.updateContent();
+  }
+
+  /**
+   * Sets progress bar color for first row content selection modal
+   */
   setProgressType(): void {
     switch (this.occupiedSpace) {
       case 1:
@@ -132,6 +208,9 @@ export class SocialStudentComponent implements OnInit {
     }
   }
 
+  /**
+   * Sets progress bar color for second row content selection modal
+   */
   setProgressType2(): void {
     switch (this.occupiedSpace2) {
       case 1:
@@ -146,70 +225,6 @@ export class SocialStudentComponent implements OnInit {
       default:
         this.progressType2 = 'primary';
     }
-  }
-
-  onSelect(component: string): void {
-    if (component === 'socialActivity') {
-      this.content.socialActivity = !this.content.socialActivity;
-      this.content.socialActivity ? this.occupiedSpace += 2 : this.occupiedSpace -= 2;
-    }
-    if (component === 'keywords') {
-      this.content.keywords = !this.content.keywords;
-      this.content.keywords ? this.occupiedSpace += 1 : this.occupiedSpace -= 1;
-    }
-    if (component === 'socialReach') {
-      this.content.socialReach = !this.content.socialReach;
-      this.content.socialReach ? this.occupiedSpace += 1 : this.occupiedSpace -= 1;
-    }
-    if (component === 'engagement') {
-      this.content.engagement = !this.content.engagement;
-      this.content.engagement ? this.occupiedSpace += 1 : this.occupiedSpace -= 1;
-    }
-    if (component === 'network') {
-      this.content.network = !this.content.network;
-      this.content.network ? this.occupiedSpace += 1 : this.occupiedSpace -= 1;
-    }
-    if (component === 'twitterTopic') {
-      this.content.twitterTopic = !this.content.twitterTopic;
-      this.content.twitterTopic ? this.occupiedSpace += 3 : this.occupiedSpace -= 3;
-    }
-    this.updateContent();
-    this.setDisabledBtn();
-    this.setDisabledBtn2();
-    this.setProgressType();
-    this.setEmptySpace();
-  }
-
-  onSelect2(component: string): void {
-    if (component === 'socialActivity') {
-      this.content.socialActivity2 = !this.content.socialActivity2;
-      this.content.socialActivity2 ? this.occupiedSpace2 += 2 : this.occupiedSpace2 -= 2;
-    }
-    if (component === 'keywords') {
-      this.content.keywords2 = !this.content.keywords2;
-      this.content.keywords2 ? this.occupiedSpace2 += 1 : this.occupiedSpace2 -= 1;
-    }
-    if (component === 'socialReach') {
-      this.content.socialReach2 = !this.content.socialReach2;
-      this.content.socialReach2 ? this.occupiedSpace2 += 1 : this.occupiedSpace2 -= 1;
-    }
-    if (component === 'engagement') {
-      this.content.engagement2 = !this.content.engagement2;
-      this.content.engagement2 ? this.occupiedSpace2 += 1 : this.occupiedSpace2 -= 1;
-    }
-    if (component === 'network') {
-      this.content.network2 = !this.content.network2;
-      this.content.network2 ? this.occupiedSpace2 += 1 : this.occupiedSpace2 -= 1;
-    }
-    if (component === 'twitterTopic') {
-      this.content.twitterTopic2 = !this.content.twitterTopic2;
-      this.content.twitterTopic2 ? this.occupiedSpace2 += 3 : this.occupiedSpace2 -= 3;
-    }
-    this.updateContent();
-    this.setDisabledBtn();
-    this.setDisabledBtn2();
-    this.setProgressType2();
-    this.setEmptySpace2();
   }
 
 }
