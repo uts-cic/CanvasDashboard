@@ -1,9 +1,14 @@
+<!-- Loading Page -->
 <div *ngIf="isLoading" class="loading">
   <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
   <span class="sr-only">Loading...</span>
 </div>
+
+<!-- Social Page -->
 <div *ngIf="!isLoading">
   <div class="row social-container">
+
+    <!-- Content Manager -->
     <div class="col-md-2 sidebar-container">
       <div class="sidebar">
         <div class="sidebar-content">
@@ -34,7 +39,10 @@
         </div>
       </div>
     </div>
+
+    <!-- Components -->
     <div class="col-md-10 content">
+      <!-- Top Row Components -->
       <div class="row">
         <div *ngIf="content.socialActivity" class="col-md-8">
           <div class="card">
@@ -45,6 +53,7 @@
             <app-social-activity-chart></app-social-activity-chart>
           </div>
         </div>
+
         <div *ngIf="content.keywords" class="col-md-4">
           <div class="card">
             <div class="card-header header-click" (click)="open(content1)" [ngbPopover]="chartDesc"
@@ -54,6 +63,7 @@
             <app-keywords></app-keywords>
           </div>
         </div>
+
         <div *ngIf="content.socialReach" class="col-md-4">
           <div class="card">
             <div class="card-header header-click" (click)="open(content1)" [ngbPopover]="chartDesc"
@@ -63,6 +73,7 @@
             <app-social-reach-chart></app-social-reach-chart>
           </div>
         </div>
+
         <div *ngIf="content.engagement" class="col-md-4">
           <div class="card">
             <div class="card-header header-click" (click)="open(content1)" [ngbPopover]="chartDesc"
@@ -72,6 +83,7 @@
             <app-engagement-chart></app-engagement-chart>
           </div>
         </div>
+
         <div *ngIf="content.network" class="col-md-4">
           <div class="card">
             <div class="card-header header-click" (click)="open(content1)" [ngbPopover]="chartDesc"
@@ -81,6 +93,7 @@
             <app-network-chart></app-network-chart>
           </div>
         </div>
+
         <div *ngIf="content.twitterTopic" class="col-md-12">
           <div class="card">
             <div class="card-header header-click" (click)="open(content1)" [ngbPopover]="chartDesc"
@@ -90,6 +103,7 @@
             <app-twitter-topic-chart></app-twitter-topic-chart>
           </div>
         </div>
+
         <div *ngIf="!rowFull" [class]="emptyColSize">
           <div class="card empty-card" (click)="open(content1)">
             <h3 class="card-title">Click here to select your content</h3>
@@ -98,6 +112,7 @@
         </div>
       </div>
       
+      <!-- Bottom Row Components -->
       <div class="row">
         <div *ngIf="content.socialActivity2" class="col-md-8">
           <div class="card">
@@ -108,6 +123,7 @@
             <app-social-activity-chart></app-social-activity-chart>
           </div>
         </div>
+
         <div *ngIf="content.keywords2" class="col-md-4">
           <div class="card">
             <div class="card-header header-click" (click)="open(content2)" [ngbPopover]="chartDesc"
@@ -117,6 +133,7 @@
             <app-keywords></app-keywords>
           </div>
         </div>
+
         <div *ngIf="content.socialReach2" class="col-md-4">      
           <div class="card">
             <div class="card-header header-click" (click)="open(content2)" [ngbPopover]="chartDesc"
@@ -126,6 +143,7 @@
             <app-social-reach-chart></app-social-reach-chart>
           </div>
         </div>
+
         <div *ngIf="content.engagement2" class="col-md-4">
           <div class="card">
             <div class="card-header header-click" (click)="open(content2)" [ngbPopover]="chartDesc"
@@ -135,6 +153,7 @@
             <app-engagement-chart></app-engagement-chart>
           </div>
         </div>
+
         <div *ngIf="content.network2" class="col-md-4">
           <div class="card">
             <div class="card-header header-click" (click)="open(content2)" [ngbPopover]="chartDesc"
@@ -144,6 +163,7 @@
             <app-network-chart></app-network-chart>
           </div>
         </div>
+
         <div *ngIf="content.twitterTopic2" class="col-md-12">
           <div class="card">
             <div class="card-header header-click" (click)="open(content2)" [ngbPopover]="chartDesc"
@@ -153,6 +173,7 @@
             <app-twitter-topic-chart></app-twitter-topic-chart>
           </div>
         </div>
+
         <div *ngIf="!rowFull2" [class]="emptyColSize2">
           <div class="card empty-card" (click)="open(content2)">
             <h3 class="card-title">Click here to select your content</h3>
@@ -165,6 +186,7 @@
 </div>
 
 
+<!-- Top Row Modal -->
 <ng-template #content1 let-c="close" let-d="dismiss">
   <div class="modal-header">
     <h4 class="modal-title">Select Your Content</h4>
@@ -210,7 +232,7 @@
   </div>
 </ng-template>
 
-
+<!-- Bottom Row Modal -->
 <ng-template #content2 let-c="close" let-d="dismiss">
   <div class="modal-header">
     <h4 class="modal-title">Select Your Content</h4>
