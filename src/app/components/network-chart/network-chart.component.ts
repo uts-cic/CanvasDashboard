@@ -15,6 +15,14 @@ export class NetworkChartComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.setupChart();
+    this.generateMockData();
+  }
+
+  /**
+   * Configure chart options
+   */
+  setupChart(): void {
     const color = d3.scale.category20();
     this.options = {
       chart: {
@@ -37,7 +45,12 @@ export class NetworkChartComponent implements OnInit {
         }
       }
     };
+  }
 
+  /**
+   * Generates mock data for the network chart
+   */
+  generateMockData(): void {
     this.data = {
       'nodes': [
         { 'name': 'Myriel', 'group': 1 },

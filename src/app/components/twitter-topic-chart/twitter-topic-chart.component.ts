@@ -19,6 +19,17 @@ export class TwitterTopicChartComponent implements OnInit {
   private data: any;
   private keywords: any;
 
+  constructor() { }
+
+  ngOnInit() {
+    this.keywords = KEYWORDS;
+    this.setupChart();
+    this.generateMockData();
+  }
+
+  /**
+   * Provides search suggestions based on mock keywords
+   */
   search = (text$: Observable<string>) => {
     const result = text$
       .debounceTime(200)
@@ -30,10 +41,10 @@ export class TwitterTopicChartComponent implements OnInit {
     return result;
   }
 
-  constructor() { }
-
-  ngOnInit() {
-    this.keywords = KEYWORDS;
+  /**
+   * Configures chart options
+   */
+  setupChart(): void {
     this.options = {
       chart: {
         type: 'lineChart',
@@ -70,7 +81,12 @@ export class TwitterTopicChartComponent implements OnInit {
         }
       }
     };
+  }
 
+  /**
+   * Generates mock data for the twitter topic analysis chart
+   */
+  generateMockData(): void {
     this.data = [
       {
         'key': 'Original',

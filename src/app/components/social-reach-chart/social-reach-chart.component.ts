@@ -15,6 +15,14 @@ export class SocialReachChartComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.setupChart();
+    this.generateMockData();
+  }
+
+  /**
+   * Configures chart options
+   */
+  setupChart(): void {
     this.options = {
       chart: {
         type: 'pieChart',
@@ -34,7 +42,12 @@ export class SocialReachChartComponent implements OnInit {
         labelSunbeamLayout: true,
       }
     };
+  }
 
+  /**
+   * Generates mock data for the social reach chart
+   */
+  generateMockData(): void {
     this.data = [
       {
         key: 'Twitter',

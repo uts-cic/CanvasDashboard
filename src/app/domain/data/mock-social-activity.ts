@@ -1,6 +1,6 @@
 export const SOCIAL_ACTIVITY = sinAndCos();
 
-function sinAndCos() {
+export function sinAndCos() {
   const sin = [], cos = [], cos2 = [];
   const dates = [
     1025409600000,

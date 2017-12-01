@@ -19,6 +19,34 @@ export class EngagementChartComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.setupChart();
+    this.generateMockData();
+  }
+
+  /**
+   * Shows data based on selected filter
+   * @param selection selected filter
+   */
+  onSelect(selection: string): void {
+    switch (selection) {
+      case 'Twitter':
+        this.data = this.twitterData;
+        break;
+      case 'Facebook':
+        this.data = this.facebookData;
+        break;
+      case 'Slack':
+        this.data = this.slackData;
+        break;
+      default:
+        break;
+    }
+  }
+
+  /**
+   * Configure chart options
+   */
+  setupChart() {
     this.options = {
       chart: {
         type: 'pieChart',
@@ -37,7 +65,12 @@ export class EngagementChartComponent implements OnInit {
         duration: 500,
       }
     };
+  }
 
+  /**
+   * Generates mock data for engagement chart
+   */
+  generateMockData(): void {
     this.twitterData = [
       {
         key: 'Twitter',
@@ -78,22 +111,6 @@ export class EngagementChartComponent implements OnInit {
     ];
 
     this.data = this.facebookData;
-  }
-
-  onSelect(val) {
-    switch (val) {
-      case 'Twitter':
-        this.data = this.twitterData;
-        break;
-      case 'Facebook':
-        this.data = this.facebookData;
-        break;
-      case 'Slack':
-        this.data = this.slackData;
-        break;
-      default:
-        break;
-    }
   }
 
 }

@@ -19,6 +19,14 @@ export class SocialActivityChartComponent implements OnInit {
   constructor(private socialActivityService: SocialActivityService) { }
 
   ngOnInit() {
+    this.setupChart();
+    this.getSocialActivity();
+  }
+
+  /**
+   * Configure chart options
+   */
+  setupChart(): void {
     this.options = {
       chart: {
         type: 'lineChart',
@@ -49,10 +57,11 @@ export class SocialActivityChartComponent implements OnInit {
         },
       }
     };
-
-    this.getSocialActivity();
   }
 
+  /**
+   * Toggles whether to show added data (for testing purposes)
+   */
   toggleShow() {
     this.isShow = !this.isShow;
 
@@ -63,26 +72,39 @@ export class SocialActivityChartComponent implements OnInit {
     }
   }
 
+  /**
+   * Gets social activity from the service
+   */
   getSocialActivity(): void {
     this.socialActivityService.getSocialActivity()
       .subscribe(socialActivity => this.data = socialActivity);
   }
 
+  /**
+   * Adds a new social activity
+   * @param socialActivity new social activity to be added
+   */
   addSocialActivity(socialActivity: Object): void {
     this.socialActivityService.addSocialActivity(socialActivity as SocialActivity)
       .subscribe(activity => {
         this.data.push(activity);
         this.nvd3.chart.update();
       });
-    console.log(this.data);
   }
 
+  /**
+   * Deletes a social activity
+   * @param id id of social activity to be deleted
+   */
   deleteSocialActivity(id: number): void {
     this.data = this.data.filter(s => s.id !== id);
     this.socialActivityService.deleteSocialActivity(id).subscribe();
     this.nvd3.chart.update();
   }
 
+  /**
+   * Generates mock data for the social activity chart
+   */
   generateMockData(): Object {
     const newData = [];
     const dates = [

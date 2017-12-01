@@ -12,9 +12,7 @@ import { SocialActivity } from '../../domain/models/socialActivity';
 })
 export class KeywordsComponent implements OnInit {
   private data: any;
-
   keywords = KEYWORDS;
-
   selectedKeyword: any;
 
   constructor(private socialActivityService: SocialActivityService) { }
@@ -23,16 +21,27 @@ export class KeywordsComponent implements OnInit {
     this.getSocialActivity();
   }
 
+  /**
+   * Adds keyword data to social activity chart when a keyword is selected
+   * @param keyword selected keyword
+   */
   onSelect(keyword: any): void {
     this.selectedKeyword = this.selectedKeyword === keyword ? undefined : keyword;
     this.addSocialActivity(this.generateMockData());
   }
 
+  /**
+   * Gets social activity data from the service
+   */
   getSocialActivity(): void {
     this.socialActivityService.getSocialActivity()
       .subscribe(socialActivity => this.data = socialActivity);
   }
 
+  /**
+   * Adds a new social activity data
+   * @param socialActivity new social activity data
+   */
   addSocialActivity(socialActivity: Object): void {
     this.socialActivityService.addSocialActivity(socialActivity as SocialActivity)
       .subscribe(activity => {
@@ -41,6 +50,9 @@ export class KeywordsComponent implements OnInit {
       });
   }
 
+  /**
+   * Generates mock data for the keywords component
+   */
   generateMockData(): Object {
     const newData = [];
     const dates = [
