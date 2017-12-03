@@ -1,7 +1,14 @@
+/**
+ * A mock service which can be used to simulate http requests
+ */
 import { InMemoryDbService } from 'angular-in-memory-web-api';
 import { CONTENTS } from '../data/mock-content';
 
 export class InMemoryDataService implements InMemoryDbService {
+
+  /**
+   * Create initial db when the app loads
+   */
   createDb() {
     const socialActivity = sinAndCos();
     const contents = CONTENTS;
@@ -10,6 +17,9 @@ export class InMemoryDataService implements InMemoryDbService {
 
 }
 
+/**
+ * Generates and returns mock social activity data
+ */
 function sinAndCos() {
   const sin = [], cos = [], cos2 = [];
   const dates = [

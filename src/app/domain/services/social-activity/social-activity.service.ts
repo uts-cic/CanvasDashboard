@@ -16,6 +16,10 @@ export class SocialActivityService {
 
   constructor(private http: HttpClient) { }
 
+  /**
+   * Gets all social activities
+   * @returns all social activities as an observable
+   */
   getSocialActivity(): Observable<SocialActivity[]> {
     return this.http.get<SocialActivity[]>(this.socialActivityUrl)
       .pipe(
@@ -24,6 +28,10 @@ export class SocialActivityService {
       );
   }
 
+  /**
+   * Adds a new social activity
+   * @param socialActivity new social activity to be added
+   */
   addSocialActivity(socialActivity: SocialActivity): Observable<SocialActivity> {
     return this.http.post<SocialActivity>(this.socialActivityUrl, socialActivity, httpOptions)
       .pipe(
@@ -32,6 +40,10 @@ export class SocialActivityService {
       );
   }
 
+  /**
+   * Deletes a social activity
+   * @param socialActivity social activity or social activity ID to be deleted
+   */
   deleteSocialActivity(socialActivity: SocialActivity | number): Observable<SocialActivity> {
     const id = typeof socialActivity === 'number' ? socialActivity : socialActivity.id;
     const url = `${this.socialActivityUrl}/${id}`;
@@ -42,6 +54,11 @@ export class SocialActivityService {
     );
   }
 
+  /**
+   * Handles error on a http request
+   * @param operation http operation to be performed
+   * @param result result of the request
+   */
   private handleError<T> (operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
       console.error(error);

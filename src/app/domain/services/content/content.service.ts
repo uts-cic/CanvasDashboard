@@ -16,6 +16,10 @@ export class ContentService {
 
   constructor(private http: HttpClient) { }
 
+  /**
+   * Get all contents
+   * @returns All contents as an observable
+   */
   getContents(): Observable<Content[]> {
     return this.http.get<Content[]>(this.contentsUrl).pipe(
       tap(contents => console.log(`fetched contents`)),
@@ -23,6 +27,11 @@ export class ContentService {
     );
   }
 
+  /**
+   * Get a single content
+   * @param id ID of content
+   * @returns The content as observable
+   */
   getContent(id: number): Observable<Content> {
     const url = `${this.contentsUrl}/${id}`;
     return this.http.get<Content>(url).pipe(
@@ -31,6 +40,10 @@ export class ContentService {
     );
   }
 
+  /**
+   * Updates a single content
+   * @param content New content to be updated
+   */
   updateContent(content: Content): Observable<any> {
     return this.http.put(this.contentsUrl, content, httpOptions).pipe(
       tap(_ => console.log(`updated content id=${content.id}`)),
@@ -38,6 +51,11 @@ export class ContentService {
     );
   }
 
+  /**
+   * Handles error on a http request
+   * @param operation name of http operation to be performed
+   * @param result request result
+   */
   private handleError<T> (operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
     console.error(error);
