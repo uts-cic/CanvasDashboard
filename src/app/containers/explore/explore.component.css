@@ -1,0 +1,15 @@
+.explore-container {
+  padding: 1rem;
+}
+
+.search-container {
+  margin-top: 12.5rem;
+  margin-right: 25rem;
+  margin-left: 25rem;
+}
+
+.search-title {
+  margin-bottom: 2rem;
+  text-align: center;
+  font-size: 2.5rem;
+}
