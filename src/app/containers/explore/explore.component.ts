@@ -7,10 +7,15 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
   encapsulation: ViewEncapsulation.None
 })
 export class ExploreComponent implements OnInit {
+  private firstVisit = true;
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  toggleFirstVisit() {
+    this.firstVisit = !this.firstVisit;
   }
 
 }

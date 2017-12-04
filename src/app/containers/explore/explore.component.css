@@ -3,13 +3,27 @@
 }
 
 .search-container {
-  margin-top: 12.5rem;
-  margin-right: 25rem;
-  margin-left: 25rem;
+  margin-top: 17.5%;
+  margin-right: 25%;
+  margin-left: 25%;
 }
 
 .search-title {
   margin-bottom: 2rem;
   text-align: center;
   font-size: 2.5rem;
+}
+
+.search-nav-container {
+  padding: 1rem;
+  background-color: #f2f2f2;
+}
+
+.search-input-nav {
+  width: 60%;
+  margin-left: 1rem;
+}
+
+.explore-back-btn {
+  margin-left: 1rem;
 }
