@@ -2,9 +2,9 @@
   <div *ngIf="firstVisit" class="search-container">
     <h5 class="search-title display-4">What would you like to <b>explore</b>?</h5>
     <div class="input-group">
-      <input type="text" class="form-control" placeholder="e.g. Angular framework, Bootstrap 4..." />
+      <input type="text" class="form-control" placeholder="e.g. Angular framework, Bootstrap 4..." (keyup.enter)="submitSearchFirstVisit(searchText)" [(ngModel)]="searchText" />
       <span class="input-group-btn">
-        <button class="btn btn-outline-primary" (click)="toggleFirstVisit()"><i class="fa fa-search"></i></button>
+        <button type="button" class="btn btn-outline-primary" (click)="submitSearchFirstVisit(searchText)"><i class="fa fa-search"></i></button>
       </span>
     </div>
   </div>
@@ -14,10 +14,16 @@
         <i class="fa fa-chevron-left"></i>
       </button>
       <div class="input-group search-input-nav">
-        <input type="text" class="form-control" placeholder="e.g. Angular framework, Bootstrap 4..." />
+        <input type="text" class="form-control" placeholder="e.g. Angular framework, Bootstrap 4..." (keyup.enter)="submitSearch(searchText)" [(ngModel)]="searchText" />
         <span class="input-group-btn">
-          <button class="btn btn-outline-primary"><i class="fa fa-search"></i></button>
+          <button class="btn btn-outline-primary" (click)="submitSearch(searchText)"><i class="fa fa-search"></i></button>
         </span>
+      </div>
+    </div>
+    <div class="people-result-container card">
+      <h5 class="display-4 search-result-text">Found <b>4 connections</b> related to <i>{{searchResultText}}</i></h5>
+      <div class="row">
+        <div class="card"></div>
       </div>
     </div>
   </div>

@@ -8,10 +8,21 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 })
 export class ExploreComponent implements OnInit {
   private firstVisit = true;
+  private searchText = '';
+  private searchResultText = '';
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  submitSearch(text: string) {
+    this.searchResultText = text;
+  }
+
+  submitSearchFirstVisit(text: string) {
+    this.searchResultText = text;
+    this.toggleFirstVisit();
   }
 
   toggleFirstVisit() {

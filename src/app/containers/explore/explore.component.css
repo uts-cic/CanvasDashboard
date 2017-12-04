@@ -27,3 +27,12 @@
 .explore-back-btn {
   margin-left: 1rem;
 }
+
+.people-result-container {
+  padding: 1rem;
+  padding-top: 1.5rem;
+}
+
+.search-result-text {
+  font-size: 1.25rem;
+}
