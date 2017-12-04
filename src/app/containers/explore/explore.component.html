@@ -22,8 +22,25 @@
     </div>
     <div class="people-result-container card">
       <h5 class="display-4 search-result-text">Found <b>4 connections</b> related to <i>{{searchResultText}}</i></h5>
-      <div class="row">
-        <div class="card"></div>
+      <div class="row people-result">
+        <div class="card col-3 people-card">
+          <div class="card-body">
+            <div class="people-card-header">
+              <div>
+                <h4 class="card-title">Tim Alpha</h4>
+                <h6 class="card-subtitle mb-2 text-muted">Student at UTS FEIT</h6>
+              </div>
+              <button class="btn btn-outline-primary btn-sm connect-btn">Connect</button>
+            </div>
+          </div>
+          <img class="card-img-middle" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap">
+          <div class="card-body">
+            <div [ngbPopover]="activitiesText" triggers="mouseenter:mouseleave" container="body" placement="auto">
+              <i class="fa fa-line-chart"></i>
+              <span>125 activities</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

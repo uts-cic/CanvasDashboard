@@ -10,6 +10,7 @@ export class ExploreComponent implements OnInit {
   private firstVisit = true;
   private searchText = '';
   private searchResultText = '';
+  private activitiesText = 'Total activities related to ' + this.searchResultText;
 
   constructor() { }
 
@@ -18,10 +19,12 @@ export class ExploreComponent implements OnInit {
 
   submitSearch(text: string) {
     this.searchResultText = text;
+    this.activitiesText = 'Total activities related to ' + this.searchResultText;
   }
 
   submitSearchFirstVisit(text: string) {
     this.searchResultText = text;
+    this.activitiesText = 'Total activities related to ' + this.searchResultText;
     this.toggleFirstVisit();
   }
 
