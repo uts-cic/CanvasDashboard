@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewEncapsulation, Input, ViewChild } from '@angular/core';
-import { SocialActivityService } from '../../domain/services/social-activity/social-activity.service';
-import { SocialActivity } from '../../domain/models/socialActivity';
+import { SocialActivityService } from '../../../domain/services/social-activity/social-activity.service';
+import { SocialActivity } from '../../../domain/models/socialActivity';
 
 declare let d3: any;
 
