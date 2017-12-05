@@ -43,11 +43,16 @@
   margin-left: 0rem;
 }
 
+.people-card-container {
+  padding-right: 0.5rem;
+  padding-bottom: 1.5rem;
+}
+
 .people-card {
   padding: 0;
 }
 
-.people-card-header {
+.inline-container {
   display: flex;
   justify-content: space-between;
 }
@@ -61,6 +66,6 @@
   margin-top: 0.25rem;
 }
 
-.connect-btn {
+.people-card-btn {
   height: 2rem;
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { people } from '../../domain/data/mock-people';
 
 @Component({
   selector: 'app-explore',
@@ -11,6 +12,9 @@ export class ExploreComponent implements OnInit {
   private searchText = '';
   private searchResultText = '';
   private activitiesText = 'Total activities related to ' + this.searchResultText;
+  private mockActivity = 'Lorem ipsum dolor sit amet, id veri aliquid docendi nam, qui at soleat lucilius. ' +
+  'Option quaestio scribentur his et, an labores facilis eum, vel ea propriae delectus.';
+  private people = people;
 
   constructor() { }
 

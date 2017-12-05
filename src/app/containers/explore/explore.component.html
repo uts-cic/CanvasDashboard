@@ -21,23 +21,25 @@
       </div>
     </div>
     <div class="people-result-container card">
-      <h5 class="display-4 search-result-text">Found <b>4 connections</b> related to <i>{{searchResultText}}</i></h5>
+      <h5 class="display-4 search-result-text">Found <b>{{people.length}} connections</b> related to <i>{{searchResultText}}</i></h5>
       <div class="row people-result">
-        <div class="card col-3 people-card">
-          <div class="card-body">
-            <div class="people-card-header">
-              <div>
-                <h4 class="card-title">Tim Alpha</h4>
-                <h6 class="card-subtitle mb-2 text-muted">Student at UTS FEIT</h6>
+        <div *ngFor="let person of people" class="col-3 people-card-container">
+          <div class="card people-card">
+            <div class="card-body">
+              <div class="inline-container">
+                <h4 class="card-title">{{person.name}}</h4>
+                <button class="btn btn-outline-primary btn-sm people-card-btn"><i class="fa fa-plus"></i></button>
               </div>
-              <button class="btn btn-outline-primary btn-sm connect-btn">Connect</button>
+              <h6 class="card-subtitle mb-2 text-muted">{{person.role}}</h6>
             </div>
-          </div>
-          <img class="card-img-middle" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap">
-          <div class="card-body">
-            <div [ngbPopover]="activitiesText" triggers="mouseenter:mouseleave" container="body" placement="auto">
-              <i class="fa fa-line-chart"></i>
-              <span>125 activities</span>
+            <img class="card-img-middle" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180" alt="Card image cap">
+            <div class="card-body">
+              <div class="inline-container">
+                <div [ngbPopover]="activitiesText" triggers="mouseenter:mouseleave" placement="top-left">
+                  <i class="fa fa-line-chart"></i>
+                  <span>{{person.activities}} activities</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
