@@ -28,7 +28,8 @@
       <span class="sr-only">Loading...</span>
     </div>
     <div *ngIf="!isLoading && topicAnalysis" class="card people-result-container">
-        <h5 class="display-4 search-result-text">Showing topic analysis for <i>{{searchResultText}}</i></h5>
+      <h5 class="display-4 search-result-text">Showing topic analysis for <i>{{searchResultText}}</i></h5>
+      <app-topic-analysis></app-topic-analysis>
     </div>
     <div *ngIf="!isLoading" class="people-result-container card">
       <h5 class="display-4 search-result-text">Found <b>{{people.length}} connections</b> related to <i>{{searchResultText}}</i></h5>
