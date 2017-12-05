@@ -16,6 +16,7 @@ export class ExploreComponent implements OnInit {
   'Option quaestio scribentur his et, an labores facilis eum, vel ea propriae delectus.';
   private people = people;
   private isLoading = true;
+  private topicAnalysis = false;
 
   constructor() { }
 

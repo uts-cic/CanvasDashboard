@@ -9,7 +9,7 @@
   <!-- Top row components -->
   <div class="row">
     <div *ngIf="content.socialActivity" class="col-md-8">
-      <div class="card">
+      <div class="card component-container">
         <div class="card-header header-click" (click)="open(content1)" [ngbPopover]="chartDesc"
         triggers="mouseenter:mouseleave" container="body" placement="auto">
           Social Activity
@@ -19,7 +19,7 @@
     </div>
 
     <div *ngIf="content.keywords" class="col-md-4">
-      <div class="card">
+      <div class="card component-container">
         <div class="card-header header-click" (click)="open(content1)" [ngbPopover]="chartDesc"
         triggers="mouseenter:mouseleave" container="body" placement="auto">
           Keywords
@@ -29,7 +29,7 @@
     </div>
 
     <div *ngIf="content.socialReach" class="col-md-4">
-      <div class="card">
+      <div class="card component-container">
         <div class="card-header header-click" (click)="open(content1)" [ngbPopover]="chartDesc"
         triggers="mouseenter:mouseleave" container="body" placement="auto">
           Social Reach
@@ -39,7 +39,7 @@
     </div>
 
     <div *ngIf="content.engagement" class="col-md-4">
-      <div class="card">
+      <div class="card component-container">
         <div class="card-header header-click" (click)="open(content1)" [ngbPopover]="chartDesc"
         triggers="mouseenter:mouseleave" container="body" placement="auto">
           Engagement
@@ -49,7 +49,7 @@
     </div>
 
     <div *ngIf="content.network" class="col-md-4">
-      <div class="card">
+      <div class="card component-container">
         <div class="card-header header-click" (click)="open(content1)" [ngbPopover]="chartDesc"
         triggers="mouseenter:mouseleave" container="body" placement="auto">
           Network
@@ -59,7 +59,7 @@
     </div>
 
     <div *ngIf="content.twitterTopic" class="col-md-12">
-      <div class="card">
+      <div class="card component-container">
         <div class="card-header header-click" (click)="open(content1)" [ngbPopover]="chartDesc"
         triggers="mouseenter:mouseleave" container="body" placement="auto">
           Twitter Topic Analysis
@@ -69,7 +69,7 @@
     </div>
 
     <div *ngIf="!rowFull" [class]="emptyColSize">
-      <div class="card empty-card" (click)="open(content1)">
+      <div class="card component-container empty-card" (click)="open(content1)">
         <h3 class="card-title">Click here to select your content</h3>
         <p>{{emptySpaceText}}</p>
       </div>
@@ -79,7 +79,7 @@
   <!-- Bottom row components -->
   <div class="row">
     <div *ngIf="content.socialActivity2" class="col-md-8">
-      <div class="card">
+      <div class="card component-container">
         <div class="card-header header-click" (click)="open(content2)" [ngbPopover]="chartDesc"
         triggers="mouseenter:mouseleave" container="body" placement="auto">
           Social Activity
@@ -89,7 +89,7 @@
     </div>
 
     <div *ngIf="content.keywords2" class="col-md-4">
-      <div class="card">
+      <div class="card component-container">
         <div class="card-header header-click" (click)="open(content2)" [ngbPopover]="chartDesc"
         triggers="mouseenter:mouseleave" container="body" placement="auto">
           Keywords
@@ -99,7 +99,7 @@
     </div>
 
     <div *ngIf="content.socialReach2" class="col-md-4">      
-      <div class="card">
+      <div class="card component-container">
         <div class="card-header header-click" (click)="open(content2)" [ngbPopover]="chartDesc"
         triggers="mouseenter:mouseleave" container="body" placement="auto">
           Social Reach
@@ -109,7 +109,7 @@
     </div>
 
     <div *ngIf="content.engagement2" class="col-md-4">
-      <div class="card">
+      <div class="card component-container">
         <div class="card-header header-click" (click)="open(content2)" [ngbPopover]="chartDesc"
         triggers="mouseenter:mouseleave" container="body" placement="auto">
           Engagement
@@ -119,7 +119,7 @@
     </div>
 
     <div *ngIf="content.network2" class="col-md-4">
-      <div class="card">
+      <div class="card component-container">
         <div class="card-header header-click" (click)="open(content2)" [ngbPopover]="chartDesc"
         triggers="mouseenter:mouseleave" container="body" placement="auto">
           Network
@@ -129,7 +129,7 @@
     </div>
 
     <div *ngIf="content.twitterTopic2" class="col-md-12">
-      <div class="card">
+      <div class="card component-container">
         <div class="card-header header-click" (click)="open(content2)" [ngbPopover]="chartDesc"
         triggers="mouseenter:mouseleave" container="body" placement="auto">
           Twitter Topic Analysis
@@ -139,7 +139,7 @@
     </div>
 
     <div *ngIf="!rowFull2" [class]="emptyColSize2">
-      <div class="card empty-card" (click)="open(content2)">
+      <div class="card component-container empty-card" (click)="open(content2)">
         <h3 class="card-title">Click here to select your content</h3>
         <p>{{emptySpaceText2}}</p>
       </div>
