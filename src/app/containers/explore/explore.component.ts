@@ -23,16 +23,20 @@ export class ExploreComponent implements OnInit {
   }
 
   submitSearch(text: string) {
-    this.searchResultText = text;
-    this.activitiesText = 'Total activities related to ' + this.searchResultText;
-    this.mockLoading();
+    if (text) {
+      this.searchResultText = text;
+      this.activitiesText = 'Total activities related to ' + this.searchResultText;
+      this.mockLoading();
+    }
   }
 
   submitSearchFirstVisit(text: string) {
-    this.searchResultText = text;
-    this.activitiesText = 'Total activities related to ' + this.searchResultText;
-    this.toggleFirstVisit();
-    this.mockLoading();
+    if (text) {
+      this.searchResultText = text;
+      this.activitiesText = 'Total activities related to ' + this.searchResultText;
+      this.toggleFirstVisit();
+      this.mockLoading();
+    }
   }
 
   toggleFirstVisit() {
