@@ -15,6 +15,7 @@ export class ExploreComponent implements OnInit {
   private mockActivity = 'Lorem ipsum dolor sit amet, id veri aliquid docendi nam, qui at soleat lucilius. ' +
   'Option quaestio scribentur his et, an labores facilis eum, vel ea propriae delectus.';
   private people = people;
+  private isLoading = true;
 
   constructor() { }
 
@@ -24,16 +25,23 @@ export class ExploreComponent implements OnInit {
   submitSearch(text: string) {
     this.searchResultText = text;
     this.activitiesText = 'Total activities related to ' + this.searchResultText;
+    this.mockLoading();
   }
 
   submitSearchFirstVisit(text: string) {
     this.searchResultText = text;
     this.activitiesText = 'Total activities related to ' + this.searchResultText;
     this.toggleFirstVisit();
+    this.mockLoading();
   }
 
   toggleFirstVisit() {
     this.firstVisit = !this.firstVisit;
+  }
+
+  mockLoading() {
+    this.isLoading = true;
+    setTimeout(() => this.isLoading = false, 1000);
   }
 
 }

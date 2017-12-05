@@ -1,4 +1,4 @@
-<div class="">
+<div>
   <div *ngIf="firstVisit" class="search-container">
     <h5 class="search-title display-4">What would you like to <b>explore</b>?</h5>
     <div class="input-group">
@@ -20,7 +20,11 @@
         </span>
       </div>
     </div>
-    <div class="people-result-container card">
+    <div *ngIf="isLoading" class="loading">
+      <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+      <span class="sr-only">Loading...</span>
+    </div>
+    <div *ngIf="!isLoading" class="people-result-container card">
       <h5 class="display-4 search-result-text">Found <b>{{people.length}} connections</b> related to <i>{{searchResultText}}</i></h5>
       <div class="row people-result">
         <div *ngFor="let person of people" class="col-3 people-card-container">
