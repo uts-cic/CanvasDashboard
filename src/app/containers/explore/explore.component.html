@@ -50,7 +50,7 @@
                   <i class="fa fa-line-chart"></i>
                   <span>{{person.activities}} activities</span>
                 </div>
-                <a href="javascript:void(0)" class="card-link" (click)="open(activitiesModal)">Details</a>
+                <a href="javascript:void(0)" class="card-link" (click)="open(activitiesModal, person.name)">Details</a>
               </div>
             </div>
           </div>
@@ -63,7 +63,7 @@
 <ng-template #activitiesModal let-c="close" let-d="dismiss">
   <div class="modal-header">
     <div>
-      <h4 class="modal-title">Tim Alpha</h4>
+      <h4 class="modal-title">{{personName}}</h4>
       <h6 class="text-muted">Posts related to <i>{{searchResultText}}</i></h6>
     </div>
     <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">

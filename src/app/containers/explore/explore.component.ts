@@ -18,13 +18,15 @@ export class ExploreComponent implements OnInit {
   private people = people;
   private isLoading = true;
   private topicAnalysis = false;
+  private personName = '';
 
   constructor(private modalService: NgbModal) { }
 
   ngOnInit() {
   }
 
-  open(content) {
+  open(content: any, personName: string) {
+    this.personName = personName;
     this.modalService.open(content);
   }
 
