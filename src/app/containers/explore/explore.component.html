@@ -50,6 +50,7 @@
                   <i class="fa fa-line-chart"></i>
                   <span>{{person.activities}} activities</span>
                 </div>
+                <a href="javascript:void(0)" class="card-link" (click)="open(activitiesModal)">Details</a>
               </div>
             </div>
           </div>
@@ -58,3 +59,47 @@
     </div>
   </div>
 </div>
+
+<ng-template #activitiesModal let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <div>
+      <h4 class="modal-title">Tim Alpha</h4>
+      <h6 class="text-muted">Posts related to <i>{{searchResultText}}</i></h6>
+    </div>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body activities-container">
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">
+        <p>{{mockActivity}}</p>
+        <i class="fa fa-facebook-official activities-social-icon"></i>
+        <span class="text-muted">posted on 25 Nov 2017</span>
+      </li>
+      <li class="list-group-item">
+        <p>{{mockActivity}}</p>
+        <i class="fa fa-twitter activities-social-icon"></i>
+        <span class="text-muted">posted on 12 Oct 2017</span>
+      </li>
+      <li class="list-group-item">
+        <p>{{mockActivity}}</p>
+        <i class="fa fa-facebook-official activities-social-icon"></i>
+        <span class="text-muted">posted on 10 Oct 2017</span>
+      </li>
+      <li class="list-group-item">
+        <p>{{mockActivity}}</p>
+        <i class="fa fa-slack activities-social-icon"></i>
+        <span class="text-muted">posted on 5 Sep 2017</span>
+      </li>
+      <li class="list-group-item">
+        <p>{{mockActivity}}</p>
+        <i class="fa fa-twitter activities-social-icon"></i>
+        <span class="text-muted">posted on 13 Aug 2017</span>
+      </li>
+    </ul>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">Close</button>
+  </div>
+</ng-template>

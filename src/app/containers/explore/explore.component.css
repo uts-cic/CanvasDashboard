@@ -83,3 +83,13 @@
   justify-content: center;
   position: fixed;
 }
+
+.activities-container {
+  padding: 0;
+  max-height: 30rem;
+  overflow-y: scroll;
+}
+
+.activities-social-icon {
+  width: 1rem;
+}

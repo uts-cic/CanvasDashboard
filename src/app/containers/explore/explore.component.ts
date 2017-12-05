@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { people } from '../../domain/data/mock-people';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-explore',
@@ -18,9 +19,13 @@ export class ExploreComponent implements OnInit {
   private isLoading = true;
   private topicAnalysis = false;
 
-  constructor() { }
+  constructor(private modalService: NgbModal) { }
 
   ngOnInit() {
+  }
+
+  open(content) {
+    this.modalService.open(content);
   }
 
   submitSearch(text: string) {
