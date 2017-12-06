@@ -5,7 +5,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { MatCheckboxModule } from '@angular/material';
+import { MatCheckboxModule, MatSnackBarModule } from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { SocialComponent } from './containers/social/social.component';
@@ -52,7 +53,9 @@ import { TopicAnalysisComponent } from './components/explore/topic-analysis/topi
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }
     ),
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatSnackBarModule,
+    BrowserAnimationsModule
   ],
   providers: [SocialActivityService, ContentService],
   bootstrap: [AppComponent]

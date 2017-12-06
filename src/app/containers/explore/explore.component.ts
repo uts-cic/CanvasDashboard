@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { MatSnackBar } from '@angular/material';
 import * as moment from 'moment';
 
 import { people } from '../../domain/data/mock-people';
@@ -25,10 +26,17 @@ export class ExploreComponent implements OnInit {
   private peopleActivities = peopleActivities;
   private activityIcon = '';
   private personIndex: number;
+  private connectModal: any;
 
-  constructor(private modalService: NgbModal) { }
+  constructor(private modalService: NgbModal, public snackBar: MatSnackBar) { }
 
   ngOnInit() {
+  }
+
+  openSnackBar(message: string, action: string) {
+    this.snackBar.open(message, action, {
+      duration: 3000,
+    });
   }
 
   openDetailsModal(content: any, personName: string) {
@@ -38,7 +46,12 @@ export class ExploreComponent implements OnInit {
 
   openConnectModal(content: any, index) {
     this.personIndex = index;
-    this.modalService.open(content);
+    this.connectModal = this.modalService.open(content);
+  }
+
+  connect(index: number) {
+    this.connectModal.close();
+    this.openSnackBar('Connected with ' + people[index].name, 'Dismiss');
   }
 
   submitSearch(text: string) {
