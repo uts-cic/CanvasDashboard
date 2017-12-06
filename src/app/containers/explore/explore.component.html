@@ -72,30 +72,10 @@
   </div>
   <div class="modal-body activities-container">
     <ul class="list-group list-group-flush">
-      <li class="list-group-item">
-        <p>{{mockActivity}}</p>
-        <i class="fa fa-facebook-official activities-social-icon"></i>
-        <span class="text-muted">posted on 25 Nov 2017</span>
-      </li>
-      <li class="list-group-item">
-        <p>{{mockActivity}}</p>
-        <i class="fa fa-twitter activities-social-icon"></i>
-        <span class="text-muted">posted on 12 Oct 2017</span>
-      </li>
-      <li class="list-group-item">
-        <p>{{mockActivity}}</p>
-        <i class="fa fa-facebook-official activities-social-icon"></i>
-        <span class="text-muted">posted on 10 Oct 2017</span>
-      </li>
-      <li class="list-group-item">
-        <p>{{mockActivity}}</p>
-        <i class="fa fa-slack activities-social-icon"></i>
-        <span class="text-muted">posted on 5 Sep 2017</span>
-      </li>
-      <li class="list-group-item">
-        <p>{{mockActivity}}</p>
-        <i class="fa fa-twitter activities-social-icon"></i>
-        <span class="text-muted">posted on 13 Aug 2017</span>
+      <li *ngFor="let activity of peopleActivities" class="list-group-item">
+        <p>{{activity.message}}</p>
+        <i [class]="setActivityIcon(activity.platform)"></i>
+        <span class="text-muted">posted on {{dateToString(activity.date)}}</span>
       </li>
     </ul>
   </div>

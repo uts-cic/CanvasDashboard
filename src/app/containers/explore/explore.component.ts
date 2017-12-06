@@ -1,6 +1,9 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { people } from '../../domain/data/mock-people';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import * as moment from 'moment';
+
+import { people } from '../../domain/data/mock-people';
+import { peopleActivities } from '../../domain/data/mock-people-activities';
 
 @Component({
   selector: 'app-explore',
@@ -19,6 +22,8 @@ export class ExploreComponent implements OnInit {
   private isLoading = true;
   private topicAnalysis = false;
   private personName = '';
+  private peopleActivities = peopleActivities;
+  private activityIcon = '';
 
   constructor(private modalService: NgbModal) { }
 
@@ -54,6 +59,23 @@ export class ExploreComponent implements OnInit {
   mockLoading() {
     this.isLoading = true;
     setTimeout(() => this.isLoading = false, 1000);
+  }
+
+  setActivityIcon(platform: string): string {
+    if (platform === 'Facebook') {
+      return 'fa fa-facebook-official activities-social-icon';
+    }
+    if (platform === 'Twitter') {
+      return 'fa fa-twitter activities-social-icon';
+    }
+    if (platform === 'Slack') {
+      return 'fa fa-slack activities-social-icon';
+    }
+  }
+
+  dateToString(dateInLong: number): string {
+    const date = moment(dateInLong);
+    return date.format('D MMM YYYY');
   }
 
 }
