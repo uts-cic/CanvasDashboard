@@ -34,12 +34,12 @@
     <div *ngIf="!isLoading" class="people-result-container card">
       <h5 class="display-4 search-result-text">Found <b>{{people.length}} connections</b> related to <i>{{searchResultText}}</i></h5>
       <div class="row people-result">
-        <div *ngFor="let person of people" class="col-3 people-card-container">
+        <div *ngFor="let person of people; let i = index" class="col-3 people-card-container">
           <div class="card people-card">
             <div class="card-body">
               <div class="inline-container">
                 <h4 class="card-title">{{person.name}}</h4>
-                <button class="btn btn-outline-primary btn-sm people-card-btn"><i class="fa fa-plus"></i></button>
+                <button class="btn btn-outline-primary btn-sm people-card-btn" (click)="openConnectModal(connectModal, i)"><i class="fa fa-plus"></i></button>
               </div>
               <h6 class="card-subtitle mb-2 text-muted">{{person.role}}</h6>
             </div>
@@ -50,7 +50,7 @@
                   <i class="fa fa-line-chart"></i>
                   <span>{{person.activities}} activities</span>
                 </div>
-                <a href="javascript:void(0)" class="card-link" (click)="open(activitiesModal, person.name)">Details</a>
+                <a href="javascript:void(0)" class="card-link" (click)="openDetailsModal(activitiesModal, person.name)">Details</a>
               </div>
             </div>
           </div>
@@ -81,5 +81,28 @@
   </div>
   <div class="modal-footer">
     <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">Close</button>
+  </div>
+</ng-template>
+
+<ng-template #connectModal let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <div>
+      <h4 class="modal-title">Add New Connection</h4>
+    </div>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>How would you like to connect with <b>{{people[personIndex].name}}</b>?</p>
+    <div class="connect-checkbox-container">
+      <mat-checkbox >Like on Facebook</mat-checkbox>
+      <mat-checkbox >Follow on Twitter</mat-checkbox>
+      <mat-checkbox >Message on Slack</mat-checkbox>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-danger" (click)="c('Close click')">Cancel</button>
+    <button type="button" class="btn btn-outline-primary" (click)="c('Close click')">Confirm</button>
   </div>
 </ng-template>

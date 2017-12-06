@@ -24,14 +24,20 @@ export class ExploreComponent implements OnInit {
   private personName = '';
   private peopleActivities = peopleActivities;
   private activityIcon = '';
+  private personIndex: number;
 
   constructor(private modalService: NgbModal) { }
 
   ngOnInit() {
   }
 
-  open(content: any, personName: string) {
+  openDetailsModal(content: any, personName: string) {
     this.personName = personName;
+    this.modalService.open(content);
+  }
+
+  openConnectModal(content: any, index) {
+    this.personIndex = index;
     this.modalService.open(content);
   }
 

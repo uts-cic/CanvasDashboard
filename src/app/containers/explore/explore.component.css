@@ -93,3 +93,8 @@
 .activities-social-icon {
   width: 1rem;
 }
+
+.connect-checkbox-container {
+  display: flex;
+  flex-direction: column;
+}
