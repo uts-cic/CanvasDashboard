@@ -19,6 +19,9 @@ export class TopicAnalysisComponent implements OnInit {
     this.generateMockData();
   }
 
+  /**
+   * Configures chart options
+   */
   setupChart(): void {
     this.options = {
       chart: {
@@ -58,6 +61,9 @@ export class TopicAnalysisComponent implements OnInit {
     };
   }
 
+  /**
+   * Generates mock data for the topic analysis chart
+   */
   generateMockData(): void {
     this.data = [
       {

@@ -33,27 +33,50 @@ export class ExploreComponent implements OnInit {
   ngOnInit() {
   }
 
+  /**
+   * Opens snackbar for displaying messages on the bottom of page
+   * @param message message to be displayed
+   * @param action snackbar action button label
+   */
   openSnackBar(message: string, action: string) {
     this.snackBar.open(message, action, {
       duration: 3000,
     });
   }
 
+  /**
+   * Opens modal to show people activities
+   * @param content template for details modal
+   * @param personName person name to be displayed
+   */
   openDetailsModal(content: any, personName: string) {
     this.personName = personName;
     this.modalService.open(content);
   }
 
+  /**
+   * Opens modal to connect with people
+   * @param content template for connect modal
+   * @param index index of person to connect with
+   */
   openConnectModal(content: any, index) {
     this.personIndex = index;
     this.connectModal = this.modalService.open(content);
   }
 
+  /**
+   * Connects with a person
+   * @param index index of person to connect with
+   */
   connect(index: number) {
     this.connectModal.close();
     this.openSnackBar('Connected with ' + people[index].name, 'Dismiss');
   }
 
+  /**
+   * Submits search for a specific topic
+   * @param text search topic
+   */
   submitSearch(text: string) {
     if (text) {
       this.searchResultText = text;
@@ -62,6 +85,10 @@ export class ExploreComponent implements OnInit {
     }
   }
 
+  /**
+   * Submits first time search for a specific topic
+   * @param text search topic
+   */
   submitSearchFirstVisit(text: string) {
     if (text) {
       this.searchResultText = text;
@@ -71,15 +98,25 @@ export class ExploreComponent implements OnInit {
     }
   }
 
+  /**
+   * Sets whether to show first time search page
+   */
   toggleFirstVisit() {
     this.firstVisit = !this.firstVisit;
   }
 
+  /**
+   * Simulates loading for 1 second
+   */
   mockLoading() {
     this.isLoading = true;
     setTimeout(() => this.isLoading = false, 1000);
   }
 
+  /**
+   * Sets activity icon based on social platform
+   * @param platform social platform to determine icon shown
+   */
   setActivityIcon(platform: string): string {
     if (platform === 'Facebook') {
       return 'fa fa-facebook-official activities-social-icon';
@@ -92,6 +129,10 @@ export class ExploreComponent implements OnInit {
     }
   }
 
+  /**
+   * Converts milliseconds date (in long/number) to a formatted string date
+   * @param dateInLong date in long / number
+   */
   dateToString(dateInLong: number): string {
     const date = moment(dateInLong);
     return date.format('D MMM YYYY');
