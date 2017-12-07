@@ -25,8 +25,8 @@ export class TopicAnalysisComponent implements OnInit {
   setupChart(): void {
     this.options = {
       chart: {
-        type: 'lineChart',
-        height: 300,
+        type: 'lineWithFocusChart',
+        height: 400,
         margin : {
           top: 30,
           right: 30,
@@ -41,6 +41,10 @@ export class TopicAnalysisComponent implements OnInit {
         useInteractiveGuideline: true,
         xAxis: {
           showMaxMin: false,
+          tickFormat: d => d3.time.format('%x')(new Date(d)),
+          axisLabel: 'Timeline'
+        },
+        x2Axis: {
           tickFormat: d => d3.time.format('%x')(new Date(d)),
           axisLabel: 'Timeline'
         },
