@@ -97,13 +97,17 @@
 <ng-template #connectModal let-c="close" let-d="dismiss">
   <div class="modal-header">
     <div>
-      <h4 class="modal-title">Add New Connection</h4>
+      <h4 class="modal-title">{{people[personIndex].name}}</h4>
     </div>
     <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
   <div class="modal-body">
+    <div class="row connect-modal-media-container">
+      <div class="col-md-6"><div class="connect-modal-img"></div></div>
+      <div class="card col-md-6"></div>
+    </div>
     <p>How would you like to connect with <b>{{people[personIndex].name}}</b>?</p>
     <div class="connect-checkbox-container">
       <mat-checkbox >Like on Facebook</mat-checkbox>
