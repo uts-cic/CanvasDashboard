@@ -29,11 +29,11 @@ export class SocialActivityChartComponent implements OnInit {
   setupChart(): void {
     this.options = {
       chart: {
-        type: 'lineChart',
+        type: 'lineWithFocusChart',
         height: 300,
         margin : {
           top: 20,
-          right: 20,
+          right: 30,
           bottom: 40,
           left: 55
         },
@@ -49,6 +49,9 @@ export class SocialActivityChartComponent implements OnInit {
         xAxis: {
           showMaxMin: false,
           axisLabel: 'Timeline',
+          tickFormat: d => d3.time.format('%x')(new Date(d)),
+        },
+        x2Axis: {
           tickFormat: d => d3.time.format('%x')(new Date(d)),
         },
         yAxis: {
