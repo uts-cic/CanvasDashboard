@@ -27,6 +27,7 @@ import { ContentService } from './domain/services/content/content.service';
 import { SocialStudentComponent } from './containers/social-student/social-student.component';
 import { ExploreComponent } from './containers/explore/explore.component';
 import { TopicAnalysisComponent } from './components/explore/topic-analysis/topic-analysis.component';
+import { SocialChartComponent } from './components/explore/social-chart/social-chart.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { TopicAnalysisComponent } from './components/explore/topic-analysis/topi
     TwitterTopicChartComponent,
     SocialStudentComponent,
     ExploreComponent,
-    TopicAnalysisComponent
+    TopicAnalysisComponent,
+    SocialChartComponent
   ],
   imports: [
     BrowserModule,
