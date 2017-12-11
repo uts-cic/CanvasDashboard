@@ -48,7 +48,7 @@
           <div class="card-body">
             <div class="inline-container">
               <h4 class="card-title">{{person.name}}</h4>
-              <button class="btn btn-outline-primary btn-sm people-card-btn" (click)="openConnectModal(connectModal, i)"><i class="fa fa-plus"></i></button>
+              <button class="btn btn-outline-primary btn-sm people-card-btn" (click)="openConnectModal(connectModal, i)"><i class="fa fa-user-plus"></i></button>
             </div>
             <h6 class="card-subtitle mb-2 text-muted">{{person.role}}</h6>
           </div>
@@ -106,7 +106,7 @@
   <div class="modal-body">
     <div class="row connect-modal-media-container">
       <div class="col-md-6"><div class="connect-modal-img"></div></div>
-      <div class="card col-md-6 person-chart">
+      <div class="card col-md-6">
         <app-social-chart></app-social-chart>
       </div>
     </div>
