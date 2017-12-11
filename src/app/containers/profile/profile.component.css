@@ -1,0 +1,52 @@
+.containers-profile-header {
+  height: 17.5rem;
+  background-color: #ededed;
+  padding: 4.25rem;
+  padding-left: 8rem;
+  padding-right: 8rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.containers-profile-header-left {
+  display: flex;
+}
+
+.containers-profile-header-right {
+  display: flex;
+  flex-direction: column;
+}
+
+.containers-profile-header-title-container {
+  display: flex;
+  flex-direction: column;
+  padding-left: 3rem;
+}
+
+.containers-profile-header-social-container {
+  display: flex;
+}
+
+.containers-profile-header-message-btn {
+  margin-top: 1.1rem;
+}
+
+.containers-profile-name {
+  font-size: 2.5rem;
+}
+
+.containers-profile-role {
+  font-size: 1.5rem;
+}
+
+.containers-profile-company {
+  font-size: 1.15rem;
+}
+
+.containers-profile-img {
+  font-size: 7.5rem;
+}
+
+.containers-profile-social-icon {
+  cursor: pointer;
+}
