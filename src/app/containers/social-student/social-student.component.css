@@ -45,3 +45,10 @@
 .progressbar {
   width: 100%;
 }
+
+@media (max-width: 768px) {
+  .social-student-container {
+    position: relative;
+    overflow: scroll;
+  }
+}
