@@ -10,7 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { SocialComponent } from './containers/social/social.component';
-import { PersonalComponent } from './containers/personal/personal.component';
+import { ProfileComponent } from './containers/profile/profile.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { SocialActivityChartComponent } from './components/social/social-activity-chart/social-activity-chart.component';
 import { KeywordsComponent } from './components/social/keywords/keywords.component';
@@ -33,7 +33,7 @@ import { SocialChartComponent } from './components/explore/social-chart/social-c
   declarations: [
     AppComponent,
     SocialComponent,
-    PersonalComponent,
+    ProfileComponent,
     SocialActivityChartComponent,
     KeywordsComponent,
     SocialReachChartComponent,
