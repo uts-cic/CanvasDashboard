@@ -1,9 +1,9 @@
 .containers-profile-header {
-  height: 17.5rem;
+  height: 12.5rem;
   background-color: #ededed;
-  padding: 4.25rem;
-  padding-left: 8rem;
-  padding-right: 8rem;
+  padding-top: 2.75rem;
+  padding-left: 10%;
+  padding-right: 10%;
   display: flex;
   justify-content: space-between;
 }
@@ -32,21 +32,35 @@
 }
 
 .containers-profile-name {
-  font-size: 2.5rem;
+  font-size: 2rem;
 }
 
 .containers-profile-role {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
 }
 
 .containers-profile-company {
-  font-size: 1.15rem;
+  font-size: 1rem;
 }
 
 .containers-profile-img {
-  font-size: 7.5rem;
+  font-size: 6.5rem;
 }
 
 .containers-profile-social-icon {
   cursor: pointer;
+}
+
+.containers-profile-body {
+  padding: 2rem;
+  padding-left: 3%;
+  padding-right: 3%;
+}
+
+.containers-profile-panel {
+  padding: 1rem;
+}
+
+.containers-profile-portfolio {
+  margin-top: 2rem;
 }
