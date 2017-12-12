@@ -15,6 +15,7 @@ export class SocialActivityChartComponent implements OnInit {
   private data: any;
   public isShow = false;
   @ViewChild('nvd3') nvd3;
+  @Input() size;
 
   constructor(private socialActivityService: SocialActivityService) { }
 
@@ -27,10 +28,11 @@ export class SocialActivityChartComponent implements OnInit {
    * Configure chart options
    */
   setupChart(): void {
+    console.log(this.size);
     this.options = {
       chart: {
         type: 'lineWithFocusChart',
-        height: 300,
+        height: this.size,
         margin : {
           top: 20,
           right: 30,

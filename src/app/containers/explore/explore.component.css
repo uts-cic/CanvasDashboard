@@ -111,3 +111,11 @@
   margin-right: 0;
   margin-bottom: 1rem;
 }
+
+@media (max-width: 768px) {
+  .search-container {
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 25%;
+  }
+}

@@ -1,11 +1,12 @@
 .containers-profile-header {
-  height: 12.5rem;
   background-color: #ededed;
   padding-top: 2.75rem;
+  padding-bottom: 2.75rem;
   padding-left: 10%;
   padding-right: 10%;
   display: flex;
   justify-content: space-between;
+  overflow: auto;
 }
 
 .containers-profile-header-left {
@@ -52,7 +53,7 @@
 }
 
 .containers-profile-body {
-  padding: 2rem;
+  padding: 1rem;
   padding-left: 3%;
   padding-right: 3%;
 }
@@ -62,5 +63,65 @@
 }
 
 .containers-profile-portfolio {
-  margin-top: 2rem;
+  padding: 1.25rem;
+  padding-bottom: 0;
+}
+
+.containers-profile-portfolio-title {
+  margin-bottom: 1rem;
+}
+
+.containers-profile-component-container {
+  height: 18rem;
+  margin-bottom: 1rem;
+}
+
+.containers-profile-component-body {
+  height: 16rem;
+  overflow: auto;
+}
+
+.containers-profile-analytics-empty {
+  cursor: pointer;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.containers-profile-portfolio-container {
+  margin-left: 0;
+}
+
+.containers-profile-portfolio-item-container {
+  padding-left: 0;
+  margin-bottom: 1rem;
+}
+
+.containers-profile-portfolio-item-img {
+  height: 7.75rem;
+}
+
+.containers-profile-portfolio-item-details {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0.5rem;
+}
+
+.containers-profile-portfolio-item-detail {
+  margin-right: 0.75rem;
+}
+
+.containers-profile-portfolio-item-empty {
+  cursor: pointer;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .containers-profile-header-right {
+    margin-top: 2rem;
+  }
 }
