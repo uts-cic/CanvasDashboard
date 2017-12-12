@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, Input } from '@angular/core';
 
 declare let d3: any;
 
@@ -15,6 +15,7 @@ export class EngagementChartComponent implements OnInit {
   private facebookData: any;
   private slackData: any;
   private selected: String = 'Facebook';
+  @Input() size;
 
   constructor() { }
 
@@ -50,7 +51,7 @@ export class EngagementChartComponent implements OnInit {
     this.options = {
       chart: {
         type: 'pieChart',
-        height: 250,
+        height: this.size,
         margin: {
           top: 0,
           right: 0,

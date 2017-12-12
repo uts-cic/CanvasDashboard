@@ -54,10 +54,26 @@
           </div>
         </div>
       </div>
-      <div class="col-md-6">
+      <div *ngIf="socialActivity" class="col-md-6">
+        <div class="card containers-profile-component-container">
+          <div class="card-header containers-profile-analytics-card-header" (click)="open(analyticsModal)">
+            Social Activity
+          </div>
+          <app-social-activity-chart [size]="200"></app-social-activity-chart>
+        </div>
+      </div>
+      <div *ngIf="engagement" class="col-md-3">
+        <div class="card containers-profile-component-container">
+          <div class="card-header containers-profile-analytics-card-header" (click)="open(analyticsModal)">
+            Engagement
+          </div>
+          <app-engagement-chart [size]="180"></app-engagement-chart>
+        </div>
+      </div>
+      <div *ngIf="occupiedSpace < 2" [class]="emptySpaceClass">
         <div class="card containers-profile-component-container">
           <div class="card-header">My Analytics</div>
-          <div class="card-body containers-profile-analytics-empty">
+          <div class="card-body containers-profile-analytics-empty" (click)="open(analyticsModal)">
             <h3 class="card-title">Click here to select your content</h3>
             <p>2 of 2 spaces left</p>
           </div>
@@ -109,3 +125,28 @@
     </div>
   </div>
 </div>
+
+<ng-template #analyticsModal let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title">Select Your Content</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+
+  <div class="modal-body">
+    <p>Select analytics for your profile</p>
+
+    <button type="button" class="btn btn-outline-primary containers-profile-analytics-btn"
+    (click)="onSelect('socialActivity')" [class.active]="socialActivity" [disabled]="socialActivityDisabled"
+    ngbPopover="Requires 2 spaces" triggers="mouseenter:mouseleave" container="body" placement="auto">Social Activity</button>
+
+    <button type="button" class="btn btn-outline-primary containers-profile-analytics-btn"
+    (click)="onSelect('engagement')" [class.active]="engagement" [disabled]="engagementDisabled"
+    ngbPopover="Requires 1 space" triggers="mouseenter:mouseleave" container="body" placement="auto">Engagement</button>
+
+  </div>
+
+  <div class="modal-footer">
+  </div>
+</ng-template>

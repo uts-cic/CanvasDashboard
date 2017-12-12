@@ -120,6 +120,14 @@
   justify-content: center;
 }
 
+.containers-profile-analytics-card-header {
+  cursor: pointer;
+}
+
+.containers-profile-analytics-btn {
+  margin-right: 0.5rem;
+}
+
 @media (max-width: 768px) {
   .containers-profile-header-right {
     margin-top: 2rem;
