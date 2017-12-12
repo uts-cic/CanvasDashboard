@@ -11,3 +11,17 @@
   padding-top: 0;
   padding-bottom: 0;
 }
+
+.profile-mobile-nav-link {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .profile-nav-link {
+    display: none;
+  }
+  
+  .profile-mobile-nav-link {
+    display: inline;
+  }
+}
