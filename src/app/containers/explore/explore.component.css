@@ -42,18 +42,15 @@
 }
 
 .people-result {
-  margin: 1rem;
-  margin-top: 1.5rem;
-  margin-left: 0rem;
+  margin-top: 1rem;
 }
 
 .people-card-container {
-  padding-right: 0.5rem;
-  padding-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .people-card {
-  padding: 0;
+  height: 100%;
 }
 
 .inline-container {
@@ -107,9 +104,15 @@
   border-radius: 0.25rem;
 }
 
-.connect-modal-media-container {
-  margin-right: 0;
+.connect-modal-component {
   margin-bottom: 1rem;
+}
+
+.connect-modal-chart-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
 
 @media (max-width: 768px) {
@@ -117,5 +120,10 @@
     margin-left: 10%;
     margin-right: 10%;
     margin-top: 25%;
+  }
+
+  .explore-topic-btn {
+    margin-left: 1rem;
+    margin-top: 1rem;
   }
 }

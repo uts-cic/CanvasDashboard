@@ -43,7 +43,7 @@
   <div *ngIf="!isLoading" class="people-result-container card">
     <h5 class="display-4 search-result-text">Found <b>{{people.length}} connections</b> related to <i>{{searchResultText}}</i></h5>
     <div class="row people-result">
-      <div *ngFor="let person of people; let i = index" class="col-3 people-card-container">
+      <div *ngFor="let person of people; let i = index" class="col-md-3 people-card-container">
         <div class="card people-card">
           <div class="card-body">
             <div class="inline-container">
@@ -104,10 +104,14 @@
     </button>
   </div>
   <div class="modal-body">
-    <div class="row connect-modal-media-container">
-      <div class="col-md-6"><div class="connect-modal-img"></div></div>
-      <div class="card col-md-6">
-        <app-social-chart></app-social-chart>
+    <div class="row">
+      <div class="col-md-6 connect-modal-component">
+        <div class="connect-modal-img"></div>
+      </div>
+      <div class="col-md-6 connect-modal-component">
+        <div class="card connect-modal-chart-container">
+          <app-social-chart></app-social-chart>
+        </div>
       </div>
     </div>
     <p>How would you like to connect with <b>{{people[personIndex].name}}</b>?</p>
