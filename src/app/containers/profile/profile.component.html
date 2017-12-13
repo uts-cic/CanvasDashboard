@@ -1,139 +1,152 @@
-<div>
-  <div class="containers-profile-header row">
-    <div class="containers-profile-header-left">
-      <div class="containers-profile-img-container">
-        <i class="fa fa-user-circle containers-profile-img"></i>
-      </div>
-      <div class="containers-profile-header-title-container">
-        <h2 class="containers-profile-name">Andy Wilson</h2>
-        <span class="containers-profile-role">Data Analyst</span>
-        <span class="containers-profile-company">University of Technology Sydney - MDSI</span>
-      </div>
+<!-- PROFILE PAGE -->
+<!-- Shows a user's profile, can be modified to be configurable as a public profile when authentication works. -->
+
+<!-- Profile heading -->
+<div class="containers-profile-header row">
+  <div class="containers-profile-header-left">
+    <div class="containers-profile-img-container">
+      <i class="fa fa-user-circle containers-profile-img"></i>
     </div>
-    <div class="containers-profile-header-right">
-      <div class="containers-profile-header-social-container">
-        <span class="fa-stack fa-lg containers-profile-social-icon">
-          <i class="fa fa-square-o fa-stack-2x"></i>
-          <i class="fa fa-facebook-f fa-stack-1x"></i>
-        </span>
-        <span class="fa-stack fa-lg containers-profile-social-icon">
-          <i class="fa fa-square-o fa-stack-2x"></i>
-          <i class="fa fa-twitter fa-stack-1x"></i>
-        </span>
-        <span class="fa-stack fa-lg containers-profile-social-icon">
-          <i class="fa fa-square-o fa-stack-2x"></i>
-          <i class="fa fa-google-plus fa-stack-1x"></i>
-        </span>
-        <span class="fa-stack fa-lg containers-profile-social-icon">
-          <i class="fa fa-square-o fa-stack-2x"></i>
-          <i class="fa fa-stack-overflow fa-stack-1x"></i>
-        </span>
-        <span class="fa-stack fa-lg containers-profile-social-icon">
-          <i class="fa fa-square-o fa-stack-2x"></i>
-          <i class="fa fa-slack fa-stack-1x"></i>
-        </span>
-      </div>
-      <button type="button" class="btn btn-primary containers-profile-header-message-btn">
-        <i class="fa fa-comments"></i>
-        Message
-      </button>
+    <div class="containers-profile-header-title-container">
+      <h2 class="containers-profile-name">Andy Wilson</h2>
+      <span class="containers-profile-role">Data Analyst</span>
+      <span class="containers-profile-company">University of Technology Sydney - MDSI</span>
     </div>
   </div>
 
-  <div class="containers-profile-body">
-    <div class="containers-profile-info row">
-      <div class="col-md-6">
-        <div class="card containers-profile-component-container">
-          <div class="card-header">About Me</div>
-          <div class="card-body containers-profile-component-body">
-            Lorem ipsum dolor sit amet, mei in regione feugait, vis te civibus iudicabit consequuntur. 
-            Doming dignissim eum an, denique reprehendunt cu per. Viderer appetere salutandi eam no, ut nibh iusto errem quo. 
-            Usu aliquam euripidis at. Ius novum quaestio suscipiantur in. <br /><br />
-            Pro sumo quaerendum ut, vel ut ullum nobis. Vim accusata recusabo ea, ad epicuri vulputate est, 
-            nam ubique ocurreret id. Fabulas delenit mei at, et pri labore nostrum facilisi. Choro cotidieque dissentiunt mei id.
-          </div>
-        </div>
-      </div>
-      <div *ngIf="socialActivity" class="col-md-6">
-        <div class="card containers-profile-component-container">
-          <div class="card-header containers-profile-analytics-card-header" (click)="open(analyticsModal)">
-            Social Activity
-          </div>
-          <app-social-activity-chart [size]="200"></app-social-activity-chart>
-        </div>
-      </div>
-      <div *ngIf="engagement" class="col-md-3">
-        <div class="card containers-profile-component-container">
-          <div class="card-header containers-profile-analytics-card-header" (click)="open(analyticsModal)">
-            Engagement
-          </div>
-          <app-engagement-chart [size]="180"></app-engagement-chart>
-        </div>
-      </div>
-      <div *ngIf="socialReach" class="col-md-3">
-        <div class="card containers-profile-component-container">
-          <div class="card-header containers-profile-analytics-card-header" (click)="open(analyticsModal)">
-            Social Reach
-          </div>
-          <app-social-reach-chart [size]="235"></app-social-reach-chart>
-        </div>
-      </div>
-      <div *ngIf="network" class="col-md-3">
-        <div class="card containers-profile-component-container">
-          <div class="card-header containers-profile-analytics-card-header" (click)="open(analyticsModal)">
-            Network
-          </div>
-          <app-network-chart [height]="235" [width]="315"></app-network-chart>
-        </div>
-      </div>
-      <div *ngIf="occupiedSpace < 2" [class]="emptySpaceClass">
-        <div class="card containers-profile-component-container">
-          <div class="card-header">My Analytics</div>
-          <div class="card-body containers-profile-analytics-empty" (click)="open(analyticsModal)">
-            <h3 class="card-title">Click here to select your content</h3>
-            <p>{{emptySpaceText}}</p>
-          </div>
+  <div class="containers-profile-header-right">
+    <!-- Social media icons which can be used to link to the user's social media pages. Currently still static. -->
+    <div class="containers-profile-header-social-container">
+      <span class="fa-stack fa-lg containers-profile-social-icon">
+        <i class="fa fa-square-o fa-stack-2x"></i>
+        <i class="fa fa-facebook-f fa-stack-1x"></i>
+      </span>
+      <span class="fa-stack fa-lg containers-profile-social-icon">
+        <i class="fa fa-square-o fa-stack-2x"></i>
+        <i class="fa fa-twitter fa-stack-1x"></i>
+      </span>
+      <span class="fa-stack fa-lg containers-profile-social-icon">
+        <i class="fa fa-square-o fa-stack-2x"></i>
+        <i class="fa fa-google-plus fa-stack-1x"></i>
+      </span>
+      <span class="fa-stack fa-lg containers-profile-social-icon">
+        <i class="fa fa-square-o fa-stack-2x"></i>
+        <i class="fa fa-stack-overflow fa-stack-1x"></i>
+      </span>
+      <span class="fa-stack fa-lg containers-profile-social-icon">
+        <i class="fa fa-square-o fa-stack-2x"></i>
+        <i class="fa fa-slack fa-stack-1x"></i>
+      </span>
+    </div>
+    <!-- Button to send message to the user. Idea: direct message to user / redirect to message on social media / launches email apps -->
+    <button type="button" class="btn btn-primary containers-profile-header-message-btn">
+      <i class="fa fa-comments"></i>
+      Message
+    </button>
+  </div>
+</div>
+
+<!-- Profile body -->
+<div class="containers-profile-body">
+  <div class="containers-profile-info row">
+    <!-- User information (About Me) panel -->
+    <div class="col-md-6">
+      <div class="card containers-profile-component-container">
+        <div class="card-header">About Me</div>
+        <div class="card-body containers-profile-component-body">
+          Lorem ipsum dolor sit amet, mei in regione feugait, vis te civibus iudicabit consequuntur. 
+          Doming dignissim eum an, denique reprehendunt cu per. Viderer appetere salutandi eam no, ut nibh iusto errem quo. 
+          Usu aliquam euripidis at. Ius novum quaestio suscipiantur in. <br /><br />
+          Pro sumo quaerendum ut, vel ut ullum nobis. Vim accusata recusabo ea, ad epicuri vulputate est, 
+          nam ubique ocurreret id. Fabulas delenit mei at, et pri labore nostrum facilisi. Choro cotidieque dissentiunt mei id.
         </div>
       </div>
     </div>
-    <div class="containers-profile-portfolio card">
-      <h5 class="containers-profile-portfolio-title">My Portfolio</h5>
-      <div class="row containers-profile-portfolio-container">
-        <div class="col-md-3 containers-profile-portfolio-item-container">
-          <div class="card">
-            <img class="card-img-top containers-profile-portfolio-item-img" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97130&w=318&h=130" alt="Card image cap">
-            <div class="containers-profile-portfolio-item-details">
-              <div class="containers-profile-portfolio-item-detail">
-                <i class="fa fa-eye"></i>
-                <span>254</span>
-              </div>
-              <div class="containers-profile-portfolio-item-detail">
-                <i class="fa fa-heart"></i>
-                <span>53</span>
-              </div>
-              <div>
-                <i class="fa fa-share-alt"></i>
-                <span>12</span>
-              </div>
+
+    <!-- Use the same if statements logic as in social page to hide or show analytic components -->
+    <div *ngIf="socialActivity" class="col-md-6">
+      <div class="card containers-profile-component-container">
+        <div class="card-header containers-profile-analytics-card-header" (click)="open(analyticsModal)">
+          Social Activity
+        </div>
+        <app-social-activity-chart [size]="200"></app-social-activity-chart>
+      </div>
+    </div>
+    <div *ngIf="engagement" class="col-md-3">
+      <div class="card containers-profile-component-container">
+        <div class="card-header containers-profile-analytics-card-header" (click)="open(analyticsModal)">
+          Engagement
+        </div>
+        <app-engagement-chart [size]="180"></app-engagement-chart>
+      </div>
+    </div>
+    <div *ngIf="socialReach" class="col-md-3">
+      <div class="card containers-profile-component-container">
+        <div class="card-header containers-profile-analytics-card-header" (click)="open(analyticsModal)">
+          Social Reach
+        </div>
+        <app-social-reach-chart [size]="235"></app-social-reach-chart>
+      </div>
+    </div>
+    <div *ngIf="network" class="col-md-3">
+      <div class="card containers-profile-component-container">
+        <div class="card-header containers-profile-analytics-card-header" (click)="open(analyticsModal)">
+          Network
+        </div>
+        <app-network-chart [height]="235" [width]="315"></app-network-chart>
+      </div>
+    </div>
+    <!-- Empty space panel is only shown when spaces are not fully occupied, resizes based on amount of free space -->
+    <div *ngIf="occupiedSpace < 2" [class]="emptySpaceClass">
+      <div class="card containers-profile-component-container">
+        <div class="card-header">My Analytics</div>
+        <div class="card-body containers-profile-analytics-empty" (click)="open(analyticsModal)">
+          <h3 class="card-title">Click here to select your content</h3>
+          <p>{{emptySpaceText}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 'My Portfolio' panel. This is still static and doesn't have any funtionalities, but could be utilised as a space to show saved dashboards -->
+  <div class="containers-profile-portfolio card">
+    <h5 class="containers-profile-portfolio-title">My Portfolio</h5>
+    <div class="row containers-profile-portfolio-container">
+      <div class="col-md-3 containers-profile-portfolio-item-container">
+        <!-- Some mock portfolio to show how it might be displayed -->
+        <div class="card">
+          <img class="card-img-top containers-profile-portfolio-item-img" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97130&w=318&h=130" alt="Card image cap">
+          <div class="containers-profile-portfolio-item-details">
+            <div class="containers-profile-portfolio-item-detail">
+              <i class="fa fa-eye"></i>
+              <span>254</span>
+            </div>
+            <div class="containers-profile-portfolio-item-detail">
+              <i class="fa fa-heart"></i>
+              <span>53</span>
+            </div>
+            <div>
+              <i class="fa fa-share-alt"></i>
+              <span>12</span>
             </div>
           </div>
         </div>
-        <div class="col-md-3 containers-profile-portfolio-item-container">
-          <div class="card">
-            <img class="card-img-top containers-profile-portfolio-item-img" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97130&w=318&h=130" alt="Card image cap">
-            <div class="containers-profile-portfolio-item-details">
-              <div class="containers-profile-portfolio-item-detail">
-                <i class="fa fa-eye"></i>
-                <span>152</span>
-              </div>
-              <div class="containers-profile-portfolio-item-detail">
-                <i class="fa fa-heart"></i>
-                <span>62</span>
-              </div>
-              <div>
-                <i class="fa fa-share-alt"></i>
-                <span>25</span>
-              </div>
+      </div>
+      <div class="col-md-3 containers-profile-portfolio-item-container">
+        <div class="card">
+          <img class="card-img-top containers-profile-portfolio-item-img" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97130&w=318&h=130" alt="Card image cap">
+          <div class="containers-profile-portfolio-item-details">
+            <div class="containers-profile-portfolio-item-detail">
+              <i class="fa fa-eye"></i>
+              <span>152</span>
+            </div>
+            <div class="containers-profile-portfolio-item-detail">
+              <i class="fa fa-heart"></i>
+              <span>62</span>
+            </div>
+            <div>
+              <i class="fa fa-share-alt"></i>
+              <span>25</span>
             </div>
           </div>
         </div>
@@ -142,6 +155,7 @@
   </div>
 </div>
 
+<!-- Modal for selecting analytics shown on profile page -->
 <ng-template #analyticsModal let-c="close" let-d="dismiss">
   <div class="modal-header">
     <h4 class="modal-title">Select Your Content</h4>
@@ -153,6 +167,7 @@
   <div class="modal-body">
     <p>Select analytics for your profile</p>
 
+    <!-- Toggle buttons for selecting or deselecting analytic components -->
     <button type="button" class="btn btn-outline-primary containers-profile-analytics-btn"
     (click)="onSelect('socialActivity')" [class.active]="socialActivity" [disabled]="socialActivityDisabled"
     ngbPopover="Requires 2 spaces" triggers="mouseenter:mouseleave" container="body" placement="auto">Social Activity</button>
@@ -171,6 +186,7 @@
   </div>
 
   <div class="modal-footer">
+    <!-- Progress bar to show how many spaces are occupied -->
     <span class="containers-profile-analytics-progressbar">
       <ngb-progressbar [value]="occupiedSpace" [type]="progressType" [max]="2">
         <span *ngIf="occupiedSpace > 0"><b>{{occupiedSpace}} of 2</b>&nbsp;spaces occupied</span>
