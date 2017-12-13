@@ -115,6 +115,10 @@
   height: 100%;
 }
 
+.person-chart-content {
+  width: 13.5rem;
+}
+
 @media (max-width: 768px) {
   .search-container {
     margin-left: 10%;

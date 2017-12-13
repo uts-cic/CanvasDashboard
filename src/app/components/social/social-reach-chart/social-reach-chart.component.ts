@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, Input } from '@angular/core';
 
 declare let d3: any;
 
@@ -11,6 +11,7 @@ declare let d3: any;
 export class SocialReachChartComponent implements OnInit {
   private options: any;
   private data: any;
+  @Input() size;
 
   constructor() { }
 
@@ -26,7 +27,7 @@ export class SocialReachChartComponent implements OnInit {
     this.options = {
       chart: {
         type: 'pieChart',
-        height: 300,
+        height: this.size,
         margin: {
           top: 5,
           right: 0,
