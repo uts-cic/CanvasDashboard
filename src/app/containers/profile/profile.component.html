@@ -78,6 +78,14 @@
           <app-social-reach-chart [size]="235"></app-social-reach-chart>
         </div>
       </div>
+      <div *ngIf="network" class="col-md-3">
+        <div class="card containers-profile-component-container">
+          <div class="card-header containers-profile-analytics-card-header" (click)="open(analyticsModal)">
+            Network
+          </div>
+          <app-network-chart [height]="235" [width]="315"></app-network-chart>
+        </div>
+      </div>
       <div *ngIf="occupiedSpace < 2" [class]="emptySpaceClass">
         <div class="card containers-profile-component-container">
           <div class="card-header">My Analytics</div>
@@ -157,6 +165,9 @@
     (click)="onSelect('socialReach')" [class.active]="socialReach" [disabled]="socialReachDisabled"
     ngbPopover="Requires 1 space" triggers="mouseenter:mouseleave" container="body" placement="auto">Social Reach</button>
 
+    <button type="button" class="btn btn-outline-primary containers-profile-analytics-btn"
+    (click)="onSelect('network')" [class.active]="network" [disabled]="networkDisabled"
+    ngbPopover="Requires 1 space" triggers="mouseenter:mouseleave" container="body" placement="auto">Network</button>
   </div>
 
   <div class="modal-footer">

@@ -11,6 +11,8 @@ declare let d3: any;
 export class NetworkChartComponent implements OnInit {
   private options: any;
   private data: any;
+  @Input() height;
+  @Input() width;
 
   constructor() { }
 
@@ -27,7 +29,8 @@ export class NetworkChartComponent implements OnInit {
     this.options = {
       chart: {
         type: 'forceDirectedGraph',
-        height: 300,
+        height: this.height,
+        width: this.width,
         margin: {
           top: 0,
           right: 0,
