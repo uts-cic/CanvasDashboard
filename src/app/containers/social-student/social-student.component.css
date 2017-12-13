@@ -26,7 +26,7 @@
 
 .content-btn {
   margin-right: 0.5rem;
-  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
 }
 
 .empty-card {
@@ -44,6 +44,10 @@
 
 .progressbar {
   width: 100%;
+}
+
+.content-selection-tab {
+  margin-top: 0.5rem;
 }
 
 @media (max-width: 768px) {
