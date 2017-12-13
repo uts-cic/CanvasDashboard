@@ -91,7 +91,7 @@
           <div class="card-header">My Analytics</div>
           <div class="card-body containers-profile-analytics-empty" (click)="open(analyticsModal)">
             <h3 class="card-title">Click here to select your content</h3>
-            <p>2 of 2 spaces left</p>
+            <p>{{emptySpaceText}}</p>
           </div>
         </div>
       </div>
@@ -171,5 +171,10 @@
   </div>
 
   <div class="modal-footer">
+    <span class="containers-profile-analytics-progressbar">
+      <ngb-progressbar [value]="occupiedSpace" [type]="progressType" [max]="2">
+        <span *ngIf="occupiedSpace > 0"><b>{{occupiedSpace}} of 2</b>&nbsp;spaces occupied</span>
+      </ngb-progressbar>
+    </span>
   </div>
 </ng-template>

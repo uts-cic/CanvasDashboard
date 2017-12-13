@@ -19,6 +19,8 @@ export class ProfileComponent implements OnInit {
   private networkDisabled = false;
   private occupiedSpace = 0;
   private emptySpaceClass = 'col-md-6';
+  private emptySpaceText = '2 of 2 spaces left';
+  private progressType = 'warning';
 
   constructor(private modalService: NgbModal) { }
 
@@ -48,6 +50,8 @@ export class ProfileComponent implements OnInit {
     this.occupiedSpace += this.network ? 1 : 0;
 
     this.emptySpaceClass = 'col-md-' + (6 - this.occupiedSpace * 3);
+    this.emptySpaceText = (2 - this.occupiedSpace) + ' of 2 spaces left';
+    this.progressType = this.occupiedSpace === 1 ? 'warning' : 'danger';
     this.setDisabledBtn();
   }
 

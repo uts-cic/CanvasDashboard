@@ -129,6 +129,10 @@
   margin-top: 0.5rem;
 }
 
+.containers-profile-analytics-progressbar {
+  width: 100%;
+}
+
 @media (max-width: 768px) {
   .containers-profile-header-right {
     margin-top: 2rem;
