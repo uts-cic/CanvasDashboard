@@ -12,21 +12,21 @@ import { AppComponent } from './app.component';
 import { SocialComponent } from './containers/social/social.component';
 import { ProfileComponent } from './containers/profile/profile.component';
 import { AppRoutingModule } from './/app-routing.module';
-import { SocialActivityChartComponent } from './components/social/social-activity-chart/social-activity-chart.component';
-import { KeywordsComponent } from './components/social/keywords/keywords.component';
-import { SocialReachChartComponent } from './components/social/social-reach-chart/social-reach-chart.component';
+import { SocialActivityChartComponent } from './components/social-activity-chart/social-activity-chart.component';
+import { KeywordsComponent } from './components/keywords/keywords.component';
+import { SocialReachChartComponent } from './components/social-reach-chart/social-reach-chart.component';
 import { InMemoryDataService } from './domain/services/in-memory-data.service';
 
 import 'd3';
 import 'nvd3';
-import { EngagementChartComponent } from './components/social/engagement-chart/engagement-chart.component';
-import { NetworkChartComponent } from './components/social/network-chart/network-chart.component';
-import { TwitterTopicChartComponent } from './components/social/twitter-topic-chart/twitter-topic-chart.component';
+import { EngagementChartComponent } from './components/engagement-chart/engagement-chart.component';
+import { NetworkChartComponent } from './components/network-chart/network-chart.component';
+import { TwitterTopicChartComponent } from './components/twitter-topic-chart/twitter-topic-chart.component';
 import { SocialActivityService } from './domain/services/social-activity/social-activity.service';
 import { ContentService } from './domain/services/content/content.service';
 import { SocialStudentComponent } from './containers/social-student/social-student.component';
 import { ExploreComponent } from './containers/explore/explore.component';
-import { TopicAnalysisComponent } from './components/explore/topic-analysis/topic-analysis.component';
+import { TopicAnalysisComponent } from './components/topic-analysis/topic-analysis.component';
 
 @NgModule({
   declarations: [

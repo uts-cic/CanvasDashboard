@@ -1,8 +1,8 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
-import { KEYWORDS } from '../../../domain/data/mock-keywords';
-import { SocialActivityService } from '../../../domain/services/social-activity/social-activity.service';
-import { SocialActivity } from '../../../domain/models/socialActivity';
+import { KEYWORDS } from '../../domain/data/mock-keywords';
+import { SocialActivityService } from '../../domain/services/social-activity/social-activity.service';
+import { SocialActivity } from '../../domain/models/socialActivity';
 
 @Component({
   selector: 'app-keywords',
