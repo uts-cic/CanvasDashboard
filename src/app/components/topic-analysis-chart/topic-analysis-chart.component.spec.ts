@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TopicAnalysisComponent } from './topic-analysis.component';
+import { TopicAnalysisChartComponent } from './topic-analysis-chart.component';
 
-describe('TopicAnalysisComponent', () => {
-  let component: TopicAnalysisComponent;
-  let fixture: ComponentFixture<TopicAnalysisComponent>;
+describe('TopicAnalysisChartComponent', () => {
+  let component: TopicAnalysisChartComponent;
+  let fixture: ComponentFixture<TopicAnalysisChartComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TopicAnalysisComponent ]
+      declarations: [ TopicAnalysisChartComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TopicAnalysisComponent);
+    fixture = TestBed.createComponent(TopicAnalysisChartComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

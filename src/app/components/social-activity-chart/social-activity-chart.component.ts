@@ -20,7 +20,7 @@ export class SocialActivityChartComponent implements OnInit {
   private data: any;
   public isShow = false;
   @ViewChild('nvd3') nvd3;
-  @Input() height; // Gets chart size from its parent component
+  @Input() height; // Gets chart height from its parent component
 
   constructor(private socialActivityService: SocialActivityService) { }
 

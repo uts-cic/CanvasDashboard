@@ -1,4 +1,9 @@
+/**
+ * SOCIAL REACH CHART
+ * Shows reach levels on each social media platform
+ */
 import { Component, OnInit, ViewEncapsulation, Input } from '@angular/core';
+import { socialReach } from '../../domain/data/mock-social-reach';
 
 declare let d3: any;
 
@@ -10,24 +15,23 @@ declare let d3: any;
 })
 export class SocialReachChartComponent implements OnInit {
   private options: any;
-  private data: any;
-  @Input() size;
+  private data = socialReach;
+  @Input() height;
 
   constructor() { }
 
   ngOnInit() {
     this.setupChart();
-    this.generateMockData();
   }
 
   /**
-   * Configures chart options
+   * Builds the social reach chart by configuring nvd3 chart options
    */
   setupChart(): void {
     this.options = {
       chart: {
         type: 'pieChart',
-        height: this.size,
+        height: this.height,
         margin: {
           top: 5,
           right: 0,
@@ -44,28 +48,4 @@ export class SocialReachChartComponent implements OnInit {
       }
     };
   }
-
-  /**
-   * Generates mock data for the social reach chart
-   */
-  generateMockData(): void {
-    this.data = [
-      {
-        key: 'Twitter',
-        y: 65,
-        color: '#1DA1F2'
-      },
-      {
-        key: 'Facebook',
-        y: 25,
-        color: '#3b5998'
-      },
-      {
-        key: 'Slack',
-        y: 10,
-        color: '#DB4437'
-      }
-    ];
-  }
-
 }

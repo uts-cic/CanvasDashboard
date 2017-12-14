@@ -1,3 +1,7 @@
+/**
+ * TWITTER TOPIC CHART
+ * Shows popularity of a topic in different Tweet categories (replies, retweet, etc.) over a Timeline.
+ */
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
@@ -5,6 +9,7 @@ import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/distinctUntilChanged';
 
 import { KEYWORDS } from '../../domain/data/mock-keywords';
+import { twitterTopic } from '../../domain/data/mock-twitter-topic';
 
 declare let d3: any;
 
@@ -16,19 +21,18 @@ declare let d3: any;
 })
 export class TwitterTopicChartComponent implements OnInit {
   private options: any;
-  private data: any;
-  private keywords: any;
+  private data = twitterTopic;
+  private keywords = KEYWORDS;
 
   constructor() { }
 
   ngOnInit() {
-    this.keywords = KEYWORDS;
     this.setupChart();
-    this.generateMockData();
   }
 
   /**
-   * Provides search suggestions based on mock keywords
+   * Provides search suggestions from mock keywords for the twitter topic chart search bar
+   * @param text$ text typed on search bar
    */
   search = (text$: Observable<string>) => {
     const result = text$
@@ -42,7 +46,7 @@ export class TwitterTopicChartComponent implements OnInit {
   }
 
   /**
-   * Configures chart options
+   * Builds the Twitter Topic Chart by configuring nvd3 chart options
    */
   setupChart(): void {
     this.options = {
@@ -81,120 +85,5 @@ export class TwitterTopicChartComponent implements OnInit {
         }
       }
     };
-  }
-
-  /**
-   * Generates mock data for the twitter topic analysis chart
-   */
-  generateMockData(): void {
-    this.data = [
-      {
-        'key': 'Original',
-        'area': true,
-        'values': [
-          [ 1025409600000, 23 ],
-          [ 1028088000000, 19 ],
-          [ 1030766400000, 21 ],
-          [ 1033358400000, 22 ],
-          [ 1036040400000, 25 ],
-          [ 1038632400000, 26 ],
-          [ 1041310800000, 19 ],
-          [ 1043989200000, 19 ],
-          [ 1046408400000, 19 ],
-          [ 1049086800000, 21 ],
-          [ 1051675200000, 24 ],
-          [ 1054353600000, 24 ],
-          [ 1056945600000, 23 ],
-          [ 1059624000000, 23 ],
-          [ 1062302400000, 24 ],
-          [ 1064894400000, 24 ],
-          [ 1067576400000, 27 ],
-          [ 1070168400000, 26 ],
-          [ 1072846800000, 26 ],
-          [ 1075525200000, 27 ],
-        ]
-      },
-
-      {
-        'key': 'Retweets',
-        'area': true,
-        'values': [
-          [ 1025409600000, 15 ],
-          [ 1028088000000, 17 ],
-          [ 1030766400000, 10 ],
-          [ 1033358400000, 12 ],
-          [ 1036040400000, 11 ],
-          [ 1038632400000, 10 ],
-          [ 1041310800000, 13 ],
-          [ 1043989200000, 17 ],
-          [ 1046408400000, 14 ],
-          [ 1049086800000, 10 ],
-          [ 1051675200000, 12 ],
-          [ 1054353600000, 17 ],
-          [ 1056945600000, 15 ],
-          [ 1059624000000, 10 ],
-          [ 1062302400000, 12 ],
-          [ 1064894400000, 10 ],
-          [ 1067576400000, 15 ],
-          [ 1070168400000, 20 ],
-          [ 1072846800000, 14 ],
-          [ 1075525200000, 15 ],
-        ]
-      },
-
-      {
-        'key' : 'Replies' ,
-        'area': true,
-        'values': [
-          [ 1025409600000, 7 ],
-          [ 1028088000000, 7 ],
-          [ 1030766400000, 7 ],
-          [ 1033358400000, 8 ],
-          [ 1036040400000, 9 ],
-          [ 1038632400000, 9 ],
-          [ 1041310800000, 10 ],
-          [ 1043989200000, 10 ],
-          [ 1046408400000, 10 ],
-          [ 1049086800000, 8 ],
-          [ 1051675200000, 9 ],
-          [ 1054353600000, 8 ],
-          [ 1056945600000, 8 ],
-          [ 1059624000000, 8 ],
-          [ 1062302400000, 7 ],
-          [ 1064894400000, 7 ],
-          [ 1067576400000, 8 ],
-          [ 1070168400000, 8 ],
-          [ 1072846800000, 9 ],
-          [ 1075525200000, 9 ],
-        ]
-      },
-
-      {
-        'key': 'Friends',
-        'area': true,
-        'values': [
-          [ 1025409600000, 9 ],
-          [ 1028088000000, 8 ],
-          [ 1030766400000, 8 ],
-          [ 1033358400000, 8 ],
-          [ 1036040400000, 10 ],
-          [ 1038632400000, 12 ],
-          [ 1041310800000, 10 ],
-          [ 1043989200000, 11 ],
-          [ 1046408400000, 11 ],
-          [ 1049086800000, 10 ],
-          [ 1051675200000, 11 ],
-          [ 1054353600000, 12 ],
-          [ 1056945600000, 8 ],
-          [ 1059624000000, 8 ],
-          [ 1062302400000, 8 ],
-          [ 1064894400000, 7 ],
-          [ 1067576400000, 9 ],
-          [ 1070168400000, 9 ],
-          [ 1072846800000, 10 ],
-          [ 1075525200000, 10 ],
-        ]
-      },
-    ];
   }
 }

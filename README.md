@@ -18,7 +18,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
       * **network-chart**: Who the user is connected with. There can be several groups of people the user is connected with, as shown by the different node colours.
       * **social-activity-chart**: Amount of social media activities over a timeline. Focus chart below the main chart can be used to zoom in, out, and to navigate along the timeline.
       * **social-reach-chart**: Reach levels on each social media platform. Reach = how many views on posts created in the different social media platforms.
-      * **topic-analysis**: Analysis of how popular a topic is over a timeline. Focus chart is provided to zoom in, out, and to navigate along the timeline.
+      * **topic-analysis-chart**: Analysis of how popular a topic is over a timeline. Focus chart is provided to zoom in, out, and to navigate along the timeline.
       * **twitter-topic-chart**: Analysis of how popular a topic is over a timeline in the Twitter platform. Shows the different popularity levels within different Tweet categories (original, replies, retweets, friends).
     * **containers**: Full page containers.
     * **domain**: Domain / business logic level code.

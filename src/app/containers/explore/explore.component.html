@@ -36,7 +36,7 @@
   <!-- Topic analysis component -->
   <div *ngIf="!isLoading && topicAnalysis" class="card people-result-container">
     <h5 class="display-4 search-result-text">Showing topic trend analysis for <i>{{searchResultText}}</i></h5>
-    <app-topic-analysis></app-topic-analysis>
+    <app-topic-analysis-chart></app-topic-analysis-chart>
   </div>
 
   <!-- People results component -->
@@ -111,7 +111,7 @@
       <div class="col-md-6 connect-modal-component">
         <div class="card connect-modal-chart-container">
           <div class="person-chart-content">
-            <app-social-reach-chart [size]="200"></app-social-reach-chart>
+            <app-social-reach-chart [height]="200"></app-social-reach-chart>
           </div>
         </div>
       </div>
