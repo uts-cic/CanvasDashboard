@@ -4,6 +4,7 @@
 export const network = {
   // People
   'nodes': [
+    // 'group' can be used to group people into different categories, as shown by the different node colours in the chart
     { 'name': 'Myriel', 'group': 1 },
     { 'name': 'Napoleon', 'group' : 1 },
     { 'name': 'Mlle.Baptistine', 'group': 1 },
@@ -21,6 +22,8 @@ export const network = {
     { 'name': 'Isabeau', 'group': 2 },
   ],
   // Links between people
+  // 'source' and 'target' connects people with the numbers being the order of their appearance in the 'nodes' above
+  // 'value' is the strength of their connection
   'links': [
     { 'source': 1, 'target': 0, 'value': 1 },
     { 'source': 2, 'target': 0, 'value': 8 },

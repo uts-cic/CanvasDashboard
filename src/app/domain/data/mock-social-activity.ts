@@ -1,4 +1,7 @@
-export const SOCIAL_ACTIVITY = sinAndCos();
+/**
+ * Mock social activities for the Social Activity Chart
+ */
+export const socialActivities = sinAndCos();
 
 export function sinAndCos() {
   const sin = [], cos = [], cos2 = [];

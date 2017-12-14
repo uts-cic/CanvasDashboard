@@ -1,4 +1,8 @@
-export const KEYWORDS = [
+/**
+ * Mock data for the keywords component
+ */
+export const keywords = [
+  // { word = keyword, total = amount of times the keyword is being used }
   { word: 'InteractionDesign', total: 52 },
   { word: 'DesignPrinciples', total: 34 },
   { word: 'MobileDevelopment', total: 25 },

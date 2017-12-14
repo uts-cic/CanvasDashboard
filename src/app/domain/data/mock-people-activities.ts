@@ -1,10 +1,16 @@
+/**
+ * Mock data for the people activities
+ * People activities are used to show activities of people shown in the 'explore' page search results
+ * Can be shown by clicking on the 'details' button on each person card
+ */
+
 const mockMessage = 'Lorem ipsum dolor sit amet, id veri aliquid docendi nam, qui at soleat lucilius. ' +
 'Option quaestio scribentur his et, an labores facilis eum, vel ea propriae delectus.';
 
 export const peopleActivities = [
   {
     message: mockMessage,
-    date: 1511568000000,
+    date: 1511568000000, // Date in Long / Number
     platform: 'Facebook'
   },
   {

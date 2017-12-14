@@ -1,3 +1,6 @@
+/**
+ * Mock people which are used to show people results in the 'explore' page
+ */
 export const people = [
   {
     name: 'Tim Alpha',

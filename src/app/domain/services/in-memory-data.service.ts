@@ -2,7 +2,7 @@
  * A mock service which can be used to simulate http requests
  */
 import { InMemoryDbService } from 'angular-in-memory-web-api';
-import { CONTENTS } from '../data/mock-content';
+import { contents } from '../data/mock-content';
 
 export class InMemoryDataService implements InMemoryDbService {
 
@@ -11,7 +11,6 @@ export class InMemoryDataService implements InMemoryDbService {
    */
   createDb() {
     const socialActivity = sinAndCos();
-    const contents = CONTENTS;
     return { socialActivity, contents };
   }
 

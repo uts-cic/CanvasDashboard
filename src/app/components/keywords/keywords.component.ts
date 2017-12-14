@@ -4,7 +4,7 @@
  */
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
-import { KEYWORDS } from '../../domain/data/mock-keywords';
+import { keywords } from '../../domain/data/mock-keywords';
 import { SocialActivityService } from '../../domain/services/social-activity/social-activity.service';
 import { SocialActivity } from '../../domain/models/socialActivity';
 
@@ -16,7 +16,7 @@ import { SocialActivity } from '../../domain/models/socialActivity';
 })
 export class KeywordsComponent implements OnInit {
   private data: any;
-  keywords = KEYWORDS;
+  keywords = keywords;
   selectedKeyword: any;
 
   constructor(private socialActivityService: SocialActivityService) { }

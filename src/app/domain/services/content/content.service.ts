@@ -4,7 +4,7 @@ import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
 import { catchError, map, tap } from 'rxjs/operators';
 import { Content } from '../../models/content';
-import { CONTENTS } from '../../data/mock-content';
+import { contents } from '../../data/mock-content';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -22,7 +22,7 @@ export class ContentService {
    */
   getContents(): Observable<Content[]> {
     return this.http.get<Content[]>(this.contentsUrl).pipe(
-      tap(contents => console.log(`fetched contents`)),
+      tap(content => console.log(`fetched contents`)),
       catchError(this.handleError('getContents', []))
     );
   }

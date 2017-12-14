@@ -8,7 +8,7 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/distinctUntilChanged';
 
-import { KEYWORDS } from '../../domain/data/mock-keywords';
+import { keywords } from '../../domain/data/mock-keywords';
 import { twitterTopic } from '../../domain/data/mock-twitter-topic';
 
 declare let d3: any;
@@ -22,7 +22,7 @@ declare let d3: any;
 export class TwitterTopicChartComponent implements OnInit {
   private options: any;
   private data = twitterTopic;
-  private keywords = KEYWORDS;
+  private keywords = keywords;
 
   constructor() { }
 

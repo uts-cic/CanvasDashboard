@@ -4,7 +4,7 @@
 export const socialReach = [
   {
     key: 'Twitter',
-    y: 65,
+    y: 65, // Amount / level / percentage of social reach for this social media platform
     color: '#1DA1F2'
   },
   {

@@ -2,7 +2,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ContentService } from '../../domain/services/content/content.service';
 import { Content } from '../../domain/models/content';
-import { CONTENTS } from '../../domain/data/mock-content';
+import { contents } from '../../domain/data/mock-content';
 
 @Component({
   selector: 'app-social',
@@ -11,7 +11,7 @@ import { CONTENTS } from '../../domain/data/mock-content';
   encapsulation: ViewEncapsulation.None
 })
 export class SocialComponent implements OnInit {
-  private content = CONTENTS[0]; // Initialise content to avoid undefined errors before contents finishes loading
+  private content = contents[0]; // Initialise content to avoid undefined errors before contents finishes loading
   private chartDesc = 'Lorem ipsum dolor sit amet, ei mei autem docendi nostrum, esse sonet vel cu.';
   private contentManDesc= 'Use this content manager to configure components available for selection.';
   private isLoading = true;
