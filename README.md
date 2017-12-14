@@ -52,4 +52,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 - **Create more charts.** Currently all charts are created using NVD3, but D3.js can also be used as it is already installed in this project.
 >> **Helpful Resources**:
->> * [Github Example](https://github.com/datencia/d3js-angular2-example) on how to use d3.js in Angular.
+>> * [Github Example](https://github.com/datencia/d3js-angular2-example) on how to use D3.js in Angular.

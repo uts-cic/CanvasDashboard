@@ -1,3 +1,7 @@
+/**
+ * SOCIAL ACTIVITY SERVICE
+ * Handles http requests associated with social activity data for the social activity chart
+ */
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';

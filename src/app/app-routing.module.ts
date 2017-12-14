@@ -14,7 +14,7 @@ const routes: Routes = [
   { path: 'profile', component: ProfileComponent },
   { path: 'social-student', component: SocialStudentComponent },
   { path: 'explore', component: ExploreComponent },
-  { path: '', redirectTo: '/social', pathMatch: 'full' }
+  { path: '', redirectTo: '/social', pathMatch: 'full' } // Redirects on empty path
 ];
 
 @NgModule({

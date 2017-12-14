@@ -2,9 +2,13 @@
 <div class="page-container">
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <a class="navbar-brand" [routerLink]="['/']">Dashboard</a>
+    
+    <!-- Navbar menu toggler for mobile sized screens -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation" (click)="toggleNavbar()">
       <span class="navbar-toggler-icon"></span>
     </button>
+
+    <!-- Navbar menu -->
     <div [ngClass]="{'collapse': navbarCollapse, 'navbar-collapse': true}" id="navbarNavAltMarkup">
       <div class="navbar-nav"> 
         <a class="nav-item nav-link" [routerLinkActive]="['active']" [routerLink]="['/social']">Social</a>
@@ -12,6 +16,8 @@
         <a class="nav-item nav-link" [routerLinkActive]="['active']" [routerLink]="['/explore']">Explore</a>
       </div>
     </div>
+
+    <!-- Profile navbar menu is shown as icon in web view and shown as navbar menu in mobile view -->
     <div [ngClass]="{'collapse': navbarCollapse, 'navbar-collapse': true}" id="navbarNavAltMarkup">
       <div class="navbar-nav profile-nav-container">
         <a class="nav-item nav-link active profile-nav-link" [routerLink]="['/profile']">

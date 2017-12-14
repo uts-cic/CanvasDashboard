@@ -1,3 +1,6 @@
+/**
+ * Entry point of the app
+ */
 import { Component } from '@angular/core';
 
 @Component({
@@ -8,6 +11,9 @@ import { Component } from '@angular/core';
 export class AppComponent {
   private navbarCollapse = true;
 
+  /**
+   * Toggles navbar menu for mobile view
+   */
   toggleNavbar(): void {
     this.navbarCollapse = !this.navbarCollapse;
   }
