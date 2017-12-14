@@ -1,4 +1,9 @@
+/**
+ * ENGAGEMENT CHART
+ * Engagement levels on each social media platform.
+ */
 import { Component, OnInit, ViewEncapsulation, Input } from '@angular/core';
+import { twitterData, facebookData, slackData } from '../../domain/data/mock-engagement';
 
 declare let d3: any;
 
@@ -10,18 +15,17 @@ declare let d3: any;
 })
 export class EngagementChartComponent implements OnInit {
   private options: any;
-  private data: any;
-  private twitterData: any;
-  private facebookData: any;
-  private slackData: any;
+  private data = facebookData;
+  private twitterData = twitterData;
+  private facebookData = facebookData;
+  private slackData = slackData;
   private selected: String = 'Facebook';
-  @Input() size;
+  @Input() height;
 
   constructor() { }
 
   ngOnInit() {
     this.setupChart();
-    this.generateMockData();
   }
 
   /**
@@ -45,13 +49,13 @@ export class EngagementChartComponent implements OnInit {
   }
 
   /**
-   * Configure chart options
+   * Builds engagement chart by configuring nvd3 chart options
    */
   setupChart() {
     this.options = {
       chart: {
         type: 'pieChart',
-        height: this.size,
+        height: this.height,
         margin: {
           top: 0,
           right: 0,
@@ -67,51 +71,4 @@ export class EngagementChartComponent implements OnInit {
       }
     };
   }
-
-  /**
-   * Generates mock data for engagement chart
-   */
-  generateMockData(): void {
-    this.twitterData = [
-      {
-        key: 'Twitter',
-        y: 35,
-        color: '#1DA1F2'
-      },
-      {
-        key: '',
-        y: 70,
-        color: '#CCCCCC'
-      }
-    ];
-
-    this.facebookData = [
-      {
-        key: 'Facebook',
-        y: 45,
-        color: '#3B5998'
-      },
-      {
-        key: '',
-        y: 55,
-        color: '#CCCCCC'
-      }
-    ];
-
-    this.slackData = [
-      {
-        key: 'Slack',
-        y: 65,
-        color: '#DB4437'
-      },
-      {
-        key: '',
-        y: 35,
-        color: '#CCCCCC'
-      }
-    ];
-
-    this.data = this.facebookData;
-  }
-
 }
