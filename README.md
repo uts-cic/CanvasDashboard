@@ -26,17 +26,30 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
       * **models**: Models for typings
       * **services**: Services to handle http requests
 
+## Main Libraries
+- [**NVD3**](https://github.com/krispo/ng2-nvd3): All charts in this project are created with NVD3 charting library, which is based on the D3.js charting library. Therefore, D3.js library is also installed in this project and can also be readily used to create more charts.
+
+- [**ng-bootstrap**](https://ng-bootstrap.github.io/#/home): Most components in this project are created with ng-bootstrap library, which is based on Bootstrap 4.
+
+- [**Angular Material**](https://material.angular.io/): Some components such as checkbox and Snackbar messages are created using Angular Material as they are not readily available in ng-bootstrap.
+
+- [**Moment.js**](https://momentjs.com/): Used to easily manipulate dates to be displayed.
+
 ## To-do List
-- **Manipulate DOM to add and remove components** (instead of using if statements to hide and show components).
+- **[PRIORITY]** **Manipulate DOM to add and remove components** (instead of using if statements to hide and show components).This is important to significantly cut down the amount of codes required to show or hide components.
 >> **Helpful Resources**:
->> * https://medium.com/front-end-hacking/dynamically-add-components-to-the-dom-with-angular-71b0cb535286
+>> * [How to dynamically add components to DOM](https://medium.com/front-end-hacking/dynamically-add-components-to-the-dom-with-angular-71b0cb535286)
 
 - **Enable drag and drop movements to relocate components.**
 >> **Helpful Resources**:
->> * https://valor-software.com/ngx-bootstrap/#/sortable
+>> * [Bootstrap Sortable](https://valor-software.com/ngx-bootstrap/#/sortable)
 >> * Using ngx-bootstrap sortable, each component can be stored as a model and a html template can be created to display the panels.
 
-- **Immediate Interaction between different components.** Currently, selection on keyword component can update social activity component but data change does not happen immediately (requires re-rendering of the page, e.g. going to another page first and going back to the page).
+- **Immediate Interaction between different components.** Currently, selection on keyword component can update social activity component but data change does not happen immediately (requires re-rendering of the page, e.g. going to another page first and going back to the page). The aim is to enable interactions between different charts.
 >> **Helpful Resources**:
->> * https://angular.io/api/core/EventEmitter
->> * **this.nvd3.chart.update()** needs to be called everytime a data change is detected. Otherwise, chart will only be updated on page re-rendering.
+>> * Might be possible to implement using [EventEmitter](https://angular.io/api/core/EventEmitter)
+>> * `this.nvd3.chart.update()` needs to be called everytime a data change is detected. Otherwise, chart will only be updated on page re-rendering.
+
+- **Create more charts.** Currently all charts are created using NVD3, but D3.js can also be used as it is already installed in this project.
+>> **Helpful Resources**:
+>> * [Github Example](https://github.com/datencia/d3js-angular2-example) on how to use d3.js in Angular.
