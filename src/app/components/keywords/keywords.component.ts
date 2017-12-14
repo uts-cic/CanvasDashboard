@@ -1,3 +1,7 @@
+/**
+ * KEYWORDS COMPONENT
+ * Rank of keywords being used the most by the user and the amount of times being used.
+ */
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
 import { KEYWORDS } from '../../domain/data/mock-keywords';
@@ -18,7 +22,6 @@ export class KeywordsComponent implements OnInit {
   constructor(private socialActivityService: SocialActivityService) { }
 
   ngOnInit() {
-    this.getSocialActivity();
   }
 
   /**
@@ -27,15 +30,7 @@ export class KeywordsComponent implements OnInit {
    */
   onSelect(keyword: any): void {
     this.selectedKeyword = this.selectedKeyword === keyword ? undefined : keyword;
-    this.addSocialActivity(this.generateMockData());
-  }
-
-  /**
-   * Gets social activity data from the service
-   */
-  getSocialActivity(): void {
-    this.socialActivityService.getSocialActivity()
-      .subscribe(socialActivity => this.data = socialActivity);
+    this.addSocialActivity(this.generateMockData(keyword.word));
   }
 
   /**
@@ -46,14 +41,14 @@ export class KeywordsComponent implements OnInit {
     this.socialActivityService.addSocialActivity(socialActivity as SocialActivity)
       .subscribe(activity => {
         this.data.push(activity);
-        this.getSocialActivity();
       });
   }
 
   /**
-   * Generates mock data for the keywords component
+   * Generates mock keyword activity data to show the activity level of the keyword in the Social Activity Chart.
+   * Currently still needs re-rendering of page for the new data to be shown in the Social Activity Chart.
    */
-  generateMockData(): Object {
+  generateMockData(keyword: any): Object {
     const newData = [];
     const dates = [
       1025409600000,
@@ -82,7 +77,7 @@ export class KeywordsComponent implements OnInit {
     }
     return({
       values: newData,
-      key: 'InteractionDesign',
+      key: keyword,
       area: true
     });
   }
