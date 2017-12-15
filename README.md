@@ -21,6 +21,10 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
       * **topic-analysis-chart**: Analysis of how popular a topic is over a timeline. Focus chart is provided to zoom in, out, and to navigate along the timeline.
       * **twitter-topic-chart**: Analysis of how popular a topic is over a timeline in the Twitter platform. Shows the different popularity levels within different Tweet categories (original, replies, retweets, friends).
     * **containers**: Full page containers.
+      * **explore**: Allows searching for a specific topic, and shows results of people related to the topic. Users can establish connections with people shown in the results section.
+      * **profile**: Shows a user's details. Allows users to select analytics to be shown in public profile. Aims to enable saving of dashboards and uploads of files to be shown in the portfolio section.
+      * **social**: Social page which shows the instructor's view of the social dashboard. Instructors can enable / disable certain charts with the Content Manager and preset student dashboards by selecting components to be shown.
+      * **social-student**: Student's view of the social dashboard. Students can modify the preset components.
     * **domain**: Domain / business logic level code.
       * **data**: Mock data for simulation. Form of data that can be accepted by each chart can be viewed in the mock data files.
       * **models**: Models for typings.
@@ -53,3 +57,13 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 - **Create more charts.** Currently all charts are created using NVD3, but D3.js can also be used as it is already installed in this project.
 >> **Helpful Resources**:
 >> * [Github Example](https://github.com/datencia/d3js-angular2-example) on how to use D3.js in Angular.
+
+- **Locking of dashboard configurations.** Allow instructors to set certain charts as mandatory in the dashboards so that students are not able to modify it. 
+
+- **Saving and sharing of dashboards.**
+
+- **Associate a dashboard preset with weekly tasks.** Allow instructors to preset a dashboard configuration and set a weekly task for it. 
+
+- **Display tasks, video guide, and guided tour** in the dashboard (student's view) to guide students on what to do, as well as how to use and interpret the dashboard configurations to complete the given task.
+
+- **Create a section for students to answer task questions / write reflections in the dashboard.**
