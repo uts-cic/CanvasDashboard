@@ -1,3 +1,7 @@
+/**
+ * EXPLORE PAGE
+ * Allows searching for a specific topic and showing results of people related to the topic to expand connection
+ */
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { MatSnackBar } from '@angular/material';

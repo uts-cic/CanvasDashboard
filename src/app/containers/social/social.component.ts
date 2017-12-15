@@ -1,3 +1,7 @@
+/**
+ * SOCIAL PAGE
+ * Instructor's social dashboard which can be used to preset student's dashboard
+ */
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ContentService } from '../../domain/services/content/content.service';

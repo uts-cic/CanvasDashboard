@@ -5,6 +5,8 @@
 </div>
 
 <!-- Social (Student) Page -->
+<!-- Uses if statements to determine which components are shown in each row -->
+<!-- Selections are made using the selection modal -->
 <div *ngIf="!isLoading" class="social-student-container">
   <!-- Top row components -->
   <div class="row">
@@ -148,6 +150,7 @@
 </div>
 
 <!-- Top Row Modal -->
+<!-- Selection for first row components -->
 <ng-template #content1 let-c="close" let-d="dismiss">
   <div class="modal-header">
     <h4 class="modal-title">Select Your Content</h4>
@@ -159,6 +162,7 @@
   <div class="modal-body">
     <p>Select components to fill up your first row</p>
 
+    <!-- Selections are divided into three categories - basic, advanced, and custom -->
     <ngb-tabset>
       <ngb-tab title="Basic">
         <ng-template ngbTabContent>
@@ -202,6 +206,7 @@
   </div>
 
   <div class="modal-footer">
+    <!-- Progress bar to show amount of occupied space in the first row -->
     <span class="progressbar">
       <ngb-progressbar [value]="occupiedSpace" [type]="progressType" [max]="3">
         <span *ngIf="occupiedSpace > 0"><b>{{occupiedSpace}} of 3</b>&nbsp;spaces occupied</span>
@@ -211,6 +216,7 @@
 </ng-template>
 
 <!-- Bottom Row Modal -->
+<!-- Selection for second row components -->
 <ng-template #content2 let-c="close" let-d="dismiss">
   <div class="modal-header">
     <h4 class="modal-title">Select Your Content</h4>
@@ -222,6 +228,7 @@
   <div class="modal-body">
     <p>Select components to fill up your second row</p>
 
+    <!-- Selections are divided into three categories - basic, advanced, and custom -->
     <ngb-tabset>
       <ngb-tab title="Basic">
         <ng-template ngbTabContent>
@@ -265,6 +272,7 @@
   </div>
 
   <div class="modal-footer">
+    <!-- Progress bar to show amount of occupied space in the second row -->
     <span class="progressbar">
       <ngb-progressbar [value]="occupiedSpace2" [type]="progressType2" [max]="3">
           <span *ngIf="occupiedSpace2 > 0"><b>{{occupiedSpace2}} of 3</b>&nbsp;spaces occupied</span>

@@ -9,6 +9,8 @@
   <div class="row social-container">
 
     <!-- Content Manager -->
+    <!-- Checkboxes to configure which charts are made available for selection -->
+    <!-- Disabled charts are hidden from the selection modal -->
     <div class="col-md-2 sidebar-container">
       <div class="sidebar">
         <div class="sidebar-content">
@@ -41,6 +43,8 @@
     </div>
 
     <!-- Components -->
+    <!-- Uses if statements to determine which components are shown in each row -->
+    <!-- Selections are made using the selection modal -->
     <div class="col-md-10 content">
       <!-- Top Row Components -->
       <div class="row">
@@ -187,6 +191,7 @@
 
 
 <!-- Top Row Modal -->
+<!-- Selection for first row components -->
 <ng-template #content1 let-c="close" let-d="dismiss">
   <div class="modal-header">
     <h4 class="modal-title">Select Your Content</h4>
@@ -198,6 +203,7 @@
   <div class="modal-body">
     <p>Select components to fill up your first row</p>
 
+    <!-- Selections are divided into three categories - basic, advanced, and custom -->
     <ngb-tabset>
       <ngb-tab title="Basic">
         <ng-template ngbTabContent>
@@ -241,6 +247,7 @@
   </div>
 
   <div class="modal-footer">
+    <!-- Progress bar to show amount of occupied space in the first row -->
     <span class="progressbar">
       <ngb-progressbar [value]="occupiedSpace" [type]="progressType" [max]="3">
         <span *ngIf="occupiedSpace > 0"><b>{{occupiedSpace}} of 3</b>&nbsp;spaces occupied</span>
@@ -250,6 +257,7 @@
 </ng-template>
 
 <!-- Bottom Row Modal -->
+<!-- Selection for second row components -->
 <ng-template #content2 let-c="close" let-d="dismiss">
   <div class="modal-header">
     <h4 class="modal-title">Select Your Content</h4>
@@ -261,6 +269,7 @@
   <div class="modal-body">
     <p>Select components to fill up your second row</p>
 
+    <!-- Selections are divided into three categories - basic, advanced, and custom -->
     <ngb-tabset>
       <ngb-tab title="Basic">
         <ng-template ngbTabContent>
@@ -305,6 +314,7 @@
 
   <div class="modal-footer">
     <span class="progressbar">
+      <!-- Progress bar to show amount of occupied space in the second row -->
       <ngb-progressbar [value]="occupiedSpace2" [type]="progressType2" [max]="3">
           <span *ngIf="occupiedSpace2 > 0"><b>{{occupiedSpace2}} of 3</b>&nbsp;spaces occupied</span>
       </ngb-progressbar>
