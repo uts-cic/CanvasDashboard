@@ -18,17 +18,46 @@
   margin-bottom: 1rem;
 }
 
+.task-input-container {
+  margin-top: 1rem;
+}
+
+.task-btn-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 2rem;
+}
+
+.task-btn {
+  margin-left: 0.5rem;
+}
+
 .content-btn {
   margin-right: 0.5rem;
   margin-top: 0.5rem;
 }
 
-.content {
-  padding: 1rem;
+.content-dashboard {
+  margin-top: 1rem;
   padding-left: 0.5rem;
-  padding-right: 0;
-  margin-left: 15rem;
-  position: fixed;
+  padding-right: 0.5rem;
+}
+
+.content {
+  padding: 0;
+  margin-left: 13.1rem;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+.task-container {
+  background-color: #f2f2f2;
+  padding: 1rem;
+}
+
+.task-heading {
+  margin-bottom: 1rem;
 }
 
 .content-selection-tab {
@@ -37,24 +66,20 @@
 
 .sidebar {
   padding: 1rem;
-  padding-right: 2rem;
   background-color: #f2f2f2;
   height: 100%;
   min-height: 100vh;
   position: fixed;
-  max-width: 13.5rem;
+  max-width: 13rem;
 }
 
 .sidebar-content {
   max-width: 100%;
 }
 
-.sidebar-container {
-  padding-right: 0;
-}
-
 .social-container {
   max-width: 100%;
+  display: flex;
 }
 
 .content-manager {
