@@ -52,22 +52,22 @@
   margin-top: 0.5rem;
 }
 
-.task-container {
+.student-task-container {
   background-color: #f2f2f2;
   padding: 1rem;
   cursor: pointer;
 }
 
-.task-heading-container {
+.student-task-heading-container {
   display: flex;
   justify-content: space-between;
 }
 
-.task-heading-hint {
+.student-task-heading-hint {
   font-size: 1.5rem;
 }
 
-.task-description {
+.student-task-description {
   margin-top: 1rem;
 }
 

@@ -8,13 +8,13 @@
 <div *ngIf="!isLoading" class="social-student-container">
   <!-- Student Task -->
   <!-- Shows task provided by the instructor -->
-  <div class="task-container" (click)="taskCollapse = !taskCollapse">
-    <div class="task-heading-container">
+  <div class="student-task-container" (click)="taskCollapse = !taskCollapse">
+    <div class="student-task-heading-container">
       <h5>Week 7 Task</h5>
-      <i class="fa fa-question-circle-o task-heading-hint" [ngbPopover]="taskHint" 
+      <i class="fa fa-question-circle-o student-task-heading-hint" [ngbPopover]="taskHint" 
       triggers="mouseenter:mouseleave" container="body" placement="left"></i>
     </div>
-    <div class="task-description" [ngbCollapse]="taskCollapse">
+    <div class="student-task-description" [ngbCollapse]="taskCollapse">
       <span>
         Lorem ipsum dolor sit amet, eos dolore aperiam admodum id, per ea nibh accusam accommodare.
         Eos vidit antiopam constituam cu. Simul elitr in cum, usu ne dolor integre minimum. At simul sapientem per,
