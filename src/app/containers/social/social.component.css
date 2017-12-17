@@ -22,6 +22,22 @@
   margin-top: 1rem;
 }
 
+.task-heading-hint {
+  font-size: 1.5rem;
+}
+
+.task-heading-container {
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.task-toggle-btn {
+  padding-top: 0;
+  padding-bottom: 0;
+  height: 2rem;
+}
+
 .task-btn-container {
   display: flex;
   justify-content: flex-end;
@@ -54,10 +70,6 @@
 .task-container {
   background-color: #f2f2f2;
   padding: 1rem;
-}
-
-.task-heading {
-  margin-bottom: 1rem;
 }
 
 .content-selection-tab {

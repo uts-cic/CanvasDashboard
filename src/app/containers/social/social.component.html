@@ -42,25 +42,35 @@
       </div>
     </div>
 
-    <!-- Components -->
-    <!-- Uses if statements to determine which components are shown in each row -->
-    <!-- Selections are made using the selection modal -->
+    <!-- Page Content -->
     <div class="content">
+      <!-- Task Manager -->
+      <!-- Can be used by instructors to assign tasks for students -->
       <div class="task-container">
-        <h5 class="task-heading">Task Manager</h5>
-        <div class="task-input-container">
-          <span>Title</span>
-          <input type="text" class="form-control" placeholder="e.g. Week 5 Task...">
+        <div class="task-heading-container" (click)="taskCollapse = !taskCollapse">
+          <h5>Task Manager</h5>
+          <i class="fa fa-question-circle-o task-heading-hint" [ngbPopover]="taskManDesc" 
+          triggers="mouseenter:mouseleave" container="body" placement="left"></i>
         </div>
-        <div class="task-input-container">
-          <span>Description</span>
-          <textarea type="text" class="form-control" placeholder="Task instructions for students" rows="3"></textarea>
-        </div>
-        <div class="task-btn-container">
-          <button type="button" class="btn btn-secondary task-btn">Clear</button>
-          <button type="button" class="btn btn-primary task-btn">Save</button>
+        <div [ngbCollapse]="taskCollapse">
+          <div class="task-input-container">
+            <span>Title</span>
+            <input type="text" class="form-control" placeholder="e.g. Week 5 Task...">
+          </div>
+          <div class="task-input-container">
+            <span>Description</span>
+            <textarea type="text" class="form-control" placeholder="Task instructions for students" rows="3"></textarea>
+          </div>
+          <div class="task-btn-container">
+            <button type="button" class="btn btn-secondary task-btn">Clear</button>
+            <button type="button" class="btn btn-primary task-btn">Save</button>
+          </div>
         </div>
       </div>
+      
+      <!-- Components -->
+      <!-- Uses if statements to determine which components are shown in each row -->
+      <!-- Selections are made using the selection modal -->
       <div class="content-dashboard">
       <!-- Top Row Components -->
         <div class="row">
