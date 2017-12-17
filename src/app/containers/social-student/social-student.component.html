@@ -5,145 +5,165 @@
 </div>
 
 <!-- Social (Student) Page -->
-<!-- Uses if statements to determine which components are shown in each row -->
-<!-- Selections are made using the selection modal -->
 <div *ngIf="!isLoading" class="social-student-container">
-  <!-- Top row components -->
-  <div class="row">
-    <div *ngIf="content.socialActivity" class="col-md-8">
-      <div class="card component-container">
-        <div class="card-header header-click" (click)="open(content1)" [ngbPopover]="chartDesc"
-        triggers="mouseenter:mouseleave" container="body" placement="auto">
-          Social Activity
-        </div>
-        <app-social-activity-chart [height]="300"></app-social-activity-chart>
-      </div>
+  <!-- Student Task -->
+  <!-- Shows task provided by the instructor -->
+  <div class="task-container">
+    <div class="task-heading-container">
+      <h5>Week 7 Task</h5>
+      <i class="fa fa-question-circle-o task-heading-hint" [ngbPopover]="taskHint" 
+      triggers="mouseenter:mouseleave" container="body" placement="left"></i>
     </div>
-
-    <div *ngIf="content.keywords" class="col-md-4">
-      <div class="card component-container">
-        <div class="card-header header-click" (click)="open(content1)" [ngbPopover]="chartDesc"
-        triggers="mouseenter:mouseleave" container="body" placement="auto">
-          Keywords
-        </div>
-        <app-keywords></app-keywords>
-      </div>
-    </div>
-
-    <div *ngIf="content.socialReach" class="col-md-4">
-      <div class="card component-container">
-        <div class="card-header header-click" (click)="open(content1)" [ngbPopover]="chartDesc"
-        triggers="mouseenter:mouseleave" container="body" placement="auto">
-          Social Reach
-        </div>
-        <app-social-reach-chart [height]="310"></app-social-reach-chart>
-      </div>
-    </div>
-
-    <div *ngIf="content.engagement" class="col-md-4">
-      <div class="card component-container">
-        <div class="card-header header-click" (click)="open(content1)" [ngbPopover]="chartDesc"
-        triggers="mouseenter:mouseleave" container="body" placement="auto">
-          Engagement
-        </div>
-        <app-engagement-chart [height]="250"></app-engagement-chart>
-      </div>
-    </div>
-
-    <div *ngIf="content.network" class="col-md-4">
-      <div class="card component-container">
-        <div class="card-header header-click" (click)="open(content1)" [ngbPopover]="chartDesc"
-        triggers="mouseenter:mouseleave" container="body" placement="auto">
-          Network
-        </div>
-        <app-network-chart [height]="315" [width]="445"></app-network-chart>
-      </div>
-    </div>
-
-    <div *ngIf="content.twitterTopic" class="col-md-12">
-      <div class="card component-container">
-        <div class="card-header header-click" (click)="open(content1)" [ngbPopover]="chartDesc"
-        triggers="mouseenter:mouseleave" container="body" placement="auto">
-          Twitter Topic Analysis
-        </div>
-        <app-twitter-topic-chart></app-twitter-topic-chart>
-      </div>
-    </div>
-
-    <div *ngIf="!rowFull" [class]="emptyColSize">
-      <div class="card component-container empty-card" (click)="open(content1)">
-        <h3 class="card-title">Click here to select your content</h3>
-        <p>{{emptySpaceText}}</p>
-      </div>
+    <div class="task-description">
+      <span>
+        Lorem ipsum dolor sit amet, eos dolore aperiam admodum id, per ea nibh accusam accommodare.
+        Eos vidit antiopam constituam cu. Simul elitr in cum, usu ne dolor integre minimum. At simul sapientem per,
+        sit vocibus reformidans an. Probo aliquip prompta ad vis. Eum justo harum in, nihil nobis iudico ius no,
+        minimum molestiae eos no.
+      </span>
     </div>
   </div>
 
-  <!-- Bottom row components -->
-  <div class="row">
-    <div *ngIf="content.socialActivity2" class="col-md-8">
-      <div class="card component-container">
-        <div class="card-header header-click" (click)="open(content2)" [ngbPopover]="chartDesc"
-        triggers="mouseenter:mouseleave" container="body" placement="auto">
-          Social Activity
+  <!-- Uses if statements to determine which components are shown in each row -->
+  <!-- Selections are made using the selection modal -->
+  <div class="social-student-components">
+    <!-- Top row components -->
+    <div class="row">
+      <div *ngIf="content.socialActivity" class="col-md-8">
+        <div class="card component-container">
+          <div class="card-header header-click" (click)="open(content1)" [ngbPopover]="chartDesc"
+          triggers="mouseenter:mouseleave" container="body" placement="auto">
+            Social Activity
+          </div>
+          <app-social-activity-chart [height]="300"></app-social-activity-chart>
         </div>
-        <app-social-activity-chart [height]="300"></app-social-activity-chart>
+      </div>
+
+      <div *ngIf="content.keywords" class="col-md-4">
+        <div class="card component-container">
+          <div class="card-header header-click" (click)="open(content1)" [ngbPopover]="chartDesc"
+          triggers="mouseenter:mouseleave" container="body" placement="auto">
+            Keywords
+          </div>
+          <app-keywords></app-keywords>
+        </div>
+      </div>
+
+      <div *ngIf="content.socialReach" class="col-md-4">
+        <div class="card component-container">
+          <div class="card-header header-click" (click)="open(content1)" [ngbPopover]="chartDesc"
+          triggers="mouseenter:mouseleave" container="body" placement="auto">
+            Social Reach
+          </div>
+          <app-social-reach-chart [height]="310"></app-social-reach-chart>
+        </div>
+      </div>
+
+      <div *ngIf="content.engagement" class="col-md-4">
+        <div class="card component-container">
+          <div class="card-header header-click" (click)="open(content1)" [ngbPopover]="chartDesc"
+          triggers="mouseenter:mouseleave" container="body" placement="auto">
+            Engagement
+          </div>
+          <app-engagement-chart [height]="250"></app-engagement-chart>
+        </div>
+      </div>
+
+      <div *ngIf="content.network" class="col-md-4">
+        <div class="card component-container">
+          <div class="card-header header-click" (click)="open(content1)" [ngbPopover]="chartDesc"
+          triggers="mouseenter:mouseleave" container="body" placement="auto">
+            Network
+          </div>
+          <app-network-chart [height]="315" [width]="445"></app-network-chart>
+        </div>
+      </div>
+
+      <div *ngIf="content.twitterTopic" class="col-md-12">
+        <div class="card component-container">
+          <div class="card-header header-click" (click)="open(content1)" [ngbPopover]="chartDesc"
+          triggers="mouseenter:mouseleave" container="body" placement="auto">
+            Twitter Topic Analysis
+          </div>
+          <app-twitter-topic-chart></app-twitter-topic-chart>
+        </div>
+      </div>
+
+      <div *ngIf="!rowFull" [class]="emptyColSize">
+        <div class="card component-container empty-card" (click)="open(content1)">
+          <h3 class="card-title">Click here to select your content</h3>
+          <p>{{emptySpaceText}}</p>
+        </div>
       </div>
     </div>
 
-    <div *ngIf="content.keywords2" class="col-md-4">
-      <div class="card component-container">
-        <div class="card-header header-click" (click)="open(content2)" [ngbPopover]="chartDesc"
-        triggers="mouseenter:mouseleave" container="body" placement="auto">
-          Keywords
+    <!-- Bottom row components -->
+    <div class="row">
+      <div *ngIf="content.socialActivity2" class="col-md-8">
+        <div class="card component-container">
+          <div class="card-header header-click" (click)="open(content2)" [ngbPopover]="chartDesc"
+          triggers="mouseenter:mouseleave" container="body" placement="auto">
+            Social Activity
+          </div>
+          <app-social-activity-chart [height]="300"></app-social-activity-chart>
         </div>
-        <app-keywords></app-keywords>
       </div>
-    </div>
 
-    <div *ngIf="content.socialReach2" class="col-md-4">      
-      <div class="card component-container">
-        <div class="card-header header-click" (click)="open(content2)" [ngbPopover]="chartDesc"
-        triggers="mouseenter:mouseleave" container="body" placement="auto">
-          Social Reach
+      <div *ngIf="content.keywords2" class="col-md-4">
+        <div class="card component-container">
+          <div class="card-header header-click" (click)="open(content2)" [ngbPopover]="chartDesc"
+          triggers="mouseenter:mouseleave" container="body" placement="auto">
+            Keywords
+          </div>
+          <app-keywords></app-keywords>
         </div>
-        <app-social-reach-chart [height]="310"></app-social-reach-chart>
       </div>
-    </div>
 
-    <div *ngIf="content.engagement2" class="col-md-4">
-      <div class="card component-container">
-        <div class="card-header header-click" (click)="open(content2)" [ngbPopover]="chartDesc"
-        triggers="mouseenter:mouseleave" container="body" placement="auto">
-          Engagement
+      <div *ngIf="content.socialReach2" class="col-md-4">      
+        <div class="card component-container">
+          <div class="card-header header-click" (click)="open(content2)" [ngbPopover]="chartDesc"
+          triggers="mouseenter:mouseleave" container="body" placement="auto">
+            Social Reach
+          </div>
+          <app-social-reach-chart [height]="310"></app-social-reach-chart>
         </div>
-        <app-engagement-chart [height]="250"></app-engagement-chart>
       </div>
-    </div>
 
-    <div *ngIf="content.network2" class="col-md-4">
-      <div class="card component-container">
-        <div class="card-header header-click" (click)="open(content2)" [ngbPopover]="chartDesc"
-        triggers="mouseenter:mouseleave" container="body" placement="auto">
-          Network
+      <div *ngIf="content.engagement2" class="col-md-4">
+        <div class="card component-container">
+          <div class="card-header header-click" (click)="open(content2)" [ngbPopover]="chartDesc"
+          triggers="mouseenter:mouseleave" container="body" placement="auto">
+            Engagement
+          </div>
+          <app-engagement-chart [height]="250"></app-engagement-chart>
         </div>
-        <app-network-chart [height]="315" [width]="445"></app-network-chart>
       </div>
-    </div>
 
-    <div *ngIf="content.twitterTopic2" class="col-md-12">
-      <div class="card component-container">
-        <div class="card-header header-click" (click)="open(content2)" [ngbPopover]="chartDesc"
-        triggers="mouseenter:mouseleave" container="body" placement="auto">
-          Twitter Topic Analysis
+      <div *ngIf="content.network2" class="col-md-4">
+        <div class="card component-container">
+          <div class="card-header header-click" (click)="open(content2)" [ngbPopover]="chartDesc"
+          triggers="mouseenter:mouseleave" container="body" placement="auto">
+            Network
+          </div>
+          <app-network-chart [height]="315" [width]="445"></app-network-chart>
         </div>
-        <app-twitter-topic-chart></app-twitter-topic-chart>
       </div>
-    </div>
 
-    <div *ngIf="!rowFull2" [class]="emptyColSize2">
-      <div class="card component-container empty-card" (click)="open(content2)">
-        <h3 class="card-title">Click here to select your content</h3>
-        <p>{{emptySpaceText2}}</p>
+      <div *ngIf="content.twitterTopic2" class="col-md-12">
+        <div class="card component-container">
+          <div class="card-header header-click" (click)="open(content2)" [ngbPopover]="chartDesc"
+          triggers="mouseenter:mouseleave" container="body" placement="auto">
+            Twitter Topic Analysis
+          </div>
+          <app-twitter-topic-chart></app-twitter-topic-chart>
+        </div>
+      </div>
+
+      <div *ngIf="!rowFull2" [class]="emptyColSize2">
+        <div class="card component-container empty-card" (click)="open(content2)">
+          <h3 class="card-title">Click here to select your content</h3>
+          <p>{{emptySpaceText2}}</p>
+        </div>
       </div>
     </div>
   </div>

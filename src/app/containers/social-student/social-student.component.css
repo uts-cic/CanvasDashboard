@@ -9,9 +9,11 @@
 }
 
 .social-student-container {
-  padding: 1rem;
   width: 100%;
-  position: fixed;
+}
+
+.social-student-components {
+  padding: 1rem;
 }
 
 .component-body {
@@ -48,6 +50,24 @@
 
 .content-selection-tab {
   margin-top: 0.5rem;
+}
+
+.task-container {
+  background-color: #f2f2f2;
+  padding: 1rem;
+}
+
+.task-heading-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.task-heading-hint {
+  font-size: 1.5rem;
+}
+
+.task-description {
+  margin-top: 1rem;
 }
 
 @media (max-width: 768px) {
