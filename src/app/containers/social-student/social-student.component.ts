@@ -19,7 +19,8 @@ export class SocialStudentComponent implements OnInit {
   private chartDesc = 'Lorem ipsum dolor sit amet, ei mei autem docendi nostrum, esse sonet vel cu.';
   private contentManDesc= 'Use this content manager to configure components available for selection.';
   private isLoading = true;
-  private taskHint = 'Write answers to this task in the provided space at the bottom of this page. (Click to toggle task open/close)';
+  private taskHint = 'Write answers for this task in the provided space at the bottom of this page. (Click to toggle task open/close)';
+  private taskCollapse = false; // Boolean to toggle task section - true = collapsed
 
   // First row component attributes
   private socialActivityDisabled = false;
