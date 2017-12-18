@@ -21,6 +21,7 @@ export class SocialStudentComponent implements OnInit {
   private isLoading = true;
   private taskHint = 'Write answers for this task in the provided space at the bottom of this page. (Click to toggle task open/close)';
   private taskCollapse = false; // Boolean to toggle task section - true = collapsed
+  private answerHint = 'Write your answer in the provided space below and click save when you are ready to submit/update your answer.';
 
   // First row component attributes
   private socialActivityDisabled = false;

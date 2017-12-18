@@ -47,7 +47,7 @@
       <div class="task-container">
         <div class="task-heading-container" (click)="taskCollapse = !taskCollapse">
           <h5>Task Manager</h5>
-          <i class="fa fa-question-circle-o task-heading-hint" [ngbPopover]="taskManDesc" 
+          <i class="fa fa-question-circle-o task-heading-hint" [ngbPopover]="taskManHint" 
           triggers="mouseenter:mouseleave" container="body" placement="left"></i>
         </div>
         <div [ngbCollapse]="taskCollapse">

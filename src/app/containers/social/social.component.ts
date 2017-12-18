@@ -20,7 +20,7 @@ export class SocialComponent implements OnInit {
   private contentManDesc= 'Use this content manager to configure components available for selection.';
   private isLoading = true;
   private taskCollapse = true; // Boolean to toggle Task Manager - true = collapsed
-  private taskManDesc = 'Use this task manager to assign tasks for students. (Click to toggle open/close)';
+  private taskManHint = 'Use this task manager to assign tasks for students. (Click to toggle open/close)';
 
   // First row component attributes
   private socialActivityDisabled = false;

@@ -167,6 +167,21 @@
       </div>
     </div>
   </div>
+
+  <div class="answer-container">
+    <div class="answer-heading-container">
+      <h5>Task Answer</h5>
+      <i class="fa fa-question-circle-o student-task-heading-hint" [ngbPopover]="answerHint" 
+      triggers="mouseenter:mouseleave" container="body" placement="left"></i>
+    </div>
+    <div class="answer-input-container">
+      <textarea type="text" class="form-control" placeholder="Write your answer here..." rows="3"></textarea>
+    </div>
+    <div class="answer-btn-container">
+      <button type="button" class="btn btn-secondary answer-btn">Clear</button>
+      <button type="button" class="btn btn-primary answer-btn">Save</button>
+    </div>
+  </div>
 </div>
 
 <!-- Top Row Modal -->
