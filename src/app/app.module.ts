@@ -27,6 +27,7 @@ import { ContentService } from './domain/services/content/content.service';
 import { SocialStudentComponent } from './containers/social-student/social-student.component';
 import { ExploreComponent } from './containers/explore/explore.component';
 import { TopicAnalysisChartComponent } from './components/topic-analysis-chart/topic-analysis-chart.component';
+import { TaskService } from './domain/services/task/task.service';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,7 @@ import { TopicAnalysisChartComponent } from './components/topic-analysis-chart/t
     MatSnackBarModule,
     BrowserAnimationsModule
   ],
-  providers: [SocialActivityService, ContentService],
+  providers: [SocialActivityService, ContentService, TaskService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

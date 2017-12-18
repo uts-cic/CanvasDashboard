@@ -53,11 +53,11 @@
         <div [ngbCollapse]="taskCollapse">
           <div class="task-input-container">
             <span>Title</span>
-            <input type="text" class="form-control" placeholder="e.g. Week 5 Task...">
+            <input type="text" class="form-control" placeholder="e.g. Week 5 Task..." [(ngModel)]="task.title">
           </div>
           <div class="task-input-container">
             <span>Description</span>
-            <textarea type="text" class="form-control" placeholder="Task instructions for students" rows="3"></textarea>
+            <textarea type="text" class="form-control" placeholder="Task instructions for students" rows="3" [(ngModel)]="task.description"></textarea>
           </div>
           <div class="task-btn-container">
             <button type="button" class="btn btn-secondary task-btn">Clear</button>

@@ -6,6 +6,8 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ContentService } from '../../domain/services/content/content.service';
 import { Content } from '../../domain/models/content';
 import { contents } from '../../domain/data/mock-content';
+import { TaskService } from '../../domain/services/task/task.service';
+import { tasks } from '../../domain/data/mock-task';
 
 
 @Component({
@@ -22,6 +24,7 @@ export class SocialStudentComponent implements OnInit {
   private taskHint = 'Write answers for this task in the provided space at the bottom of this page. (Click to toggle task open/close)';
   private taskCollapse = false; // Boolean to toggle task section - true = collapsed
   private answerHint = 'Write your answer in the provided space below and click save when you are ready to submit/update your answer.';
+  private task = tasks[0];
 
   // First row component attributes
   private socialActivityDisabled = false;
@@ -49,10 +52,11 @@ export class SocialStudentComponent implements OnInit {
   private emptyColSize2 = 'col-md-12';
   private emptySpaceText2 = '3 of 3 spaces left';
 
-  constructor(private modalService: NgbModal, private contentService: ContentService) { }
+  constructor(private modalService: NgbModal, private contentService: ContentService, private taskService: TaskService) { }
 
   ngOnInit() {
     this.getContent(2);
+    this.getTask(1);
   }
 
   /**
@@ -73,6 +77,12 @@ export class SocialStudentComponent implements OnInit {
    */
   updateContent(): void {
     this.contentService.updateContent(this.content).subscribe();
+  }
+
+  getTask(id: number): void {
+    this.taskService.getTask(id).subscribe((task) => {
+      this.task = task;
+    });
   }
 
   /**

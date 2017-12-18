@@ -7,6 +7,8 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ContentService } from '../../domain/services/content/content.service';
 import { Content } from '../../domain/models/content';
 import { contents } from '../../domain/data/mock-content';
+import { TaskService } from '../../domain/services/task/task.service';
+import { tasks } from '../../domain/data/mock-task';
 
 @Component({
   selector: 'app-social',
@@ -21,6 +23,7 @@ export class SocialComponent implements OnInit {
   private isLoading = true;
   private taskCollapse = true; // Boolean to toggle Task Manager - true = collapsed
   private taskManHint = 'Use this task manager to assign tasks for students. (Click to toggle open/close)';
+  private task = tasks[0];
 
   // First row component attributes
   private socialActivityDisabled = false;
@@ -48,10 +51,11 @@ export class SocialComponent implements OnInit {
   private emptyColSize2 = 'col-md-12';
   private emptySpaceText2 = '3 of 3 spaces left';
 
-  constructor(private modalService: NgbModal, private contentService: ContentService) { }
+  constructor(private modalService: NgbModal, private contentService: ContentService, private taskService: TaskService) { }
 
   ngOnInit() {
     this.getContent(1);
+    this.getTask(1);
   }
 
   /**
@@ -76,6 +80,12 @@ export class SocialComponent implements OnInit {
     this.contentService.getContent(2).subscribe((content) => {
       this.copyContent(this.content, content);
       this.contentService.updateContent(content).subscribe();
+    });
+  }
+
+  getTask(id: number): void {
+    this.taskService.getTask(id).subscribe((task) => {
+      this.task = task;
     });
   }
 
