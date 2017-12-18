@@ -60,7 +60,7 @@
             <textarea type="text" class="form-control" placeholder="Task instructions for students" rows="3" [(ngModel)]="task.description"></textarea>
           </div>
           <div class="task-btn-container">
-            <button type="button" class="btn btn-secondary task-btn">Clear</button>
+            <button type="button" class="btn btn-secondary task-btn" (click)="clearTask()">Clear</button>
             <button type="button" class="btn btn-primary task-btn" (click)="updateTask()">Save</button>
           </div>
         </div>

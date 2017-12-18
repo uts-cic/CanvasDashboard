@@ -104,6 +104,14 @@ export class SocialComponent implements OnInit {
   }
 
   /**
+   * Clears all task field inputs (does not automatically save)
+   */
+  clearTask(): void {
+    this.task.title = '';
+    this.task.description = '';
+  }
+
+  /**
    * Opens snackbar for displaying messages on the bottom of page
    * @param message message to be displayed
    * @param action snackbar action button label
