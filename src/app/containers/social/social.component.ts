@@ -4,6 +4,7 @@
  */
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { MatSnackBar } from '@angular/material';
 import { ContentService } from '../../domain/services/content/content.service';
 import { Content } from '../../domain/models/content';
 import { contents } from '../../domain/data/mock-content';
@@ -51,7 +52,8 @@ export class SocialComponent implements OnInit {
   private emptyColSize2 = 'col-md-12';
   private emptySpaceText2 = '3 of 3 spaces left';
 
-  constructor(private modalService: NgbModal, private contentService: ContentService, private taskService: TaskService) { }
+  constructor(private modalService: NgbModal, private contentService: ContentService, private taskService: TaskService,
+    public snackBar: MatSnackBar) { }
 
   ngOnInit() {
     this.getContent(1);
@@ -83,9 +85,32 @@ export class SocialComponent implements OnInit {
     });
   }
 
+  /**
+   * Gets task from from the Task Service
+   * @param id task ID (from mock task)
+   */
   getTask(id: number): void {
     this.taskService.getTask(id).subscribe((task) => {
       this.task = task;
+    });
+  }
+
+  /**
+   * Updates a task and notifies success with snackbar
+   */
+  updateTask(): void {
+    this.taskService.updateTask(this.task).subscribe();
+    this.openSnackBar('Task Updated', 'Dismiss');
+  }
+
+  /**
+   * Opens snackbar for displaying messages on the bottom of page
+   * @param message message to be displayed
+   * @param action snackbar action button label
+   */
+  openSnackBar(message: string, action: string) {
+    this.snackBar.open(message, action, {
+      duration: 3000,
     });
   }
 

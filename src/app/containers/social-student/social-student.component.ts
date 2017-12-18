@@ -79,6 +79,10 @@ export class SocialStudentComponent implements OnInit {
     this.contentService.updateContent(this.content).subscribe();
   }
 
+  /**
+   * Gets task from from the Task Service
+   * @param id task ID (from mock task)
+   */
   getTask(id: number): void {
     this.taskService.getTask(id).subscribe((task) => {
       this.task = task;

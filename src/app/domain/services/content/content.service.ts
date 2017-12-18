@@ -21,7 +21,7 @@ export class ContentService {
   constructor(private http: HttpClient) { }
 
   /**
-   * Get all contents
+   * Gets all contents
    * @returns All contents as an observable
    */
   getContents(): Observable<Content[]> {
@@ -32,8 +32,8 @@ export class ContentService {
   }
 
   /**
-   * Get a single content
-   * @param id ID of content
+   * Gets a single content
+   * @param id ID of content to be retrieved
    * @returns The content as observable
    */
   getContent(id: number): Observable<Content> {
