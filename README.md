@@ -23,8 +23,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
     * **containers**: Full page containers.
       * **explore**: Allows searching for a specific topic, and shows results of people related to the topic. Users can establish connections with people shown in the results section.
       * **profile**: Shows a user's details. Allows users to select analytics to be shown in public profile. Aims to enable saving of dashboards and uploads of files to be shown in the portfolio section.
-      * **social**: Social page which shows the instructor's view of the social dashboard. Instructors can enable / disable certain charts with the Content Manager and preset student dashboards by selecting components to be shown.
-      * **social-student**: Student's view of the social dashboard. Students can modify the preset components.
+      * **social**: Social page which shows the instructor's view of the social dashboard. Instructors can enable / disable certain charts with the Content Manager and preset student dashboards by selecting components to be shown. Instructors can assign task for students. Once a task is assigned, students will be able to view and submit an answer in the student's view of social dashboard.
+      * **social-student**: Student's view of the social dashboard. Students can modify the preset components. Once the instructor assigns a task for students, it can be viewed in this page and an answer can be submitted with the provided answer field.
     * **domain**: Domain / business logic level code.
       * **data**: Mock data for simulation. Form of data that can be accepted by each chart can be viewed in the mock data files.
       * **models**: Models for typings.
