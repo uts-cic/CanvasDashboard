@@ -176,11 +176,11 @@
       triggers="mouseenter:mouseleave" container="body" placement="left"></i>
     </div>
     <div class="answer-input-container">
-      <textarea type="text" class="form-control" placeholder="Write your answer here..." rows="3"></textarea>
+      <textarea type="text" class="form-control" placeholder="Write your answer here..." rows="3" [(ngModel)]="answer.answer"></textarea>
     </div>
     <div class="answer-btn-container">
-      <button type="button" class="btn btn-secondary answer-btn">Clear</button>
-      <button type="button" class="btn btn-primary answer-btn">Save</button>
+      <button type="button" class="btn btn-secondary answer-btn" (click)="clearAnswer()">Clear</button>
+      <button type="button" class="btn btn-primary answer-btn" (click)="updateAnswer()">Save</button>
     </div>
   </div>
 </div>

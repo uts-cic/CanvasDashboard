@@ -3,12 +3,14 @@
  */
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { MatSnackBar } from '@angular/material';
 import { ContentService } from '../../domain/services/content/content.service';
 import { Content } from '../../domain/models/content';
 import { contents } from '../../domain/data/mock-content';
 import { TaskService } from '../../domain/services/task/task.service';
 import { tasks } from '../../domain/data/mock-task';
-
+import { answers } from '../../domain/data/mock-answer';
+import { AnswerService } from '../../domain/services/answer/answer.service';
 
 @Component({
   selector: 'app-social-student',
@@ -25,6 +27,7 @@ export class SocialStudentComponent implements OnInit {
   private taskCollapse = false; // Boolean to toggle task section - true = collapsed
   private answerHint = 'Write your answer in the provided space below and click save when you are ready to submit/update your answer.';
   private task = tasks[0];
+  private answer = answers[0];
 
   // First row component attributes
   private socialActivityDisabled = false;
@@ -52,11 +55,13 @@ export class SocialStudentComponent implements OnInit {
   private emptyColSize2 = 'col-md-12';
   private emptySpaceText2 = '3 of 3 spaces left';
 
-  constructor(private modalService: NgbModal, private contentService: ContentService, private taskService: TaskService) { }
+  constructor(private modalService: NgbModal, private contentService: ContentService, private taskService: TaskService,
+    private answerService: AnswerService, public snackBar: MatSnackBar) { }
 
   ngOnInit() {
     this.getContent(2);
     this.getTask(1);
+    this.getAnswer(1);
   }
 
   /**
@@ -86,6 +91,42 @@ export class SocialStudentComponent implements OnInit {
   getTask(id: number): void {
     this.taskService.getTask(id).subscribe((task) => {
       this.task = task;
+    });
+  }
+
+  /**
+   * Gets answer from from the Answer Service
+   * @param id answer ID (from mock answer)
+   */
+  getAnswer(id: number): void {
+    this.answerService.getAnswer(id).subscribe((answer) => {
+      this.answer = answer;
+    });
+  }
+
+  /**
+   * Updates an answer and notifies success with snackbar
+   */
+  updateAnswer(): void {
+    this.answerService.updateAnswer(this.answer).subscribe();
+    this.openSnackBar('Answer Updated', 'Dismiss');
+  }
+
+  /**
+   * Clears the answer field input (does not automatically save)
+   */
+  clearAnswer(): void {
+    this.answer.answer = '';
+  }
+
+  /**
+   * Opens snackbar for displaying messages on the bottom of page
+   * @param message message to be displayed
+   * @param action snackbar action button label
+   */
+  openSnackBar(message: string, action: string) {
+    this.snackBar.open(message, action, {
+      duration: 3000,
     });
   }
 

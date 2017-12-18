@@ -4,6 +4,7 @@
 import { InMemoryDbService } from 'angular-in-memory-web-api';
 import { contents } from '../data/mock-content';
 import { tasks } from '../data/mock-task';
+import { answers } from '../data/mock-answer';
 
 export class InMemoryDataService implements InMemoryDbService {
 
@@ -12,7 +13,7 @@ export class InMemoryDataService implements InMemoryDbService {
    */
   createDb() {
     const socialActivity = sinAndCos();
-    return { socialActivity, contents, tasks };
+    return { socialActivity, contents, tasks, answers };
   }
 
 }
