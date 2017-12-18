@@ -8,7 +8,8 @@
 <div *ngIf="!isLoading" class="social-student-container">
   <!-- Student Task -->
   <!-- Shows task provided by the instructor -->
-  <div class="student-task-container" (click)="taskCollapse = !taskCollapse">
+  <!-- This field only appears when instructor has assigned a task -->
+  <div *ngIf="task.title !== '' && task.description !== ''" class="student-task-container" (click)="taskCollapse = !taskCollapse">
     <div class="student-task-heading-container">
       <h5>{{task.title}}</h5>
       <i class="fa fa-question-circle-o student-task-heading-hint" [ngbPopover]="taskHint" 
@@ -165,7 +166,10 @@
     </div>
   </div>
 
-  <div class="answer-container">
+  <!-- Answer field -->
+  <!-- Input field for student to submit / update answer for assigned task -->
+  <!-- This field only appears when instructor has assigned a task -->
+  <div *ngIf="task.title !== '' && task.description !== ''" class="answer-container">
     <div class="answer-heading-container">
       <h5>Task Answer</h5>
       <i class="fa fa-question-circle-o student-task-heading-hint" [ngbPopover]="answerHint" 
