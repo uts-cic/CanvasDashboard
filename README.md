@@ -1,6 +1,6 @@
 # CanvasDashboardIntegration
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.5.0.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.2. Please ensure to change the angular-cli version to suit your node and other dependencies.
 
 ## Instructions
 
