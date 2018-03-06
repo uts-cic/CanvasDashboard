@@ -1,6 +1,35 @@
 # CanvasDashboardIntegration
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.2. Please ensure to change the angular-cli version to suit your node and other dependencies.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.2. 
+
+``` sh 
+ng -v 
+
+
+ Angular CLI: 1.7.2
+ Node: 8.9.4
+ OS: darwin x64
+ Angular: 5.2.7
+ ... common, compiler, compiler-cli, core, forms, http
+ ... language-service, platform-browser, platform-browser-dynamic
+ ... router
+
+ @angular/animations: 5.1.0
+ @angular/cdk: 5.0.0-rc.1
+ @angular/cli: 1.7.2
+ @angular/material: 5.0.0-rc.1
+ @angular-devkit/build-optimizer: 0.3.2
+ @angular-devkit/core: 0.3.2
+ @angular-devkit/schematics: 0.3.2
+ @ngtools/json-schema: 1.2.0
+ @ngtools/webpack: 1.10.1
+ @schematics/angular: 0.3.2
+ @schematics/package-update: 0.3.2
+ typescript: 2.4.2
+ webpack: 3.11.0
+
+```
+
 
 ## Instructions
 
