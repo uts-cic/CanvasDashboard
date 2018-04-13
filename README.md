@@ -37,6 +37,20 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
+To get started:
+
+Install Node.js (https://nodejs.org/en/download/)
+Install npm <> or update npm <>
+
+Using the node.js command prompt install the Angular CLI globally: <npm install -g @angular/cli>
+Check the version of node.js <node -v> - gives the version number such as v8.11.1
+Check the version of npm <npm -v> - gives the version number such as 5.6.0
+
+Using the node.js command prompt change directory to the cloned repo on your local machine. This will contains the .angular-cli.json file. npm uses this file to determine what packages it needs to install on your machine.
+List the packages and their status using this command: <npm ls>
+Install / update the packages to the folders using the command: <npm install> (this will run for about 10 minutes depending on bandwith/processing power)
+Then update the packages using npm <npm update> - gives a final output line like --added 3 packages, removed 1 package and updated 5 packages in 73.173s
+
 ## Project Structure
 
 * **src**
