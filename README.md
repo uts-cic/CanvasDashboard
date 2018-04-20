@@ -51,6 +51,39 @@ List the packages and their status using this command: <npm ls>
 Install / update the packages to the folders using the command: <npm install> (this will run for about 10 minutes depending on bandwith/processing power)
 Then update the packages using npm <npm update> - gives a final output line like --added 3 packages, removed 1 package and updated 5 packages in 73.173s
 
+Run the following command <ng -v> to check the versions and that everything is installed correctly.
+
+The final result shoudl look like this :-
+
+    _                      _                 ____ _     ___
+   / \   _ __   __ _ _   _| | __ _ _ __     / ___| |   |_ _|
+  / △ \ | '_ \ / _` | | | | |/ _` | '__|   | |   | |    | |
+ / ___ \| | | | (_| | |_| | | (_| | |      | |___| |___ | |
+/_/   \_\_| |_|\__, |\__,_|_|\__,_|_|       \____|_____|___|
+               |___/
+
+Angular CLI: 1.7.2
+Node: 8.11.1
+OS: win32 x64
+Angular: 5.2.9
+... animations, common, compiler, compiler-cli, core, forms
+... http, language-service, platform-browser
+... platform-browser-dynamic, router
+
+@angular/cdk: 5.2.4
+@angular/cli: 1.7.2
+@angular/material: 5.2.4
+@schematics/package-update: 0.3.2
+typescript: 2.4.2
+webpack: 4.5.0
+
+Note: My install gave this line - webpack: error
+To resolve execute <npm install --save-dev webpack> - This results in a succesful install with the final lines being "+ webpack@4.5.0 added 226 packages in 125.696s" and can be checked by rerunning the command <ng -v> and checking the versions as above. Note some version numbers will increse from those listed here. Do not be alarmed by this.
+
+To start the code run the following <ng serve>
+Accept the firewall rule change for both private and public networks
+
+
 ## Project Structure
 
 * **src**
